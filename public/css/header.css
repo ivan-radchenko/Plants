@@ -1,0 +1,39 @@
+.header{
+    width: 100%;
+    background-color: #2b4c4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-wrapper{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.header-nav-home{
+
+}
+
+.header-nav{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 30px;
+    color: #a9ceca;
+    transition: 0.5s;
+}
+
+.nav-this-page{
+    color: #aed285;
+}
+
+.nav-link:hover{
+    color: #aed285;
+}
