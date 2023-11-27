@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+    redis:
+        image: 'redis:alpine'
+
+    postgres:
+        image: 'postgres:15-alpine'
+        working_dir: /application
+        volumes:
+            - '.:/application'
+        environment:
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=030103
+            - POSTGRES_DB=plants_db
+        ports:
+            - '3004:5432'
+
+    webserver:
+        image: 'nginx:alpine'
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '3000:80'
+
+    php-fpm:
+        build: docker/php-fpm
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './docker/php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini'
