@@ -2,3 +2,13 @@
     margin: 0;
     padding: 0;
 }
+
+.main{
+    background-color: #1a1c18;
+    min-height: 80vh;
+    color: #c5c8bc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}

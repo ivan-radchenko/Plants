@@ -1,0 +1,15 @@
+.footer{
+    width: 100vw;
+    background-color: #1e4e4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-wrapper{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}

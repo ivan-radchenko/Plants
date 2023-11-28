@@ -9,13 +9,16 @@
         </nav>
         <nav class="header-nav">
             @auth
-                <a class="nav-link" href="{{--{{ route('profile') }}--}}">Мои Растения</a>
+                <a class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
                 <a class="nav-link" href="{{--{{ route('profile') }}--}}">Уход Сегодня</a>
                 <a class="nav-link" href="{{--{{ route('profile') }}--}}">Профиль</a>
-                <a class="nav-link" href="{{--{{ route('logout') }}--}}">Выйти</a>
+                <form class="logout-form" action="{{ route('logout') }}" method="post">
+                    @csrf
+                <button class="logout-button nav-link">Выйти</button>
+                </form>
             @else
-                <a class="nav-link" href="{{--{{ route('login') }}--}}">Войти</a>
-                <a class="nav-link" href="{{--{{ route('register') }}--}}">Регистрация</a>
+                <a class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
+                <a class="nav-link @if(Request::route()->getName() == 'register') nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
             @endauth
         </nav>
     </div>
