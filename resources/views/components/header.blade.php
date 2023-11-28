@@ -7,19 +7,26 @@
                 </svg>
             </a>
         </nav>
-        <nav class="header-nav">
+
             @auth
-                <a class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
-                <a class="nav-link" href="{{--{{ route('profile') }}--}}">Уход Сегодня</a>
-                <a class="nav-link" href="{{--{{ route('profile') }}--}}">Профиль</a>
+                <nav class="center-nav">
+                    <a class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
+                    <a class="nav-link" href="#">Уход Сегодня</a>
+                </nav>
+            <nav class="profile">
+                <a class="nav-link" href="#{{--{{ route('profile') }}--}}">
+                    <img class="profile-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="profile">
+                </a>
                 <form class="logout-form" action="{{ route('logout') }}" method="post">
                     @csrf
-                <button class="logout-button nav-link">Выйти</button>
+                    <button class="logout-button nav-link">Выйти</button>
                 </form>
+            </nav>
             @else
+            <nav class="header-nav">
                 <a class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
                 <a class="nav-link @if(Request::route()->getName() == 'register') nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
+            </nav>
             @endauth
-        </nav>
     </div>
 </header>

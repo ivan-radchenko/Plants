@@ -3,7 +3,7 @@
 @section('content')
     <link href="{{ asset('css/auth/login.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form class="form" action="{{ route('password.reset') }}" method="post">
+        <form class="form" action="{{ route('password.update') }}" method="post">
             @csrf
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>

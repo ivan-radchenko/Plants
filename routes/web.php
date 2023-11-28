@@ -36,11 +36,11 @@ Route::middleware('guest')->group(function () {
     Route::get('/forgot-password', [ForgotPasswordController::class, 'index'])
         ->name('password.request');
     Route::post('/forgot-password', [ForgotPasswordController::class, 'send'])
-        ->name('password.request');
+        ->name('password.email');
     Route::get('/reset-password/{token}',[ResetPasswordController::class,'index'])
         ->name('password.reset');
     Route::post('/reset-password',[ResetPasswordController::class,'reset'])
-        ->name('password.reset');
+        ->name('password.update');
 });
 
 Route::middleware('auth')->group(function () {
@@ -48,5 +48,4 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
     Route::get('/my-plants', [MyPlants::class, 'index'])
         ->name('my-plants');
-
 });
