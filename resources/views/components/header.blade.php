@@ -19,7 +19,7 @@
                 </a>
                 <form class="logout-form" action="{{ route('logout') }}" method="post">
                     @csrf
-                    <button class="logout-button nav-link">Выйти</button>
+                    <button type="submit" class="logout-button nav-link">Выйти</button>
                 </form>
             </nav>
             @else
