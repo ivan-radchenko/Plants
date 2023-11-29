@@ -5,11 +5,11 @@
 
 .main{
     background-color: #1a1c18;
-    min-height: 80vh;
+    min-height: 78vh;
     color: #c5c8bc;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }

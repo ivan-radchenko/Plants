@@ -40,7 +40,7 @@
                     <span class="error">{{ $message }}</span>
                     @enderror
                 </div>
-                <img class="img-prev" id="img" src="{{Storage::disk('public')->url('users/default.png')}}"/>
+                    <img class="img-prev" id="img" src="{{Storage::disk('public')->url('users/default.png')}}" alt="image"/>
                 <button class="button" type="submit">Зарегистрироваться</button>
             </div>
         </form>

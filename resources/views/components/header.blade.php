@@ -14,7 +14,7 @@
                     <a class="nav-link" href="#">Уход Сегодня</a>
                 </nav>
             <nav class="profile">
-                <a class="nav-link" href="#{{--{{ route('profile') }}--}}">
+                <a class="nav-link" href="{{ route('profile') }}">
                     <img class="profile-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="profile">
                 </a>
                 <form class="logout-form" action="{{ route('logout') }}" method="post">

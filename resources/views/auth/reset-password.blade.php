@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <link href="{{ asset('css/auth/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/auth/reset-password.css') }}" rel="stylesheet">
     <div class="wrapper">
         <form class="form" action="{{ route('password.update') }}" method="post">
             @csrf

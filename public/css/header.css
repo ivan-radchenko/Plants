@@ -1,5 +1,5 @@
 .header{
-    width: 100vw;
+    width: 100%;
     background-color: #1e4e4d;
     display: flex;
     align-items: center;
@@ -46,12 +46,14 @@
     background-color: transparent;
     cursor: pointer;
     font-family: auto, serif;
+    border-bottom: solid 1px rgba(0,0,0,0);
 }
 
 .profile-image{
     width: 50px;
     height: 50px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .profile{
@@ -63,4 +65,17 @@
 .center-nav{
     display: flex;
     gap: 20px;
+}
+
+@media screen and (max-width: 425px) {
+
+    .nav-link{
+        font-size: 14px;
+    }
+
+    .profile-image{
+        width: 40px;
+        height: 40px;
+    }
+
 }
