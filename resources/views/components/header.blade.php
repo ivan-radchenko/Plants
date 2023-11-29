@@ -13,15 +13,21 @@
                     <a class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
                     <a class="nav-link" href="#">Уход Сегодня</a>
                 </nav>
-            <nav class="profile">
-                <a class="nav-link" href="{{ route('profile') }}">
-                    <img class="profile-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="profile">
-                </a>
-                <form class="logout-form" action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <button type="submit" class="logout-button nav-link">Выйти</button>
-                </form>
-            </nav>
+            <div class="profile" id="profile">
+                <img class="profile-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="profile">
+                <span class="nav-link">{{Auth::user()->name}}</span>
+                <nav class="drop-down" id="drop-down">
+                    <div class="drop-down-box" id="drop-down-box">
+                        <a class="nav-link @if(Request::route()->getName() == 'profile') nav-this-page @endif" href="{{ route('profile') }}">Профиль</a>
+                        <a class="nav-link mobile @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
+                        <a class="nav-link mobile" href="#">Уход Сегодня</a>
+                        <form class="logout-form" action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="logout-button nav-link">Выйти</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
             @else
             <nav class="header-nav">
                 <a class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
@@ -30,3 +36,14 @@
             @endauth
     </div>
 </header>
+<script>
+    document.getElementById("profile").addEventListener("click", function() {
+        document.getElementById("drop-down").classList.add("open");
+        function sleep (time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+        sleep(5000).then(() => {
+            document.getElementById("drop-down").classList.remove("open");
+        });
+    });
+</script>

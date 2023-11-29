@@ -10,7 +10,8 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $authUser=Auth::class;
+        $authUser=Auth::user();
+
         return view('auth.profile',[
             'authUser'=>$authUser
         ]);

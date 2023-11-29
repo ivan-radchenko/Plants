@@ -20,8 +20,10 @@
 
 <body>
     <x-header></x-header>
-    <main class="main">
-        @yield('content')
+    <main class="main" id="main">
+        <div class="main-container">
+            @yield('content')
+        </div>
     </main>
     <x-footer></x-footer>
 </body>
