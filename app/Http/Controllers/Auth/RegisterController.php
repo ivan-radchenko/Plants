@@ -31,7 +31,7 @@ class RegisterController extends Controller
         $user=User::create($validated);
         if ($user->save()){
             Auth::login($user);
-            return redirect()->route('home');
+            return redirect()->route('my-plants');
         }
 
         return back()->with('error',('Что-то пошло не так =('));
