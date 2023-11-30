@@ -12,8 +12,6 @@ class ProfileController extends Controller
     {
         $authUser=Auth::user();
 
-        return view('auth.profile',[
-            'authUser'=>$authUser
-        ]);
+        return view('auth.profile');
     }
 }
