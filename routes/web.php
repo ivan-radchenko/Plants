@@ -1,12 +1,11 @@
 <?php
 
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Livewire\auth\Login;
-use App\Livewire\auth\Profile;
+use App\Livewire\Auth\ForgotPassword;
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Profile;
+use App\Livewire\Auth\Register;
+use App\Livewire\Auth\ResetPassword;
 use App\Livewire\Home;
 use App\Livewire\MyPlants;
 use Illuminate\Support\Facades\Route;
@@ -27,22 +26,15 @@ Route::get('/', Home::class)
 
 Route::middleware('guest')->group(function () {
 
-    Route::get('/register', [RegisterController::class, 'create'])
-        ->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])
+    Route::get('/register', Register::class)
         ->name('register');
     Route::get('/login', Login::class)
         ->name('login');
-    Route::post('/login', [LoginController::class, 'login'])
-        ->name('login');
-    Route::get('/forgot-password', [ForgotPasswordController::class, 'index'])
+    Route::get('/forgot-password', ForgotPassword::class)
         ->name('password.request');
-    Route::post('/forgot-password', [ForgotPasswordController::class, 'send'])
-        ->name('password.email');
-    Route::get('/reset-password/{token}',[ResetPasswordController::class,'index'])
+    Route::get('/reset-password/{token}', ResetPassword::class)
         ->name('password.reset');
-    Route::post('/reset-password',[ResetPasswordController::class,'reset'])
-        ->name('password.update');
+
 });
 
 Route::middleware('auth')->group(function () {

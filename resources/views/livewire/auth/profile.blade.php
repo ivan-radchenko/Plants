@@ -48,7 +48,7 @@
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                         </svg>
                     </div>
-                    <input wire:model="password" class="form-input" type="password" name="password" id="password">
+                    <input wire:model="password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
                     @if(session('success_update_password')) <span class="success">{{session('success_update_password')}}</span> @endif
                     @error('password')
                     <span class="error">{{ $message }}</span>

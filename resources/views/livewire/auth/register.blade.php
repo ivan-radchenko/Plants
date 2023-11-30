@@ -1,20 +1,18 @@
-@extends('layouts.main')
-
-@section('content')
+<div>
     <link href="{{ asset('css/auth/register.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form class="form" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
+        <form wire:submit="register" class="form">
             @csrf
             <div class="name form-item">
                 <label for="name">Имя</label>
-                <input class="form-input" type="text" name="name" id="name" value="{{old('name')}}">
+                <input wire:model="name" class="form-input" type="text" name="name" id="name">
                 @error('name')
                 <span class="error">{{ $message }}</span>
                 @enderror
             </div>
             <div class="email form-item">
                 <label for="email">Email</label>
-                <input class="form-input" type="email" name="email" id="email" value="{{old('email')}}">
+                <input wire:model="email" class="form-input" type="email" name="email" id="email">
                 @error('email')
                 <span class="error">{{ $message }}</span>
                 @enderror
@@ -27,20 +25,24 @@
                         <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                     </svg>
                 </div>
-                <input class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
-                @error('password')
-                <span class="error">{{ $message }}</span>
-                @enderror
+                <input wire:model="password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
             </div>
+            @error('error')
+                {{ $message }}
+            @enderror
             <div class="bottom-wrapper">
-                <div class="image form-item">
-                    <label class="button" for="image">Выбрать Фото</label>
-                    <input class="form-input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg" value="не обязательно">
-                    @error('image')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
+                @if($image)
+                    <img class="img-prev" src="{{$image->temporaryUrl()}}" alt="user_image">
+                @else
                     <img class="img-prev" id="img" src="{{Storage::disk('public')->url('users/default.png')}}" alt="image"/>
+                @endif
+                    <div class="image form-item">
+                        <label class="button" for="image">Выбрать Фото</label>
+                        <input wire:model="image" class="form-input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
+                        @error('image')
+                        <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
                 <button class="button" type="submit">Зарегистрироваться</button>
             </div>
         </form>
@@ -55,9 +57,5 @@
                 x.type = "password";
             }
         })
-
-        document.getElementById('image').addEventListener('change', event => {
-            document.getElementById('img').src=URL.createObjectURL(event.target.files[0]);
-        })
     </script>
-@endsection
+</div>

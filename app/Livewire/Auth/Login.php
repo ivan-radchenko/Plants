@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\auth;
+namespace App\Livewire\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Rule;
@@ -26,9 +26,7 @@ class Login extends Component
 
             redirect('my-plants');
         }
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        back()->with(['status' => 'Неверный логин или пароль']);
     }
 
     public function render()

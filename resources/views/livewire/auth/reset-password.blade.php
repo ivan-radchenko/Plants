@@ -1,9 +1,7 @@
-@extends('layouts.main')
-
-@section('content')
+<div>
     <link href="{{ asset('css/auth/reset-password.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form class="form" action="{{ route('password.update') }}" method="post">
+        <form wire:submit="resetPassword" class="form">
             @csrf
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>
@@ -11,7 +9,7 @@
             <input type="hidden" name="token" id="token" value="{{ $token }}">
             <div class="email form-item">
                 <label for="email">Email</label>
-                <input class="form-input" type="email" name="email" id="email" value="{{old('email')}}">
+                <input wire:model="email" class="form-input" type="email" name="email" id="email">
                 @error('email')
                 <span class="error">{{ $message }}</span>
                 @enderror
@@ -24,7 +22,7 @@
                         <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                     </svg>
                 </div>
-                <input class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
+                <input wire:model="password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
                 @error('password')
                 <span class="error">{{ $message }}</span>
                 @enderror
@@ -43,5 +41,4 @@
             }
         })
     </script>
-@endsection
-
+</div>
