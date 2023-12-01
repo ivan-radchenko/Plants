@@ -12,12 +12,12 @@
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     </head>
     <body>
-    <x-header></x-header>
-    <main class="main" id="main">
-        <div class="main-container">
-            {{ $slot }}
-        </div>
-    </main>
-    <x-footer></x-footer>
+        <livewire:components.header></livewire:components.header>
+            <main class="main" id="main">
+                <div class="main-container">
+                    {{ $slot }}
+                </div>
+            </main>
+        <livewire:components.footer></livewire:components.footer>
     </body>
 </html>

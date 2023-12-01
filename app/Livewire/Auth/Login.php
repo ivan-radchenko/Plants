@@ -19,8 +19,8 @@ class Login extends Component
 
     public function login()
     {
-
-        if (Auth::attempt(['email'=>$this->email,'password'=>$this->password], $this->remember)) {
+        $validated = $this->validate();
+        if (Auth::attempt(['email'=>$validated['email'],'password'=>$validated['password']], $validated['remember'])) {
 
             session()->regenerate();
 

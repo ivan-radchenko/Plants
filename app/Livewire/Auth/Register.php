@@ -28,7 +28,7 @@ class Register extends Component
     {
         $validated = $this->validate();
 
-        $path=$this->image->store('users','public');
+        $path=$validated['image']->store('users','public');
         $validated['image']=$path;
 
         $user=User::create($validated);

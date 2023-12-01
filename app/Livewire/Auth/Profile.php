@@ -14,21 +14,19 @@ class Profile extends Component
 {
     use WithFileUploads;
 
-    #[Rule('sometimes |nullable|image|mimes:jpg,jpeg,png| max: 5500')]
     public $image;
-
-    #[Rule('required | string | min:3 | max:20 ')]
     public $name;
-
-    #[Rule('required | email | unique:users')]
     public $email;
-
-    #[Rule('required | string | min:6 | max:20')]
     public $password;
 
     public function updateImage():void
     {
-        $path=$this->image->store('users','public');
+        $image=$this->validate([
+            'image' => 'sometimes |nullable|image|mimes:jpg,jpeg,png| max: 5500'
+        ]);
+        $image = $image['image'];
+
+        $path=$image->store('users','public');
 
         if (Auth::user()->image !== 'users/default.png') {
             Storage::disk('public')->delete(Auth::user()->image);
@@ -39,19 +37,34 @@ class Profile extends Component
     }
     public function updateName(): void
     {
-        User::find(Auth::user()->id)->update(['name'=>$this->name]);
+        $name=$this->validate([
+            'name' => 'required | string | min:3 | max:20 '
+        ]);
+        $name = $name['name'];
+
+        User::find(Auth::user()->id)->update(['name'=>$name]);
         request()->session()->flash('success_update_name','Имя обновлено');
     }
     public function updateEmail(): void
     {
-        User::find(Auth::user()->id)->update(['email'=>$this->email]);
+        $email=$this->validate([
+            'email' => 'required | email | unique:users'
+        ]);
+        $email = $email['email'];
+
+        User::find(Auth::user()->id)->update(['email'=>$email]);
         request()->session()->flash('success_update_email','Email обновлен');
     }
     public function updatePassword(): void
     {
+        $password=$this->validate([
+            'password' => 'required | string | min:6 | max:20'
+        ]);
+        $password = $password['password'];
+
         $user = Auth::user();
         $user->forceFill([
-            'password' => Hash::make($this->password)
+            'password' => Hash::make($password)
         ]);
         $user->save();
         request()->session()->flash('success_update_password','Пароль успешно сохранен');

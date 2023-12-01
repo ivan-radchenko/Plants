@@ -8,11 +8,11 @@
             </a>
         </nav>
 
-            @auth
-                <nav class="center-nav">
-                    <a wire:navigate class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
-                    <a wire:navigate class="nav-link" href="#">Уход Сегодня</a>
-                </nav>
+        @auth
+            <nav class="center-nav">
+                <a wire:navigate class="nav-link @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
+                <a wire:navigate class="nav-link @if(Request::route()->getName() == 'care-today') nav-this-page @endif" href="{{route('care-today')}}">Уход Сегодня</a>
+            </nav>
             <div class="profile" id="profile">
                 <img class="profile-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="profile">
                 <span class="nav-link">{{Auth::user()->name}}</span>
@@ -20,7 +20,7 @@
                     <div class="drop-down-box" id="drop-down-box">
                         <a wire:navigate class="nav-link @if(Request::route()->getName() == 'profile') nav-this-page @endif" href="{{ route('profile') }}">Профиль</a>
                         <a wire:navigate class="nav-link mobile @if(Request::route()->getName() == 'my-plants') nav-this-page @endif" href="{{ route('my-plants') }}">Мои Растения</a>
-                        <a wire:navigate class="nav-link mobile" href="#">Уход Сегодня</a>
+                        <a wire:navigate class="nav-link mobile @if(Request::route()->getName() == 'care-today') nav-this-page @endif" href="{{route('care-today')}}">Уход Сегодня</a>
                         <form class="logout-form" action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit" class="logout-button nav-link">Выйти</button>
@@ -28,12 +28,12 @@
                     </div>
                 </nav>
             </div>
-            @else
+        @else
             <nav class="header-nav">
                 <a wire:navigate class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
                 <a wire:navigate class="nav-link @if(Request::route()->getName() == 'register') nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
             </nav>
-            @endauth
+        @endauth
     </div>
 </header>
 <script>

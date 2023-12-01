@@ -6,6 +6,7 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Profile;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\ResetPassword;
+use App\Livewire\CareToday;
 use App\Livewire\Home;
 use App\Livewire\MyPlants;
 use Illuminate\Support\Facades\Route;
@@ -44,4 +45,6 @@ Route::middleware('auth')->group(function () {
         ->name('profile');
     Route::get('/my-plants', MyPlants::class)
         ->name('my-plants');
+    Route::get('/care-today', CareToday::class)
+        ->name('care-today');
 });
