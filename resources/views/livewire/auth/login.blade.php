@@ -36,7 +36,6 @@
             <button class="button" type="submit">Войти</button>
         </form>
     </div>
-
     <script>
         document.getElementById('show').addEventListener('click', event => {
             const x = document.getElementById("password");

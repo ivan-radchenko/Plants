@@ -2,12 +2,16 @@
 
 namespace App\Livewire\Auth;
 
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
+use DanHarrin\LivewireRateLimiting\WithRateLimiting;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class Login extends Component
 {
+    use WithRateLimiting;
     #[Rule('required | email')]
     public $email;
 
@@ -19,14 +23,22 @@ class Login extends Component
 
     public function login()
     {
-        $validated = $this->validate();
-        if (Auth::attempt(['email'=>$validated['email'],'password'=>$validated['password']], $validated['remember'])) {
+        try {
+            $this->rateLimit(5,60);
+            $validated = $this->validate();
+            if (Auth::attempt(['email'=>$validated['email'],'password'=>$validated['password']], $validated['remember'])) {
 
-            session()->regenerate();
+                session()->regenerate();
 
-            redirect('my-plants');
+                redirect('my-plants');
+            }
+            back()->with(['status' => 'Неверный логин или пароль']);
+
+        } catch (TooManyRequestsException $exception) {
+            throw ValidationException::withMessages([
+                'email' => "Пожалуйста, подождите еще {$exception->secondsUntilAvailable} секунд, чтобы войти в систему.",
+            ]);
         }
-        back()->with(['status' => 'Неверный логин или пароль']);
     }
 
     public function render()

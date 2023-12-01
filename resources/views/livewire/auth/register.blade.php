@@ -25,7 +25,7 @@
                         <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                     </svg>
                 </div>
-                <input wire:model="password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
+                <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
             </div>
             @error('error')
                 {{ $message }}
