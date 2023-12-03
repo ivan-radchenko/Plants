@@ -22,7 +22,7 @@ class Profile extends Component
     public function updateImage():void
     {
         $image=$this->validate([
-            'image' => 'sometimes |nullable|image|mimes:jpg,jpeg,png| max: 5500'
+            'image' => 'required|image|mimes:jpg,jpeg,png| max: 5500'
         ]);
         $image = $image['image'];
 
