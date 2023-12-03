@@ -47,6 +47,23 @@
     color: #0b2000;
 }
 
+.button-delete{
+    background-color: #1a1c18;
+    border: none;
+    color: #ff0000;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 1s;
+    text-wrap: nowrap;
+}
+.button-delete:hover{
+    background-color: #ff0000;
+    color: #1a1c18;
+}
+
 .form-item{
     display: flex;
     flex-direction: column;

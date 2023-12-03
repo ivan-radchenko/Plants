@@ -28,8 +28,12 @@ class Register extends Component
     {
         $validated = $this->validate();
 
-        $path=$validated['image']->store('users','public');
-        $validated['image']=$path;
+        if ($validated['image'] === null){
+            $validated['image'] = 'users/default.png';
+        } else {
+            $path=$validated['image']->store('users','public');
+            $validated['image']=$path;
+        }
 
         $user=User::create($validated);
         if ($user->save()){

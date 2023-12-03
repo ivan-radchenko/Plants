@@ -56,6 +56,12 @@
                     <button wire:click="updatePassword" class="button" type="button">Сохранить</button>
                 </div>
         </div>
+        <div class="sub-container">
+            <button wire:confirm.prompt="Отменить это действие будет невозможно. Вы уверенны,что хотите удалить свой аккаунт? Если да, введите свое имя. |{{Auth::user()->name}}"
+                    wire:click="delete" class="button-delete" type="button">
+                Удалить аккаунт
+            </button>
+        </div>
     </div>
     <script>
         document.getElementById('show').addEventListener('click', event => {

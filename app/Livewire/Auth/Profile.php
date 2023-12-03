@@ -70,6 +70,13 @@ class Profile extends Component
         request()->session()->flash('success_update_password','Пароль успешно сохранен');
     }
 
+    public function delete(): void
+    {
+        User::find(Auth::user()->id)->delete();
+
+        redirect(route('home'));
+    }
+
     public function mount(): void
     {
         $this->name=Auth::user()->name;

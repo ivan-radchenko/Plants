@@ -28,6 +28,17 @@
                     </div>
                 </nav>
             </div>
+            <script>
+                document.getElementById("profile").addEventListener("click", function() {
+                    document.getElementById("drop-down").classList.add("open");
+                    function sleep (time) {
+                        return new Promise((resolve) => setTimeout(resolve, time));
+                    }
+                    sleep(5000).then(() => {
+                        document.getElementById("drop-down").classList.remove("open");
+                    });
+                });
+            </script>
         @else
             <nav class="header-nav">
                 <a wire:navigate class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
@@ -36,14 +47,3 @@
         @endauth
     </div>
 </header>
-<script>
-    document.getElementById("profile").addEventListener("click", function() {
-        document.getElementById("drop-down").classList.add("open");
-        function sleep (time) {
-            return new Promise((resolve) => setTimeout(resolve, time));
-        }
-        sleep(5000).then(() => {
-            document.getElementById("drop-down").classList.remove("open");
-        });
-    });
-</script>
