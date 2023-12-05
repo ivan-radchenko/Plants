@@ -24,7 +24,7 @@ class Login extends Component
     public function login()
     {
         try {
-            $this->rateLimit(5,60);
+            $this->rateLimit(3,60);
             $validated = $this->validate();
             if (Auth::attempt(['email'=>$validated['email'],'password'=>$validated['password']], $validated['remember'])) {
 

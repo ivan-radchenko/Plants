@@ -14,9 +14,7 @@
     <body>
         <livewire:components.header></livewire:components.header>
             <main class="main" id="main">
-                <div class="main-container">
                     {{ $slot }}
-                </div>
             </main>
         <livewire:components.footer></livewire:components.footer>
     </body>

@@ -41,7 +41,7 @@
             </script>
         @else
             <nav class="header-nav">
-                <a wire:navigate class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Войти</a>
+                <a wire:navigate class="nav-link @if(Request::route()->getName() == 'login') nav-this-page @endif" href="{{route('login')}}">Вход</a>
                 <a wire:navigate class="nav-link @if(Request::route()->getName() == 'register') nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
             </nav>
         @endauth

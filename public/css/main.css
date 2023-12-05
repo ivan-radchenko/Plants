@@ -1,26 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 .main{
-    background-color: #1a1c18;
-    min-height: 78vh;
-    color: #c5c8bc;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    min-height: calc(100vh - 275px);
+    color: #77AFAF;
+    font-family: "Malgun Gothic", serif;
+    font-style: normal;
 }
 
 .main-container{
-    width: 80vw;
+    width: 1140px;
 }
-@media screen and (min-width: 1600px) {
 
-    .main-container{
-        width: 1336px;
-    }
+@media screen and (min-width: 1200px) {
+
 
 }

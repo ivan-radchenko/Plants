@@ -1,6 +1,6 @@
 .header{
     width: 100%;
-    background-color: #1e4e4d;
+    background-color: #ffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,10 +8,10 @@
 
 .header-wrapper{
     display: flex;
-    height: 10vh;
+    height: 75px;
     align-items: center;
     justify-content: space-between;
-    width: 80vw;
+    width: 1140px;
     position: relative;
 }
 
@@ -26,25 +26,24 @@
 
 .user-name{
     font-size: 20px;
-    color: #bbecea;
+    color: #77AFAF;
 }
 
 .nav-link{
+    font-family: "Malgun Gothic", serif;
     text-decoration: none;
-    font-size: 20px;
-    color: #bbecea;
-    border-bottom:solid 1px rgba(0,0,0,0);
-    transition: 1s;
+    font-size: 25px;
+    color: #77AFAF;
+    transition: 0.7s;
+    font-weight: 400;
 }
 
 .nav-this-page{
-    color: #8eda57;
-    border-bottom: solid 1px #8eda57;
+    color: #004445;
 }
 
 .nav-link:hover{
-    color: #8eda57;
-    border-bottom: solid 1px #8eda57;
+    color: #004445;
 }
 
 .logout-button{
@@ -133,10 +132,7 @@
     }
 
 }
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1200px) {
 
-    .header-wrapper{
-        width: 1336px;
-    }
 
 }
