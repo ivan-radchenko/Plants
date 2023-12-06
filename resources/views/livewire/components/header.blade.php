@@ -32,7 +32,7 @@
 
                         <form class="header-logout-form" action="{{ route('logout') }}" method="post">
                             @csrf
-                            <div class="header-drop-down-wrapper svg-exit">
+                            <div class="header-drop-down-wrapper header-svg-exit">
                                 <svg class="header-svg-exit" xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21">
                                     <polyline points="9.75 15.87 15.5 10.43 9.87 4.92" style="fill:none;  stroke-linecap:round; stroke-linejoin:round;"/>
                                     <line x1="5.57" y1="10.39" x2="15.28" y2="10.39" style="fill:none; stroke-linecap:round; stroke-linejoin:round;"/>
