@@ -43,8 +43,8 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
     Route::get('/profile', Profile::class)
         ->name('profile');
-    Route::get('/my-plants', MyPlants::class)
-        ->name('my-plants');
+    Route::get('/my-garden', MyPlants::class)
+        ->name('my-garden');
     Route::get('/care-today', CareToday::class)
         ->name('care-today');
 });

@@ -29,7 +29,7 @@ class Register extends Component
         $validated = $this->validate();
 
         if ($validated['image'] === null){
-            $validated['image'] = 'users/default.png';
+            $validated['image'] = 'users/default.svg';
         } else {
             $path=$validated['image']->store('users','public');
             $validated['image']=$path;
@@ -38,7 +38,7 @@ class Register extends Component
         $user=User::create($validated);
         if ($user->save()){
             Auth::login($user);
-            redirect()->route('my-plants');
+            redirect()->route('my-garden');
         }
         back()->with('error',('Что-то пошло не так =('));
     }

@@ -30,7 +30,7 @@ class Login extends Component
 
                 session()->regenerate();
 
-                redirect('my-plants');
+                redirect('my-garden');
             }
             back()->with(['status' => 'Неверный логин или пароль']);
 

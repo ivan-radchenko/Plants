@@ -8,6 +8,6 @@ class MyPlants extends Component
 {
     public function render()
     {
-        return view('livewire.my-plants');
+        return view('livewire.my-garden');
     }
 }

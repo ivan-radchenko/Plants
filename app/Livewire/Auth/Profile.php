@@ -28,7 +28,7 @@ class Profile extends Component
 
         $path=$image->store('users','public');
 
-        if (Auth::user()->image !== 'users/default.png') {
+        if (Auth::user()->image !== 'users/default.svg') {
             Storage::disk('public')->delete(Auth::user()->image);
         }
 

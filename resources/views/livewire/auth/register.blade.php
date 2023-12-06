@@ -34,7 +34,7 @@
                 @if($image)
                     <img class="img-prev" src="{{$image->temporaryUrl()}}" alt="user_image">
                 @else
-                    <img class="img-prev" id="img" src="{{Storage::disk('public')->url('users/default.png')}}" alt="image"/>
+                    <img class="img-prev" id="img" src="{{Storage::disk('public')->url('users/default.svg')}}" alt="image"/>
                 @endif
                     <div class="image form-item">
                         <label class="button" for="image">Выбрать Фото</label>
