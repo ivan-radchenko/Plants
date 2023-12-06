@@ -64,7 +64,8 @@
 
 .wrapper-image{
     display: flex;
-    gap: 35px;
+    justify-content: space-between;
+    width: 1140px;
 }
 
 .img-1{
