@@ -1,7 +1,7 @@
 <div>
     <link href="{{ asset('css/auth/register.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form wire:submit="register" class="form">
+        <form wire:submit="register" class="form" method="post">
             @csrf
             <div class="name form-item">
                 <label for="name">Имя</label>

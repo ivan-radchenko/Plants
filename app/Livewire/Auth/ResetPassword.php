@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -35,9 +36,13 @@ class ResetPassword extends Component
                 event(new PasswordReset($user));
             }
         );
-
-        redirect()->route('login')->with('status', __($status));
-        back()->withErrors(['email' => [__($status)]]);
+        if ($status === 'passwords.reset'){
+            redirect()->route('login')->with('status', __($status));
+        } else {
+            throw ValidationException::withMessages([
+                'email' => __($status),
+            ]);
+        }
     }
 
     public function render()

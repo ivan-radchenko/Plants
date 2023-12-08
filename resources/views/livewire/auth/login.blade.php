@@ -1,7 +1,7 @@
 <div>
     <link href="{{ asset('css/auth/login.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form wire:submit="login" class="form">
+        <form wire:submit="login" class="form" method="post">
             @csrf
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>

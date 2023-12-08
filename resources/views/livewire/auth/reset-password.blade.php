@@ -1,7 +1,7 @@
 <div>
     <link href="{{ asset('css/auth/reset-password.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <form wire:submit="resetPassword" class="form">
+        <form wire:submit="resetPassword" class="form" method="post">
             @csrf
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>
