@@ -1,4 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+}
+
+.main{
+    min-height: calc(100vh - 275px);
+    color: #77AFAF;
+    font-family: "Malgun Gothic", serif;
+    font-style: normal;
+}
+
+.main-container{
+    width: 1140px;
+}
+
+@media screen and (min-width: 1200px) {
+
+
 }

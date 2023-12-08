@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\Auth\LogoutController;
+use App\Livewire\Auth\ForgotPassword;
+use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Profile;
+use App\Livewire\Auth\Register;
+use App\Livewire\Auth\ResetPassword;
+use App\Livewire\CareToday;
+use App\Livewire\Home;
+use App\Livewire\MyPlants;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +22,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', Home::class)
+    ->name('home');
+
+Route::middleware('guest')->group(function () {
+
+    Route::get('/register', Register::class)
+        ->name('register');
+    Route::get('/login', Login::class)
+        ->name('login');
+    Route::get('/forgot-password', ForgotPassword::class)
+        ->name('password.request');
+    Route::get('/reset-password/{token}', ResetPassword::class)
+        ->name('password.reset');
+
+});
+
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LogoutController::class, 'logout'])
+        ->name('logout');
+    Route::get('/profile', Profile::class)
+        ->name('profile');
+    Route::get('/my-garden', MyPlants::class)
+        ->name('my-garden');
+    Route::get('/care-today', CareToday::class)
+        ->name('care-today');
 });
