@@ -1,0 +1,27 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: grid;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    width: 1140px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+}
+
+.plant-card{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    flex-direction: column;
+}
+
+.cart-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
