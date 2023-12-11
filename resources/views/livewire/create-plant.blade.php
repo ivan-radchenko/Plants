@@ -2,57 +2,54 @@
     <link href="{{ asset('css/create-plant.css') }}" rel="stylesheet">
     <form wire:submit="create" class="form" method="post">
         @csrf
+        @foreach ($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+        @endforeach
+
         <label for="name">Имя</label>
         <input wire:model="name" type="text" name="name" id="name">
-        @error('name')
-        <span class="error">{{ $message }}</span>
-        @enderror
 
         <label for="image">Фото</label>
         <input wire:model="image" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
-        @error('image')
-        <span class="error">{{ $message }}</span>
-        @enderror
+        @if($image)
+            <img class="img-prev" src="{{$image->temporaryUrl()}}" alt="uploaded-image">
+        @endif
 
-        <label for="waterSummer">Полив летом раз в
-            <input wire:model="waterSummer" type="number" name="waterSummer" id="waterSummer">
-            дня
+        <label for="waterSummer" id="it">Время между поливами летом:
+            <input wire:model="waterSummer" type="number" min="1" max="30" name="waterSummer" id="waterSummer">
+            дн.
         </label>
-        @error('waterSummer')
-        <span class="error">{{ $message }}</span>
-        @enderror
 
-        <label for="waterWinter">Полив зимой раз в
-            <input wire:model="waterWinter" type="number" name="waterWinter" id="waterWinter">
-            дня
+        <label for="waterWinter">Время между поливами зимой:
+            <input wire:model="waterWinter" type="number" min="1" max="30" name="waterWinter" id="waterWinter">
+            дн.
         </label>
-        @error('waterWinter')
-        <span class="error">{{ $message }}</span>
-        @enderror
 
         <label for="lightSummer">Свет летом:
-            <input wire:model="lightSummer" type="number" name="lightSummer" id="lightSummer">
-            часа
+            <input wire:model="lightSummer" min="1" max="24" type="number" name="lightSummer" id="lightSummer">
+            час.
         </label>
-        @error('lightSummer')
-        <span class="error">{{ $message }}</span>
-        @enderror
 
         <label for="lightWinter">Свет зимой:
-            <input wire:model="lightWinter" type="number" name="lightWinter" id="lightWinter">
-            часа
+            <input wire:model="lightWinter" min="1" max="24" type="number" name="lightWinter" id="lightWinter">
+            час.
         </label>
-        @error('lightWinter')
-        <span class="error">{{ $message }}</span>
-        @enderror
 
-        <label for="wet">Влажность воздуха
-            <input wire:model="wet" type="number" name="wet" id="wet">
-            %
+        <label for="light">Интенсивность освещения:
+            <select wire:model="light" name="light" id="light">
+                <option>{{\App\Enums\Light::BRIGHT->value}}</option>
+                <option>{{\App\Enums\Light::DIFFUSED->value}}</option>
+                <option>{{\App\Enums\Light::PENUMBRA->value}}</option>
+            </select>
         </label>
-        @error('wet')
-        <span class="wet">{{ $message }}</span>
-        @enderror
+
+        <label for="wet">Влажность воздуха:
+                <select wire:model="wet" name="wet" id="wet">
+                    <option>{{\App\Enums\Wet::LOW->value}}</option>
+                    <option>{{\App\Enums\Wet::MEDIUM->value}}</option>
+                    <option>{{\App\Enums\Wet::HIGH->value}}</option>
+                </select>
+        </label>
 
         <button type="submit">добавить в мой сад</button>
     </form>

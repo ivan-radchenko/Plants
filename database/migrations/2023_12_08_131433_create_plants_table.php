@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\Light;
+use App\Enums\Wet;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +22,8 @@ return new class extends Migration
             $table->integer('waterWinter');
             $table->integer('lightSummer');
             $table->integer('lightWinter');
-            $table->integer('wet');
+            $table->enum('light',[Light::getEnums()]);
+            $table->enum('wet',[Wet::getEnums()]);
             $table->date('lastWatering')->nullable();
             $table->timestamps();
         });

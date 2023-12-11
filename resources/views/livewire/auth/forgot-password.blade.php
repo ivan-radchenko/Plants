@@ -6,12 +6,12 @@
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>
             @endif
+            @foreach ($errors->all() as $error)
+                <li class="error">{{ $error }}</li>
+            @endforeach
             <div class="email form-item">
                 <label for="email">Email</label>
                 <input wire:model="email" class="form-input" type="email" name="email" id="email">
-                @error('email')
-                <span class="error">{{ $message }}</span>
-                @enderror
             </div>
             <button class="button" type="submit">Отправить</button>
         </form>

@@ -2,8 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Enums\Light;
+use App\Enums\Wet;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -29,12 +32,17 @@ class CreatePlant extends Component
     public $lightSummer=15;
     #[Rule('required|integer|min:1|max:24')]
     public $lightWinter=8;
-    #[Rule('required|integer|min:0|max:100')]
-    public $wet=60;
+    #[Rule(new Enum(Light::class))]
+    public $light=Light::BRIGHT;
+    #[Rule(new Enum(Wet::class))]
+    public $wet=Wet::MEDIUM;
 
     public function create()
     {
         $validated=$this->validate();
+
+        $validated['light']=$validated['light']->value;
+        $validated['wet']=$validated['wet']->value;
 
         if ($validated['image'] === null){
             $validated['image'] = 'plants/defaultPlant.svg';
