@@ -1,7 +1,11 @@
-<div class="wrapper">
+<div class="container">
     <link href="{{ asset('css/my-garden.css') }}" rel="stylesheet">
-
-    @foreach($plants as $plant)
+    <div>
+        <label for="search">поиск по растенькам</label>
+        <input wire:model.live.debounce.500ms="search" type="text" class="search" name="search" id="search">
+    </div>
+    <div class="wrapper">
+        @foreach($plants as $plant)
 
             <div wire:key="{{$plant->id}}" class="plant-card">
                 <img x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})" class="cart-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
@@ -9,12 +13,12 @@
             </div>
 
             <div wire:key="{{$plant->id}}-modal" class="modal"
-                x-data="{open:false, modalID:'{{$plant->id}}'}"
-                x-show="open"
-                x-on:open-modal.window="open=($event.detail.modalID === modalID)"
-                x-on:close-modal.window="open=false"
-                x-transition.duration.700ms
-                style="display: none;">
+                 x-data="{open:false, modalID:'{{$plant->id}}'}"
+                 x-show="open"
+                 x-on:open-modal.window="open=($event.detail.modalID === modalID)"
+                 x-on:close-modal.window="open=false"
+                 x-transition.duration.700ms
+                 style="display: none;">
                 <div class="modal-header">
                     <h4 class="modal-title">{{$plant->name}}</h4>
                     <button x-on:click="open=false" class="modal-close">X</button>
@@ -36,8 +40,10 @@
                 </div>
             </div>
 
-    @endforeach
-    <div class="add">
-        <button><a href="{{route('create-plant')}}">добавить растеньку</a> </button>
+        @endforeach
+        <div class="add">
+            <button><a href="{{route('create-plant')}}">добавить растеньку</a> </button>
+        </div>
     </div>
 </div>
+

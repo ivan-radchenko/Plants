@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class MyGarden extends Component
 {
+    public $search;
     public function delete($plantID)
     {
         $plantUserID = Plants::find($plantID)['userID'];
@@ -16,9 +17,14 @@ class MyGarden extends Component
             Plants::find($plantID)->delete();
         }
     }
+
     public function render()
     {
-        $plants=Plants::query()->where('userID','=',Auth::user()->id)->get();
+        if ($this->search){
+            $plants=Plants::query()->where('userID','=',Auth::user()->id)->where('name','like','%'.$this->search.'%')->get();
+        }else{
+            $plants=Plants::query()->where('userID','=',Auth::user()->id)->get();
+        }
 
         return view('livewire.my-garden',[
             'plants' => $plants
