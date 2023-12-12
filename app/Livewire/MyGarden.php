@@ -21,7 +21,8 @@ class MyGarden extends Component
     public function render()
     {
         if ($this->search){
-            $plants=Plants::query()->where('userID','=',Auth::user()->id)->where('name','like','%'.$this->search.'%')->get();
+
+            $plants=Plants::query()->where('userID','=',Auth::user()->id)->where('name','ilike','%' .$this->search. '%')->get();
         }else{
             $plants=Plants::query()->where('userID','=',Auth::user()->id)->get();
         }
