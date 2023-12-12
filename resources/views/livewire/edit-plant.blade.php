@@ -1,6 +1,6 @@
 <div>
-    <link href="{{ asset('css/create-plant.css') }}" rel="stylesheet">
-    <form wire:submit="create" class="form" method="post">
+    <link href="{{ asset('css/edit-plant.css') }}" rel="stylesheet">
+    <form wire:submit="update" class="form" method="post">
         @csrf
         @foreach ($errors->all() as $error)
             <li class="error">{{ $error }}</li>
@@ -10,10 +10,12 @@
         <input wire:model="name" type="text" name="name" id="name">
 
         <label for="image">Фото</label>
-        <input wire:model="image" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
         @if($image)
-            <img class="img-prev" src="{{$image->temporaryUrl()}}" alt="uploaded-image">
+            <img class="image" src="{{$image->temporaryUrl()}}" alt="uploaded-image">
+        @else
+            <img class="image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url($imageOld)}}" alt="plant-image" id="plant-image">
         @endif
+        <input wire:model="image" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
 
         <label for="waterSummer" id="it">Время между поливами летом:
             <input wire:model="waterSummer" type="number" min="1" max="30" name="waterSummer" id="waterSummer">
@@ -44,16 +46,16 @@
         </label>
 
         <label for="wet">Влажность воздуха:
-                <select wire:model="wet" name="wet" id="wet">
-                    <option>{{\App\Enums\Wet::LOW->value}}</option>
-                    <option>{{\App\Enums\Wet::MEDIUM->value}}</option>
-                    <option>{{\App\Enums\Wet::HIGH->value}}</option>
-                </select>
+            <select wire:model="wet" name="wet" id="wet">
+                <option>{{\App\Enums\Wet::LOW->value}}</option>
+                <option>{{\App\Enums\Wet::MEDIUM->value}}</option>
+                <option>{{\App\Enums\Wet::HIGH->value}}</option>
+            </select>
         </label>
 
         <label for="notes">Заметки:</label>
         <textarea wire:model="notes" type="text" name="notes" id="notes" class="notes"></textarea>
 
-        <button type="submit">добавить в мой сад</button>
+        <button type="submit">сохранить</button>
     </form>
 </div>

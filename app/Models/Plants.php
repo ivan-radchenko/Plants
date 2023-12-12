@@ -22,6 +22,7 @@ class Plants extends Model
         'lightWinter',
         'light',
         'wet',
+        'notes',
         'last-watering'
     ];
 

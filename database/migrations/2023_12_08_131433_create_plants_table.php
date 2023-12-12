@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('lightWinter');
             $table->enum('light',[Light::getEnums()]);
             $table->enum('wet',[Wet::getEnums()]);
+            $table->text('notes')->nullable();
             $table->date('lastWatering')->nullable();
             $table->timestamps();
         });

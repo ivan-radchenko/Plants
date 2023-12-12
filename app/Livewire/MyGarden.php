@@ -8,6 +8,14 @@ use Livewire\Component;
 
 class MyGarden extends Component
 {
+    public function delete($plantID)
+    {
+        $plantUserID = Plants::find($plantID)['userID'];
+        $userID = Auth::user()->id;
+        if($plantUserID === $userID){
+            Plants::find($plantID)->delete();
+        }
+    }
     public function render()
     {
         $plants=Plants::query()->where('userID','=',Auth::user()->id)->get();
