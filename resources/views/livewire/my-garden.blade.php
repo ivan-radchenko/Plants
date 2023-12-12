@@ -30,9 +30,9 @@
                     <div class="modal-text">заметки: {{$plant->notes}} </div>
                 </div>
                 <div class="modal-buttons">
-                    <button><a href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
-                    <button>как у других</button>
-                    <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?">удалить</button>
+                    <button class="modal-button"><a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
+                    <button class="modal-button">как у других</button>
+                    <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить</button>
                 </div>
             </div>
 
