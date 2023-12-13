@@ -7,8 +7,10 @@ use App\Livewire\Auth\Profile;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\ResetPassword;
 use App\Livewire\CareToday;
+use App\Livewire\CreatePlant;
+use App\Livewire\EditPlant;
 use App\Livewire\Home;
-use App\Livewire\MyPlants;
+use App\Livewire\MyGarden;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,8 +45,13 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
     Route::get('/profile', Profile::class)
         ->name('profile');
-    Route::get('/my-garden', MyPlants::class)
+    Route::get('/my-garden', MyGarden::class)
         ->name('my-garden');
+    Route::get('create-plant', CreatePlant::class)
+        ->name('create-plant');
+    Route::get('edit-plant/{plant}', EditPlant::class)->middleware('has.user.plants')
+        ->name('edit-plant');
+
     Route::get('/care-today', CareToday::class)
         ->name('care-today');
 });

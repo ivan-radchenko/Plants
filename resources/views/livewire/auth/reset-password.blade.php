@@ -6,13 +6,13 @@
             @if (session('status'))
                 <span class="status">{{ session('status') }}</span>
             @endif
+            @foreach ($errors->all() as $error)
+                <li class="error">{{ $error }}</li>
+            @endforeach
             <input type="hidden" name="token" id="token" value="{{ $token }}">
             <div class="email form-item">
                 <label for="email">Email</label>
                 <input wire:model="email" class="form-input" type="email" name="email" id="email">
-                @error('email')
-                <span class="error">{{ $message }}</span>
-                @enderror
             </div>
             <div class="password form-item">
                 <div class="password-item">
@@ -23,9 +23,6 @@
                     </svg>
                 </div>
                 <input wire:model="password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
-                @error('password')
-                <span class="error">{{ $message }}</span>
-                @enderror
             </div>
             <button class="button" type="submit">Сохранить</button>
         </form>

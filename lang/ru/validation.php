@@ -158,6 +158,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name'=>'имя',
+        'password'=>'пароль',
+        'email'=>'email',
+        'image'=>'фото',
+        'login'=>'логин',
+    ],
 
 ];

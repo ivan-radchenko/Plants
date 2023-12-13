@@ -3,19 +3,16 @@
     <div class="wrapper">
         <form wire:submit="register" class="form" method="post">
             @csrf
+            @foreach ($errors->all() as $error)
+                <li class="error">{{ $error }}</li>
+            @endforeach
             <div class="name form-item">
                 <label for="name">Имя</label>
                 <input wire:model="name" class="form-input" type="text" name="name" id="name">
-                @error('name')
-                <span class="error">{{ $message }}</span>
-                @enderror
             </div>
             <div class="email form-item">
                 <label for="email">Email</label>
                 <input wire:model="email" class="form-input" type="email" name="email" id="email">
-                @error('email')
-                <span class="error">{{ $message }}</span>
-                @enderror
             </div>
             <div class="password form-item">
                 <div class="password-item">
@@ -27,9 +24,6 @@
                 </div>
                 <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" value="{{old('password')}}">
             </div>
-            @error('error')
-                {{ $message }}
-            @enderror
             <div class="bottom-wrapper">
                 @if($image)
                     <img class="img-prev" src="{{$image->temporaryUrl()}}" alt="user_image">
@@ -39,9 +33,6 @@
                     <div class="image form-item">
                         <label class="button" for="image">Выбрать Фото</label>
                         <input wire:model="image" class="form-input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
-                        @error('image')
-                        <span class="error">{{ $message }}</span>
-                        @enderror
                     </div>
                 <button class="button" type="submit">Зарегистрироваться</button>
             </div>
