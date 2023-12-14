@@ -1,4 +1,4 @@
-<div class="container">
+<div>
     <link href="{{ asset('css/my-garden.css') }}" rel="stylesheet">
     <div>
         <label for="search">поиск по растенькам</label>
