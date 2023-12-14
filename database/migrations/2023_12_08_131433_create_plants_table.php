@@ -1,7 +1,9 @@
 <?php
 
 use App\Enums\Light;
+use App\Enums\PlantStatus;
 use App\Enums\Wet;
+use Carbon\Carbon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,7 +27,8 @@ return new class extends Migration
             $table->enum('light',[Light::getEnums()]);
             $table->enum('wet',[Wet::getEnums()]);
             $table->text('notes')->nullable();
-            $table->date('lastWatering')->nullable();
+            $table->enum('status',[PlantStatus::getEnums()]);
+            $table->date('lastWatering')->default('1991-12-26');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Enums\Light;
 use App\Enums\Wet;
 use App\Models\Plants;
+use App\Services\SeasonNow;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
@@ -38,7 +39,8 @@ class CreatePlant extends Component
     public $wet=Wet::MEDIUM;
     #[Rule('sometimes|nullable|string|min:3|max:1000')]
     public $notes;
-
+    #[locked]#[Rule('required')]
+    public $status;
     public function create()
     {
         $validated=$this->validate();
@@ -64,6 +66,7 @@ class CreatePlant extends Component
     public function mount(): void
     {
         $this->userID=Auth::user()->id;
+        $this->status=SeasonNow::season();
     }
 
     public function render()
