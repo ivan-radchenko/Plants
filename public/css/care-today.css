@@ -1,3 +1,38 @@
+.drop{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+
+    opacity: 0;
+}
+
+.drop.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+.clock{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 0;
+}
+
+.clock.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
+    transition: 0.7s;
+
+}
 .main{
     display: flex;
     justify-content: center;
@@ -28,24 +63,6 @@
     position: relative;
 }
 
-.drop{
-    width:150px;
-    height:150px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
-
-    opacity: 0;
-}
-
-.drop.open{
-    position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
-    opacity: 1;
-    transition: 0.7s;
-}
-
 .cart-image{
     width: 200px;
     height: 200px;
@@ -55,20 +72,4 @@
 .light-title{
     margin-bottom: 20px;
 }
-.clock{
-    width:150px;
-    height:150px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
-    opacity: 0;
-}
 
-.clock.open{
-    position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
-    opacity: 1;
-    transition: 0.7s;
-
-}
