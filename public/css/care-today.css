@@ -34,7 +34,7 @@
     position: absolute;
     background-color: rgba(0,0,0,0.7);
     padding: 25px;
-    transition: 0.7s;
+
     opacity: 0;
 }
 
@@ -43,6 +43,7 @@
     background-color: rgba(0,0,0,0.7);
     padding: 25px;
     opacity: 1;
+    transition: 0.7s;
 }
 
 .cart-image{
@@ -60,7 +61,6 @@
     position: absolute;
     background-color: rgba(0,0,0,0.7);
     padding: 25px;
-    transition: 0.7s;
     opacity: 0;
 }
 
@@ -69,4 +69,6 @@
     background-color: rgba(0,0,0,0.7);
     padding: 25px;
     opacity: 1;
+    transition: 0.7s;
+
 }
