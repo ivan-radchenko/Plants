@@ -25,7 +25,26 @@
     height: 250px;
     flex-direction: column;
     cursor:default;
+    position: relative;
 }
+
+.drop{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.drop.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
+}
+
 .cart-image{
     width: 200px;
     height: 200px;
@@ -34,4 +53,20 @@
 
 .light-title{
     margin-bottom: 20px;
+}
+.clock{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.clock.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
 }

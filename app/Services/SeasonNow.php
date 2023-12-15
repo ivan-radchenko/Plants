@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class SeasonNow
 {
-    public static function season()
+    public static function season(): string
     {
         $monthNow=Carbon::now()->month;
         if ($monthNow === 12 || $monthNow <= 2 ){

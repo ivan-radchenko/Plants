@@ -37,7 +37,7 @@ class PlantsCare
         return $watering;
     }
 
-    public static function lighting(): Collection
+    public static function lighting(): array|null
     {
         $seasonNow = SeasonNow::season();
         if ($seasonNow === PlantStatus::SUMMER->value){
@@ -45,13 +45,13 @@ class PlantsCare
                 ->where('userID','=',Auth::user()->id)
                 ->where('status','=',PlantStatus::WINTER->value)
                 ->get(['id','name','image','status','lightSummer']);
-            $lighting=$plants->groupBy('lightSummer');
+            $lighting=$plants->groupBy('lightSummer')->all();
         } else {
             $plants=Plants::query()
                 ->where('userID','=',Auth::user()->id)
                 ->where('status','=',PlantStatus::SUMMER->value)
                 ->get(['id','name','image','status','lightWinter']);
-            $lighting=$plants->groupBy('lightWinter');
+            $lighting=$plants->groupBy('lightWinter')->all();
         }
 
         return $lighting;
