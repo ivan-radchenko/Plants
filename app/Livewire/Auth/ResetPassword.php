@@ -37,7 +37,8 @@ class ResetPassword extends Component
             }
         );
         if ($status === 'passwords.reset'){
-            redirect()->route('login')->with('status', __($status));
+            redirect()->route('login');
+            request()->session()->flash('success','Пароль был успешно изменен!');
         } else {
             throw ValidationException::withMessages([
                 'email' => __($status),

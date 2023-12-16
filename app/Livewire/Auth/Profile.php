@@ -32,7 +32,7 @@ class Profile extends Component
         }
 
         User::find(Auth::user()->id)->update(['image'=>$path]);
-        request()->session()->flash('success_update_image','Фото обновлено');
+        request()->session()->flash('success','Фото обновлено');
     }
     public function updateName(): void
     {
@@ -42,7 +42,7 @@ class Profile extends Component
         $name = $name['name'];
 
         User::find(Auth::user()->id)->update(['name'=>$name]);
-        request()->session()->flash('success_update_name','Имя обновлено');
+        request()->session()->flash('success','Имя обновлено');
     }
     public function updateEmail(): void
     {
@@ -52,7 +52,7 @@ class Profile extends Component
         $email = $email['email'];
 
         User::find(Auth::user()->id)->update(['email'=>$email]);
-        request()->session()->flash('success_update_email','Email обновлен');
+        request()->session()->flash('success','Email обновлен');
     }
     public function updatePassword(): void
     {
@@ -66,7 +66,7 @@ class Profile extends Component
             'password' => Hash::make($password)
         ]);
         $user->save();
-        request()->session()->flash('success_update_password','Пароль успешно сохранен');
+        request()->session()->flash('success','Пароль успешно сохранен');
     }
 
     public function delete(): void
@@ -84,9 +84,17 @@ class Profile extends Component
 
     public function render()
     {
-        $authUser=Auth::user();
+        if (session('success'))
+        {
+            $this->dispatch(
+                'alert',
+                icon:'success',
+                title:session('success'),
+            );
+        }
+        if (session())
         return view('livewire.auth.profile',[
-            'authUser'=>$authUser
+            'authUser'=>Auth::user()
         ]);
     }
 }

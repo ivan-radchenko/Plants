@@ -9,7 +9,6 @@
                  @endif
                 <div class="form-item">
                     <label class="button" for="image">Выбрать Фото</label>
-                    @if(session('success_update_image')) <span class="success">{{session('success_update_image')}}</span> @endif
                     <button wire:click="updateImage" class="button" type="submit">Сохранить</button>
                     <input wire:model="image" class="input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
                     @error('image')
@@ -21,7 +20,6 @@
                 <div class="form-item">
                     <label for="name">Имя</label>
                     <input wire:model="name" class="form-input" type="text" name="name" id="name">
-                    @if(session('success_update_name')) <span class="success">{{session('success_update_name')}}</span> @endif
                     @error('name')
                     <span class="error">{{ $message }}</span>
                     @enderror
@@ -32,7 +30,6 @@
                 <div class="form-item">
                     <label for="email">Email</label>
                     <input wire:model="email" class="form-input" type="email" name="email" id="email">
-                    @if(session('success_update_email')) <span class="success">{{session('success_update_email')}}</span> @endif
                     @error('email')
                     <span class="error">{{ $message }}</span>
                     @enderror
@@ -49,7 +46,6 @@
                         </svg>
                     </div>
                     <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
-                    @if(session('success_update_password')) <span class="success">{{session('success_update_password')}}</span> @endif
                     @error('password')
                     <span class="error">{{ $message }}</span>
                     @enderror

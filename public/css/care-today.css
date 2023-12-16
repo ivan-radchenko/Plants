@@ -1,0 +1,75 @@
+.drop{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+
+    opacity: 0;
+}
+
+.drop.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+.clock{
+    width:150px;
+    height:150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 0;
+}
+
+.clock.open{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    padding: 25px;
+    opacity: 1;
+    transition: 0.7s;
+
+}
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 50px;
+}
+
+.cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1140px;
+    gap: 35px;
+    padding: 20px 0;
+}
+
+.plant-card{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+    cursor:default;
+    position: relative;
+}
+
+.cart-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.light-title{
+    margin-bottom: 20px;
+}
+

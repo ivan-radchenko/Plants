@@ -11,7 +11,7 @@ class Plants extends Model
     use HasFactory;
 
     protected $table = 'plants';
-
+    protected array $dates = ['created_at', 'updated_at', 'lastWatering'];
     protected $fillable = [
         'userID',
         'name',
@@ -23,7 +23,8 @@ class Plants extends Model
         'light',
         'wet',
         'notes',
-        'last-watering'
+        'status',
+        'lastWatering'
     ];
 
     public function user(): BelongsTo

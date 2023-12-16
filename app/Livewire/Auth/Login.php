@@ -43,6 +43,14 @@ class Login extends Component
 
     public function render()
     {
+        if (session('success'))
+        {
+            $this->dispatch(
+                'alert',
+                icon:'success',
+                title:session('success'),
+            );
+        }
         return view('livewire.auth.login');
     }
 }

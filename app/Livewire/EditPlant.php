@@ -6,6 +6,7 @@ use App\Enums\Light;
 use App\Enums\Wet;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
@@ -49,13 +50,14 @@ class EditPlant extends Component
         } else {
             $path=$validated['image']->store('plants','public');
             $validated['image']=$path;
+            Storage::disk('public')->delete($this->imageOld);
         }
 
         $plants=Plants::find($this->plantID)->update($validated);
         if ($plants===true)
         {
             redirect()->route('my-garden');
-            request()->session()->flash('success_update_plant','Растенька обновлена');
+            request()->session()->flash('success','Растенька изменена!');
         }
     }
 

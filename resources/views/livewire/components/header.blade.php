@@ -8,8 +8,8 @@
 
         @auth
             <nav class="header-center-nav">
-                <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'my-garden') header-nav-this-page @endif" href="{{ route('my-garden') }}">мой сад</a>
-                <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif" href="{{route('care-today')}}">уход сегодня</a>
+                <a wire:navigate.hover class="header-nav-link @if(Request::route()->getName() == 'my-garden') header-nav-this-page @endif" href="{{ route('my-garden') }}">мой сад</a>
+                <a wire:navigate.hover class="header-nav-link @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif" href="{{route('care-today')}}">уход сегодня</a>
                 <a wire:navigate class="header-nav-link {{--@if(Request::route()->getName() == 'header-care-today') nav-this-page @endif--}}" href="#">как у других</a>
             </nav>
             <div class="header-profile" id="profile">
