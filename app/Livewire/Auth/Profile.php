@@ -90,9 +90,10 @@ class Profile extends Component
                 'alert',
                 icon:'success',
                 title:session('success'),
+                position:'center'
             );
         }
-        if (session())
+
         return view('livewire.auth.profile',[
             'authUser'=>Auth::user()
         ]);

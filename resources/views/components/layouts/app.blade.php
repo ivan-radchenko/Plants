@@ -17,7 +17,6 @@
                 let data=event.detail
                 const Toast = Swal.mixin({
                     toast: true,
-                    position: "top",
                     showConfirmButton: false,
                     timer: 3000,
                     timerProgressBar: true,
@@ -29,6 +28,7 @@
                 Toast.fire({
                     icon: data.icon,
                     title: data.title,
+                    position: data.position,
                 });
             })
         </script>

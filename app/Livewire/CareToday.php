@@ -27,6 +27,7 @@ class CareToday extends Component
                 'alert',
                 icon:'success',
                 title:$plant->name.' полита!',
+                position:'top'
             );
         }
     }
@@ -42,6 +43,7 @@ class CareToday extends Component
             'alert',
             icon:'success',
             title:'Все растеньки политы!',
+            position:'top'
         );
 
     }
@@ -64,6 +66,7 @@ class CareToday extends Component
             'alert',
             icon:'success',
             title:'Группа переведена на '.$season.' время!',
+            position:'top'
         );
     }
 

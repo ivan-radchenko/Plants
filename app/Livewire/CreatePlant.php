@@ -23,7 +23,7 @@ class CreatePlant extends Component
     #[Rule('required | string | min:3 | max:20 ')]
     public $name;
 
-    #[Rule('sometimes |nullable|image|mimes:jpg,jpeg,png| max: 5500')]
+    #[Rule('required|image|mimes:jpg,jpeg,png| max: 5500')]
     public $image;
     #[Rule('required|integer|min:1|max:30')]
     public $waterSummer=1;
@@ -34,9 +34,9 @@ class CreatePlant extends Component
     #[Rule('required|integer|min:1|max:24')]
     public $lightWinter=8;
     #[Rule(new Enum(Light::class))]
-    public $light=Light::BRIGHT;
+    public $light=Light::BRIGHT->value;
     #[Rule(new Enum(Wet::class))]
-    public $wet=Wet::MEDIUM;
+    public $wet=Wet::MEDIUM->value;
     #[Rule('sometimes|nullable|string|min:3|max:1000')]
     public $notes;
     #[locked]#[Rule('required')]
@@ -45,16 +45,8 @@ class CreatePlant extends Component
     {
         $validated=$this->validate();
 
-        $validated['light']=$validated['light']->value;
-        $validated['wet']=$validated['wet']->value;
-
-        if ($validated['image'] === null){
-            $validated['image'] = 'plants/defaultPlant.svg';
-        } else {
-
-            $path=$validated['image']->store('plants','public');
-            $validated['image']=$path;
-        }
+        $path=$validated['image']->store('plants','public');
+        $validated['image']=$path;
 
         $plants=Plants::create($validated);
         if ($plants->save())

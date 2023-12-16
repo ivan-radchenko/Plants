@@ -10,6 +10,7 @@ use App\Livewire\CareToday;
 use App\Livewire\CreatePlant;
 use App\Livewire\EditPlant;
 use App\Livewire\Home;
+use App\Livewire\LikeOther;
 use App\Livewire\MyGarden;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)
     ->name('home');
+Route::get('like-other', LikeOther::class)
+    ->name('like-other');
 
 Route::middleware('guest')->group(function () {
 
@@ -51,7 +54,6 @@ Route::middleware('auth')->group(function () {
         ->name('create-plant');
     Route::get('edit-plant/{plant}', EditPlant::class)->middleware('has.user.plants')
         ->name('edit-plant');
-
     Route::get('/care-today', CareToday::class)
         ->name('care-today');
 });

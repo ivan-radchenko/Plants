@@ -41,7 +41,7 @@ class EditPlant extends Component
     #[Rule('sometimes|nullable|string|min:3|max:1000')]
     public $notes;
 
-    public function update()
+    public function update(): void
     {
         $validated=$this->validate();
 

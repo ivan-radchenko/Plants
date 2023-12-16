@@ -1,0 +1,63 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    width: 1140px;
+    gap: 35px;
+    position: relative;
+    padding: 50px 0;
+    flex-direction: column;
+}
+
+.searchResult-wrapper{
+    display: flex;
+    width: 1140px;
+    gap: 35px;
+    position: relative;
+    padding: 50px 0;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.plant-card{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.cart-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.modal{
+    position: fixed;
+    top: 20%;
+    width: 1140px;
+    z-index: 9998;
+    background-color: #004445;
+}
+
+.modal-header{
+    display: flex;
+    justify-content:space-between;
+}
+
+.modal-close{
+    width: 20px;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+.modal-image{
+    width: 1140px;
+    max-height: 50vh;
+    object-fit: cover;
+}

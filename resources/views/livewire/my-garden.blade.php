@@ -1,7 +1,7 @@
 <div>
     <link href="{{ asset('css/my-garden.css') }}" rel="stylesheet">
     <div>
-        <label for="search">поиск по растенькам</label>
+        <label for="search">поиск по моему саду</label>
         <input wire:model.live.debounce.500ms="search" type="text" class="search" name="search" id="search">
     </div>
     <div class="wrapper">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="modal-buttons">
                     <button class="modal-button"><a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
-                    <button class="modal-button">как у других</button>
+                    <button wire:click="likeOther('{{{$plant->name}}}')" class="modal-button">как у других</button>
                     <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить</button>
                 </div>
             </div>
