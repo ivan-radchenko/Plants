@@ -3,9 +3,10 @@
     <div class="section-1">
         <div class="wrapper">
             <img class="search-bg" src="{{ asset('images/home/home-bg.svg') }}" alt="image">
-            <input class="search" type="text" name="search" id="search" placeholder="Найти растеньку" onfocusout="this.placeholder ='Найти растеньку'" onfocus="this.placeholder =''">
+            <input wire:model="searchInput" wire:keydown.enter="search" class="search" type="text" name="search" id="search"
+                   placeholder="Найти растеньку" onfocusout="this.placeholder ='Найти растеньку'" onfocus="this.placeholder =''">
             <label class="search-label" for="search">
-                <a href="#">
+                <a wire:click="search">
                     <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="35.82" height="30.88" viewBox="0 0 35.82 30.88"><ellipse cx="12.62" cy="12.28" rx="12.12" ry="11.78" style="fill:none; stroke:#a7a9ac; stroke-miterlimit:10;"/><line x1="22.24" y1="19.45" x2="35.5" y2="30.5" style="fill:none; stroke:#a7a9ac; stroke-miterlimit:10;"/></svg>
                 </a>
             </label>

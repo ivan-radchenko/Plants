@@ -10,7 +10,7 @@ use Livewire\Component;
 class MyGarden extends Component
 {
     public $search;
-    public function delete($plantID)
+    public function delete($plantID): void
     {
         $plant = Plants::find($plantID);
         if($plant->userID === Auth::user()->id){
@@ -20,8 +20,14 @@ class MyGarden extends Component
                 'alert',
                 icon:'success',
                 title:$plant->name.' удалена!',
+                position:'top-end'
             );
         }
+    }
+
+    public function likeOther($plantName): void
+    {
+        $this->redirect('like-other?searchInput='.$plantName);
     }
 
     public function render()
@@ -44,6 +50,7 @@ class MyGarden extends Component
                 'alert',
                 icon:'success',
                 title:session('success'),
+                position:'top-end'
             );
         }
 

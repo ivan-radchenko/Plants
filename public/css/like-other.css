@@ -1,0 +1,37 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    width: 1140px;
+    gap: 35px;
+    position: relative;
+    padding: 50px 0;
+    flex-direction: column;
+}
+
+.searchResult-wrapper{
+    display: flex;
+    width: 1140px;
+    gap: 35px;
+    position: relative;
+    padding: 50px 0;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.plant-card{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+    cursor: default;
+}
+
+.cart-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
