@@ -27,11 +27,37 @@
     width: 200px;
     height: 250px;
     flex-direction: column;
-    cursor: default;
+    cursor: pointer;
 }
 
 .cart-image{
     width: 200px;
     height: 200px;
+    object-fit: cover;
+}
+.modal{
+    position: fixed;
+    top: 20%;
+    width: 1140px;
+    z-index: 9998;
+    background-color: #004445;
+}
+
+.modal-header{
+    display: flex;
+    justify-content:space-between;
+}
+
+.modal-close{
+    width: 20px;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+.modal-image{
+    width: 1140px;
+    max-height: 50vh;
     object-fit: cover;
 }
