@@ -77,6 +77,7 @@
 
     </div>
     <script>
+        @if($plants)
         @foreach($plants as $plant)
 
         document.getElementById("water-plant{{$plant->id}}").addEventListener("click", function() {
@@ -92,8 +93,9 @@
                 }
             );
         });
+        @endif
 
-
+        @if($changeLighting)
         @if(\App\Services\SeasonNow::season() === \App\Enums\PlantStatus::SUMMER->value)
         @foreach($changeLighting as $plantGroup)
 
@@ -120,6 +122,7 @@
         });
 
         @endforeach
+        @endif
         @endif
     </script>
 </div>

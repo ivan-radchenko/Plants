@@ -60,6 +60,7 @@ class CreatePlant extends Component
         if ($plants->save())
         {
             redirect()->route('my-garden');
+            request()->session()->flash('success','Растенька добавлена!');
         }
     }
 
