@@ -13,7 +13,7 @@ use App\Livewire\Home;
 use App\Livewire\LikeOther;
 use App\Livewire\MyGarden;
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,16 +31,17 @@ Route::get('like-other', LikeOther::class)
     ->name('like-other');
 
 Route::middleware('guest')->group(function () {
-
     Route::get('/register', Register::class)
         ->name('register');
     Route::get('/login', Login::class)
         ->name('login');
+    Route::get('/{driver}/redirect', [Login::class,'socialRedirect'])
+        ->name('social.login');
+    Route::get('/{driver}/callback',[Login::class,'socialCallback']);
     Route::get('/forgot-password', ForgotPassword::class)
         ->name('password.request');
     Route::get('/reset-password/{token}', ResetPassword::class)
         ->name('password.reset');
-
 });
 
 Route::middleware('auth')->group(function () {
