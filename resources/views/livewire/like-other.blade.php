@@ -4,7 +4,7 @@
         <div class="search-wrapper">
             <form wire:submit="search">
                 <label for="search">Поиск по растенькам</label>
-                <input wire:model="searchInput" type="text" name="search" id="search" required>
+                <input wire:model="searchInput" type="text" name="search" id="search" autocomplete="off" required>
                 <button type="submit">поиск</button>
             </form>
         </div>
