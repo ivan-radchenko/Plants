@@ -22,7 +22,7 @@
         <div class="searchResult-wrapper">
             @if($searchResult)
                 @foreach($searchResult as $plant)
-                    <div wire:key="{{$plant->id}}" class="plant-card">
+                    <div wire:key="{{$plant->id}}" class="plant-card" wire:ignore>
                         <img x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})" class="cart-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
                         <h4 x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})">{{$plant->name}}</h4>
                     </div>
@@ -42,6 +42,7 @@
                         </div>
                     </div>
                 @endforeach
+                <button type="button" wire:click="loadMore">Загрузить еще</button>
             @endif
         </div>
     </div>
