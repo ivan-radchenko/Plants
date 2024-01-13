@@ -21,12 +21,12 @@ class LikeOther extends Component
     #[Locked]
     public $averageStats;
     #[Locked]
-    public $count=5;
+    public $count=0;
 
     public function loadMore(): void
     {
-        $this->count= $this->count + 5;
-        if ($this->searchResultAll->count() < $this->count){
+        if ($this->searchResultAll->count() > $this->count) {
+            $this->count=$this->count + 5;
             $this->searchResult=$this->searchResultAll->take($this->count);
         }
     }
@@ -38,7 +38,7 @@ class LikeOther extends Component
         if ($this->searchResultAll){
             if ($this->searchResultAll->count() === 0){
                 $this->averageStats=null;
-
+                $this->searchResult=null;
                 $this->dispatch(
                     'alert',
                     icon:'error',
@@ -46,9 +46,11 @@ class LikeOther extends Component
                     position:'center'
                 );
             }
+            if ($this->searchResultAll->count() > 0){
+                $this->count=5;
+                $this->searchResult=$this->searchResultAll->take($this->count);
+            }
         }
-        $this->count=5;
-        $this->searchResult=$this->searchResultAll->take($this->count);
     }
 
     public function mount(): void

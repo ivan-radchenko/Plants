@@ -42,7 +42,9 @@
                         </div>
                     </div>
                 @endforeach
-                <button type="button" wire:click="loadMore">Загрузить еще</button>
+                @if($searchResultAll->count() > $count)
+                        <button type="button" wire:click="loadMore">Загрузить еще</button>
+                @endif
             @endif
         </div>
     </div>
