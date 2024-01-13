@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="icon" href="{{asset('images/logo.svg')}}" sizes="32x32" type="image/svg">
         <title>{{ $title ?? 'Page Title' }}</title>
 
         {{--styles--}}
