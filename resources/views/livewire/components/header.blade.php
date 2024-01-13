@@ -1,18 +1,18 @@
 <header class="header">
     <div class="header-wrapper">
         <nav class="header-nav-home">
-            <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'home') header-nav-this-page @endif" href="{{ route('home') }}" title="home-page">
+            <a class="header-nav-link @if(Request::route()->getName() == 'home') header-nav-this-page @endif" href="{{ route('home') }}" title="home-page">
                 <img class="header-my-plants-text" src="{{ asset('images/header/logo.svg') }}" alt="logo">
             </a>
         </nav>
 
         @auth
             <nav class="header-center-nav">
-                <a wire:navigate.hover class="header-nav-link @if(Request::route()->getName() == 'my-garden') header-nav-this-page @endif"
+                <a class="header-nav-link @if(Request::route()->getName() == 'my-garden') header-nav-this-page @endif"
                    href="{{ route('my-garden') }}">мой сад</a>
-                <a wire:navigate.hover class="header-nav-link @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif"
+                <a class="header-nav-link @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif"
                    href="{{route('care-today')}}">уход сегодня</a>
-                <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'like-other') header-nav-this-page @endif"
+                <a class="header-nav-link @if(Request::route()->getName() == 'like-other') header-nav-this-page @endif"
                    href="{{route('like-other')}}">как у других</a>
             </nav>
             <div class="header-profile" id="profile">
@@ -25,7 +25,7 @@
                             <svg class="header-svg-profile" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
                                 <path d="m10.5.5C4.98.5.5,4.98.5,10.5s4.48,10,10,10,10-4.48,10-10S16.02.5,10.5.5Zm-4.46,14.96c0-2.47,2-4.46,4.46-4.46-1.44,0-2.61-1.17-2.61-2.61s1.17-2.61,2.61-2.61,2.61,1.17,2.61,2.61-1.17,2.61-2.61,2.61c2.47,0,4.46,2,4.46,4.46H6.04Z" style="fill:none; stroke-linecap:round; stroke-linejoin:round;"/>
                             </svg>
-                            <a wire:navigate class="header-nav-link header-drop-down-nav-link @if(Request::route()->getName() == 'profile') header-nav-this-page @endif" href="{{ route('profile') }}">
+                            <a class="header-nav-link header-drop-down-nav-link @if(Request::route()->getName() == 'profile') header-nav-this-page @endif" href="{{ route('profile') }}">
                                 профиль
                             </a>
                         </div>
@@ -62,8 +62,8 @@
             </script>
         @else
             <nav class="header-auth-nav">
-                <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'login') header-nav-this-page @endif" href="{{route('login')}}">Вход</a>
-                <a wire:navigate class="header-nav-link @if(Request::route()->getName() == 'register') header-nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
+                <a class="header-nav-link @if(Request::route()->getName() == 'login') header-nav-this-page @endif" href="{{route('login')}}">Вход</a>
+                <a class="header-nav-link @if(Request::route()->getName() == 'register') header-nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
             </nav>
         @endauth
     </div>
