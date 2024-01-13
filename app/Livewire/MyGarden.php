@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class MyGarden extends Component
@@ -29,7 +30,7 @@ class MyGarden extends Component
     {
         $this->redirect('like-other?searchInput='.$plantName);
     }
-
+    #[Title('Мой Сад')]
     public function render()
     {
         if ($this->search){
