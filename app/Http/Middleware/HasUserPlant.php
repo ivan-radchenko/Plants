@@ -16,8 +16,8 @@ class HasUserPlant
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $plant=$request->route()->parameters();
-        $userID=Plants::find($plant)[0]['userID'];
+        $plant=$request->route()->parameters()['plant']->id;
+        $userID=Plants::find($plant)->userID;
         if ($userID===\Auth::user()->id){
             return $next($request);
         }
