@@ -35,15 +35,18 @@
                 </div>
                 <div class="modal-buttons">
                     <button class="modal-button"><a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
-                    <button wire:click="likeOther('{{{$plant->name}}}')" class="modal-button">как у других</button>
-                    <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить</button>
+                    <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">как у других</button>
+                    <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить
+                    </button>
+                    <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
+                    </div>
                 </div>
             </div>
-
         @endforeach
         <div class="add">
             <button><a href="{{route('create-plant')}}">добавить растеньку</a> </button>
         </div>
     </div>
+    <script src="{{asset('js/yandexShare.js')}}" defer></script>
 </div>
 
