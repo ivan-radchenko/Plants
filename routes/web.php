@@ -12,6 +12,7 @@ use App\Livewire\EditPlant;
 use App\Livewire\Home;
 use App\Livewire\LikeOther;
 use App\Livewire\MyGarden;
+use App\Livewire\SharePlant;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 /*
@@ -29,6 +30,8 @@ Route::get('/', Home::class)
     ->name('home');
 Route::get('like-other', LikeOther::class)
     ->name('like-other');
+Route::get('/share-plant/{plant}', SharePlant::class)
+    ->name('share-plant');
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', Register::class)

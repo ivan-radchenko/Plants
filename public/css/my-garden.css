@@ -61,6 +61,12 @@
     object-fit: cover;
 }
 
+.modal-buttons{
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+}
+
 .modal-button{
     color: black;
 }

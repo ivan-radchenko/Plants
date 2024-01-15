@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    width: 1140px;
+    position: relative;
+    padding: 50px 0;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.image{
+    width: 1140px;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.properties{
+    display: flex;
+    flex-direction: column;
+}
