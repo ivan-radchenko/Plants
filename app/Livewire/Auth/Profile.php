@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -13,9 +14,13 @@ class Profile extends Component
 {
     use WithFileUploads;
 
+    #[Rule('sometimes |nullable|image|mimes:jpg,jpeg,png| max: 5500')]
     public $image;
+    #[Rule('required | string | min:3 | max:20 ')]
     public $name;
+    #[Rule('required | email')]
     public $email;
+    #[Rule('sometimes|nullable|string | min:6 | max:20')]
     public $password;
 
     public function updateImage():void
@@ -69,6 +74,12 @@ class Profile extends Component
         request()->session()->flash('success','Пароль успешно сохранен');
     }
 
+    public function update()
+    {
+        $validated = $this->validate();
+        dd($validated);
+    }
+
     public function delete(): void
     {
         User::find(Auth::user()->id)->delete();
@@ -80,6 +91,7 @@ class Profile extends Component
     {
         $this->name=Auth::user()->name;
         $this->email=Auth::user()->email;
+
     }
 
     public function render()

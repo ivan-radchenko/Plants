@@ -1,71 +1,65 @@
 <div>
     <link href="{{ asset('css/auth/profile.css') }}" rel="stylesheet">
-    <div class="container">
-        <div class="sub-container">
-                 @if($image)
-                    <img class="user-image" src="{{$image->temporaryUrl()}}" alt="user_image" id="user-image">
-                 @else
-                    <img class="user-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="user_image" id="user-image">
-                 @endif
-                <div class="form-item">
-                    <label class="button" for="image">Выбрать Фото</label>
-                    <button wire:click="updateImage" class="button" type="submit">Сохранить</button>
-                    <input wire:model="image" class="input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
-                    @error('image')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
+    <div class="wrapper">
+        <div class="sub-header">
+            <div class="messages">
+                @if (session('status'))
+                    <span class="error">{{ session('status') }}</span>
+                @endif
+                @foreach ($errors->all() as $error)
+                    <span class="error">{{ $error }}</span>
+                @endforeach
+            </div>
         </div>
-        <div class="sub-container">
-                <div class="form-item">
-                    <label for="name">Имя</label>
-                    <input wire:model="name" class="form-input" type="text" name="name" id="name">
-                    @error('name')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                    <button wire:click="updateName" class="button" type="button">Сохранить</button>
+        <form class="form" wire:submit="update">
+            @csrf
+            <div class="form-item">
+                <label class="image-label" for="image">
+                    @if($image)
+                        <img class="user-image" src="{{$image->temporaryUrl()}}" alt="user_image" id="user-image">
+                    @else
+                        <img class="user-image" src="{{\Illuminate\Support\Facades\Storage::disk('public')->url(Auth::user()->image)}}" alt="user_image" id="user-image">
+                    @endif
+                    <div class="image-button">Выбрать Фото</div>
+                    <div class="image-animated"></div>
+                </label>
+                <input wire:model="image" class="input-image" title="не обязательно" type="file" name="image" id="image" accept="image/png, image/jpeg, image/jpg">
+            </div>
+            <div class="form-item">
+                <label for="name">Имя</label>
+                <input wire:model="name" class="form-input" type="text" name="name" id="name">
+            </div>
+            <div class="form-item">
+                <label for="email">Email</label>
+                <input wire:model="email" class="form-input" type="email" name="email" id="email">
+            </div>
+            <div class="form-item">
+                <div class="password-item">
+                    <label for="password">Пароль</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi-eye" id="show" width="25" height="25" viewBox="0 0 25.07 12.87">
+                        <path d="m12.67,10.81c-2.63,0-4.77-2.04-4.77-4.55S10.04,1.7,12.67,1.7s4.77,2.04,4.77,4.56-2.14,4.55-4.77,4.55Zm0-8.11c-2.08,0-3.77,1.59-3.77,3.56s1.69,3.55,3.77,3.55,3.77-1.59,3.77-3.55-1.69-3.56-3.77-3.56Z"/>
+                        <path d="m12.51,12.87c-.21,0-.41,0-.62-.01C5.05,12.55.47,7.45.28,7.23l-.28-.32.27-.33C.49,6.32,5.78,0,12.96,0c4.24,0,8.21,2.22,11.81,6.58l.3.36-.34.32c-3.9,3.72-8.01,5.6-12.23,5.6ZM1.34,6.89c1.11,1.11,5.15,4.73,10.61,4.96,4.03.18,7.98-1.51,11.76-4.99-3.32-3.89-6.93-5.86-10.73-5.86h0C7.17,1,2.52,5.6,1.34,6.89Z"/>
+                    </svg>
                 </div>
-        </div>
-        <div class="sub-container">
-                <div class="form-item">
-                    <label for="email">Email</label>
-                    <input wire:model="email" class="form-input" type="email" name="email" id="email">
-                    @error('email')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                    <button wire:click="updateEmail" class="button" type="button">Сохранить</button>
-                </div>
-        </div>
-        <div class="sub-container">
-                <div class="form-item">
-                    <div class="password-item">
-                        <label for="password">Пароль</label>
-                        <svg id="show" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-                        </svg>
-                    </div>
-                    <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
-                    @error('password')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                    <button wire:click="updatePassword" class="button" type="button">Сохранить</button>
-                </div>
-        </div>
-        <div class="sub-container">
+                <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
+            </div>
+            <button type="submit" class="button">Сохранить</button>
             <button wire:confirm.prompt="Отменить это действие будет невозможно. Вы уверенны,что хотите удалить свой аккаунт? Если да, введите свое имя. |{{Auth::user()->name}}"
-                    wire:click="delete" class="button-delete" type="button">
+                    wire:click="delete" class="button" type="button">
                 Удалить аккаунт
             </button>
+        </form>
         </div>
-    </div>
     <script>
         document.getElementById('show').addEventListener('click', event => {
-            const x = document.getElementById("password");
-            if (x.type === "password") {
-                x.type = "text";
+            const password = document.getElementById("password");
+            const svg = document.getElementById("show");
+            if (password.type === "password") {
+                password.type = "text";
+                svg.style.fill="#004445";
             } else {
-                x.type = "password";
+                password.type = "password";
+                svg.style.fill="#FFFFFF";
             }
         })
     </script>
