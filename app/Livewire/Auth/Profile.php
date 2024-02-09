@@ -23,13 +23,8 @@ class Profile extends Component
     #[Rule('sometimes|nullable|string | min:6 | max:20')]
     public $password;
 
-    public function updateImage():void
+    public function updateImage($image):void
     {
-        $image=$this->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png| max: 5500'
-        ]);
-        $image = $image['image'];
-
         $path=$image->store('users','public');
 
         if (Auth::user()->image !== 'users/default.svg') {
@@ -37,47 +32,46 @@ class Profile extends Component
         }
 
         User::find(Auth::user()->id)->update(['image'=>$path]);
-        request()->session()->flash('success','Фото обновлено');
+        request()->session()->flash('success','Данные сохранены.');
     }
-    public function updateName(): void
+    public function updateName($name): void
     {
-        $name=$this->validate([
-            'name' => 'required | string | min:3 | max:20 '
-        ]);
-        $name = $name['name'];
-
         User::find(Auth::user()->id)->update(['name'=>$name]);
-        request()->session()->flash('success','Имя обновлено');
+        request()->session()->flash('success','Данные сохранены.');
     }
-    public function updateEmail(): void
+    public function updateEmail($email): void
     {
-        $email=$this->validate([
-            'email' => 'required | email | unique:users'
-        ]);
-        $email = $email['email'];
-
         User::find(Auth::user()->id)->update(['email'=>$email]);
-        request()->session()->flash('success','Email обновлен');
+        request()->session()->flash('success','Данные сохранены.');
     }
-    public function updatePassword(): void
+    public function updatePassword($password): void
     {
-        $password=$this->validate([
-            'password' => 'required | string | min:6 | max:20'
-        ]);
-        $password = $password['password'];
-
         $user = Auth::user();
         $user->forceFill([
             'password' => Hash::make($password)
         ]);
         $user->save();
-        request()->session()->flash('success','Пароль успешно сохранен');
+        request()->session()->flash('success','Данные сохранены.');
     }
 
     public function update()
     {
         $validated = $this->validate();
-        dd($validated);
+        if($validated['image']) {
+            $this->updateImage($validated['image']);
+        }
+        if($validated['name'] !== Auth::user()->name) {
+            $this->updateName($validated['name']);
+        }
+        if($validated['email'] !== Auth::user()->email) {
+            $emailUniq=$this->validate([
+                'email' => 'unique:users'
+            ]);
+            $this->updateEmail($emailUniq['email']);
+        }
+        if($validated['password']) {
+            $this->updatePassword($validated['password']);
+        }
     }
 
     public function delete(): void
