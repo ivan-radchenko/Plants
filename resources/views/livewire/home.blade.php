@@ -17,7 +17,7 @@
             <div class="my-plants-wrapper">
                 {{--<img class="my-plants-text" src="{{ asset('images/home/my-plants-text.svg') }}" alt="Мои растеньки">--}}
                 <h1 class="my-plants-text-top">МOИ</h1>
-                <h1 class="my-plants-text-bot">растеньки</h1>
+                <h1 class="my-plants-text-bot">РАСТЕНЬКИ</h1>
                 <h2 class="second-section-text">гармония между вами <br>
                     и зелеными друзьями</h2>
             </div>
