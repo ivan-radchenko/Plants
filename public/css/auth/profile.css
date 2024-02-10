@@ -1,25 +1,54 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.main{
+    background-color: #77AFAF;
 }
 
-.sub-container{
-    background-color: #25510217;
-    border-radius: 20px;
+.wrapper{
     display: flex;
     flex-direction: column;
+    position: relative;
+    min-height: 1050px;
+}
+
+.sub-header{
+    height: 200px;
+    background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
+    position: relative;
+}
+
+.left-subheader-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.right-subheader-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.form{
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 10px;
+    width: 1140px;
+}
+
+.image-label{
+    position: relative;
 }
 
 .user-image {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 100px;
 }
 
 .input-image{
@@ -29,66 +58,86 @@
     width: 0.1px;
 }
 
-.button{
-    background-color: #1a1c18;
-    border: none;
-    color: #a8f770;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+.image-animated{
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transition: 0.7s;
+    border-radius: 100px;
+    background-color: rgba(0, 68, 69, 0.8);
+    opacity: 0;
+    top:0;
     cursor: pointer;
-    transition: 1s;
-    text-wrap: nowrap;
 }
 
-.button:hover{
-    background-color: #a8f770;
-    color: #0b2000;
+.image-animated:hover{
+    opacity: 1;
 }
 
-.button-delete{
-    background-color: #1a1c18;
-    border: none;
-    color: #ff0000;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+.image-button{
+    display: flex;
     cursor: pointer;
-    transition: 1s;
-    text-wrap: nowrap;
+    transition: 0.7s;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: relative;
 }
-.button-delete:hover{
-    background-color: #ff0000;
-    color: #1a1c18;
+
+.image-button:hover{
+    color: #004445;
 }
 
 .form-item{
     display: flex;
     flex-direction: column;
-    color: #8eda57;
-    font-size: 20px;
+    color: #FFFFFF;
+    font-size: 25px;
     align-items: center;
     gap: 10px;
 }
 
 .form-input{
-    width: 30vw;
-    min-width: 250px;
+    width: 550px;
+    height: 60px;
     font-size: 20px;
-    background: #bcf293;
-    color: #003737;
-    border-radius: 5px;
-    height: 40px;
-    transition: 1s;
-    border: solid 3px rgba(0,0,0,0);
+    color: #A7A9AC;
+    border-radius: 40px;
+    transition: 0.7s;
+    border: none;
     text-align: center;
 }
 
 .form-input:focus{
     outline: none;
-    border: solid 3px #9800ff;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+}
+
+.bi-eye{
+    cursor: pointer;
+    fill: #FFFFFF;
+    transition: 0.7s;
+}
+
+.button{
+    background-color: #01696C;
+    border: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.7s;
+    width: auto;
+    height: 50px;
+}
+
+.button:hover{
+    background-color: #004445;
+    color: #01696C;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
 }
 
 .password-item{
@@ -102,9 +151,17 @@
 }
 
 .error{
-    color: #690005;
-    background: #ffb4ab;
-    border-radius: 3px;
+    background: transparent;
+    color: #FFFFFF;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
 }
 
 @media screen and (max-width: 600px) {
