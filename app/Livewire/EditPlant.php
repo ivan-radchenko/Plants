@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -78,6 +79,7 @@ class EditPlant extends Component
 
     public function render()
     {
-            return view('livewire.edit-plant');
+            return view('livewire.edit-plant')
+                ->title('Изменить ' . $this->name);
     }
 }

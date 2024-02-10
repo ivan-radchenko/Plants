@@ -50,8 +50,25 @@
 .my-plants-wrapper{
     display: flex;
     flex-direction: column;
-    padding: 80px 50px;
-    gap: 40px;
+    padding: 50px 0 80px 0;
+    gap: 30px;
+}
+
+.my-plants-text-top{
+    font-family: 'AmbidexterWebRegular','serif';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 150px;
+    line-height: 0.7;
+}
+.my-plants-text-bot{
+    font-family: 'AmbidexterWebRegular','serif';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 95px;
+    line-height: 0.7;
 }
 
 .second-section-text{

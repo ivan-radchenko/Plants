@@ -19,3 +19,12 @@
 
 
 }
+
+@font-face {
+    font-family: 'AmbidexterWebRegular';
+    src:
+        url('../fonts/ambidexter_regular.woff2') format('woff2'),
+        url('../fonts/Ambidexter_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

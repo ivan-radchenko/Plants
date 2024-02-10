@@ -1,13 +1,13 @@
 <footer class="footer">
     <div class="footer-wrapper">
         <div class="footer-left">
-            <img class="footer-img" src="{{ asset('images/footer/contacts.svg') }}" alt="контакты">
-            <p class="footer-text">Тел: +7(925)777-61-40</p>
-            <p class="footer-text">e-mail: sonysakura.rf@gmail.com</p>
+            <h4 class="footer-title">КОНТАКТЫ</h4>
+            <p class="footer-text">Для вопросов и предложений: </p>
+            <p class="footer-text">email: sonysakura.rf@gmail.com</p>
         </div>
         <div class="footer-center">
             <label for="footer-search">
-                <img class="footer-img" src="{{ asset('images/footer/search.svg') }}" alt="поиск">
+                <h4 class="footer-title">ПОИСК</h4>
             </label>
             <input wire:model="searchInput" wire:keydown.enter="search" class="footer-search" id="footer-search" name="footer-search" type="text" placeholder="Найти растеньку" onfocusout="this.placeholder ='Найти растеньку'" onfocus="this.placeholder =''">
             <div class="footer-social">

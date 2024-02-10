@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class ResetPassword extends Component
@@ -45,7 +46,7 @@ class ResetPassword extends Component
             ]);
         }
     }
-
+    #[Title('Сброс пароля')]
     public function render()
     {
         return view('livewire.auth.reset-password');

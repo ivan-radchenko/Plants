@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Illuminate\Http\Request;
 
@@ -74,7 +75,7 @@ class Login extends Component
              return redirect(route('my-garden'));
         }
     }
-
+    #[Title('Вход')]
     public function render()
     {
         if (session('success'))

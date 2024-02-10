@@ -5,6 +5,7 @@ namespace App\Livewire\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -42,7 +43,7 @@ class Register extends Component
         }
         back()->with('error',('Что-то пошло не так =('));
     }
-
+    #[Title('Регистрация')]
     public function render()
     {
         return view('livewire.auth.register');

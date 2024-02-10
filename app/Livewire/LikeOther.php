@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Plants;
 use App\Services\PlantsSearch;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -57,7 +58,7 @@ class LikeOther extends Component
     {
         $this->search();
     }
-
+    #[Title('Как у других')]
     public function render()
     {
         return view('livewire.like-other');

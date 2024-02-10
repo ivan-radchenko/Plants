@@ -30,7 +30,7 @@ class MyGarden extends Component
     {
         $this->redirect('like-other?searchInput='.$plantName);
     }
-    #[Title('Мой Сад')]
+    #[Title('Мой сад')]
     public function render()
     {
         if ($this->search){
