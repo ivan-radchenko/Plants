@@ -4,6 +4,7 @@ namespace App\Livewire\Auth;
 
 use Illuminate\Support\Facades\Password;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class ForgotPassword extends Component
@@ -18,7 +19,7 @@ class ForgotPassword extends Component
         back()->with(['status' => __($status)]);
         back()->withErrors(['email' => __($status)]);
     }
-
+    #[Title('Восстановление пароля')]
     public function render()
     {
         return view('livewire.auth.forgot-password');

@@ -7,6 +7,7 @@ use App\Services\PlantsCare;
 use App\Services\SeasonNow;
 use Carbon\Carbon;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 
@@ -75,7 +76,7 @@ class CareToday extends Component
         $this->plants=PlantsCare::watering();
         $this->changeLighting=PlantsCare::lighting();
     }
-
+    #[Title('Уход сегодня')]
     public function render()
     {
         return view('livewire.care-today');

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -87,7 +88,7 @@ class Profile extends Component
         $this->email=Auth::user()->email;
 
     }
-
+    #[Title('Профиль')]
     public function render()
     {
         if (session('success'))

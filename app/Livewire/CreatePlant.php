@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -61,7 +62,7 @@ class CreatePlant extends Component
         $this->userID=Auth::user()->id;
         $this->status=SeasonNow::season();
     }
-
+    #[Title('Добавить растеньку')]
     public function render()
     {
         return view('livewire.create-plant');
