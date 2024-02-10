@@ -12,6 +12,18 @@
 .sub-header{
     height: 200px;
     background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
+    position: relative;
+}
+
+.left-subheader-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.right-subheader-image{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .form{

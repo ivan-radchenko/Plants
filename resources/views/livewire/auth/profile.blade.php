@@ -2,6 +2,8 @@
     <link href="{{ asset('css/auth/profile.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
+                <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
+                <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
             <div class="messages">
                 @if (session('status'))
                     <span class="error">{{ session('status') }}</span>
@@ -44,10 +46,14 @@
                 <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
             </div>
             <button type="submit" class="button">Сохранить</button>
-            <button wire:confirm.prompt="Отменить это действие будет невозможно. Вы уверенны,что хотите удалить свой аккаунт? Если да, введите свое имя. |{{Auth::user()->name}}"
-                    wire:click="delete" class="button" type="button">
-                Удалить аккаунт
-            </button>
+            @if(Auth::user()->is_admin === true)
+                <button type="button" class="button">Админка</button>
+            @else
+                <button wire:confirm.prompt="Отменить это действие будет невозможно. Вы уверенны,что хотите удалить свой аккаунт? Если да, введите свое имя. |{{Auth::user()->name}}"
+                        wire:click="delete" class="button" type="button">
+                    Удалить аккаунт
+                </button>
+            @endif
         </form>
         </div>
     <script>
