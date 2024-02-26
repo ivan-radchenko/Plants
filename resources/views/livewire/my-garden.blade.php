@@ -23,28 +23,57 @@
                      x-show="open"
                      x-on:open-modal.window="open=($event.detail.modalID === modalID)"
                      x-on:close-modal.window="open=false"
-                     x-transition.duration.700ms
+                     x-transition.duration.350ms
                      style="display: none;">
-                    <div class="modal-header">
-                        <h4 class="modal-title">{{$plant->name}}</h4>
-                        <button x-on:click="open=false" class="modal-close">X</button>
+
+                    <div class="modal-bg"
+                         x-on:click="open=false">
                     </div>
-                    <div class="modal-body">
-                        <img class="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
-                        <div class="modal-text">Время между поливами летом: {{$plant->waterSummer}} дн.</div>
-                        <div class="modal-text">Время между поливами зимой: {{$plant->waterWinter}} дн.</div>
-                        <div class="modal-text">Свет летом: {{$plant->lightSummer}} час.</div>
-                        <div class="modal-text">Свет зимой: {{$plant->lightWinter}} час.</div>
-                        <div class="modal-text">интенсивность освещения: {{$plant->light}} </div>
-                        <div class="modal-text">влажность: {{$plant->wet}} </div>
-                        <div class="modal-text">заметки: {{$plant->notes}} </div>
-                    </div>
-                    <div class="modal-buttons">
-                        <button class="modal-button"><a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
-                        <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">как у других</button>
-                        <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить
-                        </button>
-                        <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
+
+                    <div class="modal-content-wrapper">
+                        <div class="modal-header">
+                            <h4 class="modal-title">{{$plant->name}}</h4>
+                            <svg x-on:click="open=false" class="modal-close" id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.53 31.53">
+                                <g>
+                                    <rect width="31.53" height="31.53" rx="6" ry="6"/>
+                                    <g>
+                                        <rect x="13.27" y="3.14" width="5.29" height="25.41" transform="translate(-6.55 15.89) rotate(-45)" style="fill: #77afaf; stroke-width: 0px;"/>
+                                        <rect x="2.92" y="12.91" width="25.41" height="5.29" transform="translate(-6.43 15.6) rotate(-45)" style="fill: #77afaf; stroke-width: 0px;"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="modal-body">
+                            <img class="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
+                            <div class="modal-text-wrapper">
+                                <div class="modal-text">Интервал поливов летом: {{$plant->waterSummer}} дн</div>
+                                <div class="modal-text">Интервал поливов зимой: {{$plant->waterWinter}} дн</div>
+                                <div class="modal-text">Свет летом: {{$plant->lightSummer}} час</div>
+                                <div class="modal-text">Свет зимой: {{$plant->lightWinter}} час</div>
+                                <div class="modal-text">Интенсивность освещения: {{$plant->light}} </div>
+                                <div class="modal-text">Влажность: {{$plant->wet}}</div
+                                @if($plant->notes)
+                                    <div class="modal-text modal-notes"> {{$plant->notes}}
+                                    </div>
+                                @else
+                                    <div class="modal-text modal-notes">
+                                        Заметки...
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.8 11.55" style="width: 10px; height: 15px">
+                                            <g id="Layer_1" data-name="Layer 1">
+                                                <polygon points="1.48 10.67 0 11.55 .14 9.94 5.46 0 6.8 .73 1.48 10.67" style="fill: #a7a9ac; stroke-width: 0px;"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="modal-button"><a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">изменить</a></button>
+                            <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">как у других</button>
+                            <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">удалить
+                            </button>
+                            <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
+                            </div>
                         </div>
                     </div>
                 </div>
