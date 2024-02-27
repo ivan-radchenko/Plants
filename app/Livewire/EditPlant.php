@@ -21,7 +21,7 @@ class EditPlant extends Component
     public $plantID;
     #[locked]#[Rule('required')]
     public $userID;
-    #[Rule('required | string | min:3 | max:50 ')]
+    #[Rule('required | string | min:3 | max:30 ')]
     public $name;
     #[Rule('sometimes|nullable|image|mimes:jpg,jpeg,png| max: 5500')]
     public $image;

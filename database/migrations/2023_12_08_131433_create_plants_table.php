@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('userID')->constrained('users');
-            $table->string('name');
+            $table->string('name',30);
             $table->string('image',255);
             $table->integer('waterSummer');
             $table->integer('waterWinter');
