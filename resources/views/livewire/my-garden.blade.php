@@ -44,7 +44,7 @@
                             </svg>
                         </div>
                         <div class="modal-body">
-                            <img class="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
+                            <img class="modal-image " id="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
                             <div class="modal-text-wrapper">
                                 <div class="modal-text">Интервал поливов летом: {{$plant->waterSummer}} дн</div>
                                 <div class="modal-text">Интервал поливов зимой: {{$plant->waterWinter}} дн</div>

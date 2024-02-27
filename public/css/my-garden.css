@@ -85,7 +85,8 @@
 }
 
 .modal{
-    position: absolute;
+    position: fixed;
+    top: calc((100vh - 480px) / 2);
     margin-left: 130px;
     max-width: 870px;
     max-height: 480px;
@@ -151,6 +152,7 @@
     width: 404px;
     height: 268px;
     object-fit: cover;
+    transition: 0.7s ;
 }
 
 .modal-text-wrapper{
