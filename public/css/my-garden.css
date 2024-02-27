@@ -107,12 +107,12 @@
     z-index: 9998;
     color: #FFFFFF;
     display: flex;
-    gap: 10px;
+    gap: 26px;
     flex-direction: column;
-    padding: 30px;
     border-radius: 45px;
+    padding: 35px 30px 45px;
     background-color: #77AFAF;
-    height: 420px;
+    height: 400px;
     width: 810px;
 }
 
@@ -173,12 +173,81 @@
 
 .modal-buttons{
     display: flex;
-    gap: 50px;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+.modal-link{
+    color: #FFFFFF;
 }
 
 .modal-button{
-    color: black;
+    background-color: #01696C;
+    border: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.7s;
+    width: auto;
+    height: 50px;
+}
+
+.modal-button:hover{
+    background-color: #004445;
+    color: #01696C;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+}
+
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
+    font-size: 25px;
+    padding: 10px 25px;
+    height: 30px;
+    display: flex;
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
+    border: none;
+    background-color: #01696C;
+    border-radius: 25px;
+    transition: 0.7s;
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more:hover{
+    background-color: #004445;
+    color: #01696C;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+}
+
+.ya-share2__title {
+    color: #FFFFFF;
+    font-family: "Malgun Gothic", serif;
+    transition: 0.7s;
+}
+.ya-share2__title:hover{
+    color: #01696C;
+}
+
+.ya-share2__container_size_m .ya-share2__title {
+    line-height: 25px;
+}
+
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__icon_more {
+    background-image: none;
+    display: none;
+}
+
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__popup_direction_bottom {
+    top: 0px;
+}
+
+.ya-share2__container_size_m .ya-share2__popup:not(.ya-share2__popup_mobile) {
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 0 4px rgba(0,0,0,0.1);
+    background-color: #004445;
+}
+
+.ya-share2__popup_x-direction_left {
+    right: 0;
+    left: 0;
 }
 
 .add{
