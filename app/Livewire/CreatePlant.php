@@ -27,13 +27,13 @@ class CreatePlant extends Component
     #[Rule('required|image|mimes:jpg,jpeg,png| max: 5500')]
     public $image;
     #[Rule('required|integer|min:1|max:30')]
-    public $waterSummer=1;
+    public $waterSummer=7;
     #[Rule('required|integer|min:1|max:30')]
-    public $waterWinter=2;
+    public $waterWinter=7;
     #[Rule('required|integer|min:1|max:24')]
     public $lightSummer=15;
     #[Rule('required|integer|min:1|max:24')]
-    public $lightWinter=8;
+    public $lightWinter=9;
     #[Rule(new Enum(Light::class))]
     public $light=Light::BRIGHT->value;
     #[Rule(new Enum(Wet::class))]
@@ -55,6 +55,24 @@ class CreatePlant extends Component
             redirect()->route('my-garden');
             request()->session()->flash('success','Растенька добавлена!');
         }
+    }
+
+    public function increment($x)
+    {
+        if (gettype($this->$x) !== 'integer') {
+            $this->$x = intval($this->$x);
+        }
+        if ($this->$x <  30)
+        $this->$x=$this->$x+1;
+    }
+
+    public function decrement($x)
+    {
+        if (gettype($this->$x) !== 'integer') {
+            $this->$x = intval($this->$x);
+        }
+        if ($this->$x >  1)
+            $this->$x=$this->$x-1;
     }
 
     public function mount(): void
