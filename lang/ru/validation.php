@@ -164,6 +164,11 @@ return [
         'email'=>'email',
         'image'=>'фото',
         'login'=>'логин',
+        'waterSummer'=>'интервал полива летом',
+        'waterWinter'=>'интервал полива зимой',
+        'lightSummer'=>'свет летом',
+        'lightWinter'=>'свет зимой',
+        'notes'=>'заметки'
     ],
 
 ];

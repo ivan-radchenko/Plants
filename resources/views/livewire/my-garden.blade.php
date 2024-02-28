@@ -57,12 +57,7 @@
                                     </div>
                                 @else
                                     <div class="modal-text modal-notes">
-                                        Заметки...
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.8 11.55" style="width: 10px; height: 15px">
-                                            <g id="Layer_1" data-name="Layer 1">
-                                                <polygon points="1.48 10.67 0 11.55 .14 9.94 5.46 0 6.8 .73 1.48 10.67" style="fill: #a7a9ac; stroke-width: 0px;"/>
-                                            </g>
-                                        </svg>
+                                        Заметки...&#128393;
                                     </div>
                                 @endif
                             </div>
