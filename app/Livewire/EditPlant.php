@@ -39,7 +39,7 @@ class EditPlant extends Component
     public $light;
     #[Rule(new Enum(Wet::class))]
     public $wet;
-    #[Rule('sometimes|nullable|string|min:3|max:1000')]
+    #[Rule('sometimes|nullable|string|min:3|max:130')]
     public $notes;
 
     public function update(): void
@@ -60,6 +60,24 @@ class EditPlant extends Component
             redirect()->route('my-garden');
             request()->session()->flash('success','Растенька изменена!');
         }
+    }
+
+    public function increment($x)
+    {
+        if (gettype($this->$x) !== 'integer') {
+            $this->$x = intval($this->$x);
+        }
+        if ($this->$x <  30)
+            $this->$x=$this->$x+1;
+    }
+
+    public function decrement($x)
+    {
+        if (gettype($this->$x) !== 'integer') {
+            $this->$x = intval($this->$x);
+        }
+        if ($this->$x >  1)
+            $this->$x=$this->$x-1;
     }
 
     public function mount(Plants $plant)

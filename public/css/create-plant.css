@@ -134,9 +134,14 @@
     text-align: center;
     width: 25px;
     font-size: 25px;
-    color: #01696C;
+    color: #A7A9AC;
     cursor: pointer;
     user-select: none;
+    transition: 0.7s;
+}
+
+.increment-button:hover{
+    color: #01696C;
 }
 
 .inc-dec-light{
