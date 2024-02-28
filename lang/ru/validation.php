@@ -168,6 +168,7 @@ return [
         'waterWinter'=>'интервал полива зимой',
         'lightSummer'=>'свет летом',
         'lightWinter'=>'свет зимой',
+        'notes'=>'заметки'
     ],
 
 ];

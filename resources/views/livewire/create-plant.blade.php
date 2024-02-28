@@ -18,7 +18,7 @@
                 @csrf
                 <div class="form-item">
                     <label for="name">Имя</label>
-                    <input wire:model="name" type="text" name="name" id="name" class="form-input">
+                    <input wire:model="name" type="text" name="name" id="name" class="form-input" placeholder="Название" onfocusout="this.placeholder ='Название'" onfocus="this.placeholder =''">
                 </div>
                 <div class="form-item">
                     <span>Фото</span>
@@ -76,25 +76,25 @@
                 </div>
                 <div class="form-item">
                     <label for="light">Интенсивность освещения:
-                        <select wire:model="light" name="light" id="light">
+                        <select wire:model="light" name="light" id="light" class="form-input-select">
                             <option>{{\App\Enums\Light::BRIGHT->value}}</option>
-                            <option>{{\App\Enums\Light::DIFFUSED->value}}</option>
+                            <option selected>{{\App\Enums\Light::DIFFUSED->value}}</option>
                             <option>{{\App\Enums\Light::PENUMBRA->value}}</option>
                         </select>
                     </label>
                 </div>
                 <div class="form-item">
                     <label for="wet">Влажность воздуха:
-                        <select wire:model="wet" name="wet" id="wet">
+                        <select wire:model="wet" name="wet" id="wet" class="form-input-select">
                             <option>{{\App\Enums\Wet::LOW->value}}</option>
-                            <option>{{\App\Enums\Wet::MEDIUM->value}}</option>
+                            <option selected>{{\App\Enums\Wet::MEDIUM->value}}</option>
                             <option>{{\App\Enums\Wet::HIGH->value}}</option>
                         </select>
                     </label>
                 </div>
                 <div class="form-item">
-                    <label for="notes">Заметки:</label>
-                    <textarea wire:model="notes" type="text" name="notes" id="notes" class="notes"></textarea>
+                    <label for="notes"></label>
+                    <textarea wire:model="notes" type="text" maxlength="130" name="notes" id="notes" class="notes" placeholder="Заметки...&#128393;" onfocusout="this.placeholder ='Заметки...&#128393;'" onfocus="this.placeholder =''"></textarea>
                 </div>
                 <button class="button" type="submit">Добавить в мой сад</button>
             </form>

@@ -38,7 +38,7 @@ class CreatePlant extends Component
     public $light=Light::BRIGHT->value;
     #[Rule(new Enum(Wet::class))]
     public $wet=Wet::MEDIUM->value;
-    #[Rule('sometimes|nullable|string|min:3|max:1000')]
+    #[Rule('sometimes|nullable|string|min:3|max:130')]
     public $notes;
     #[locked]#[Rule('required')]
     public $status;
