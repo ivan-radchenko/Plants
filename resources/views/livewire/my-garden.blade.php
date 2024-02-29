@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="modal-buttons">
-                            <button class="modal-button"><a class="modal-link" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a></button>
+                            <a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a>
                             <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">Как у других</button>
                             <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">Удалить
                             </button>

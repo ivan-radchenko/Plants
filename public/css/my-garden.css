@@ -177,22 +177,23 @@
     display: flex;
     justify-content: space-evenly;
 }
-.modal-link{
-    color: #FFFFFF;
+
+.modal-button:hover.modal-link{
+    color: #01696C;
 }
 
 .modal-button{
     background-color: #01696C;
     border: none;
     color: #FFFFFF;
-    font-size: 25px;
-    padding: 10px 25px;
+    font-family: "Malgun Gothic", serif;
+    font-size: 25px;    
+    padding: 7px 25px 10px 25px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
     width: auto;
-    height: 50px;
 }
 
 .modal-button:hover{
