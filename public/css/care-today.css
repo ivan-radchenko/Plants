@@ -1,17 +1,124 @@
-.drop{
-    width:150px;
-    height:150px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
+.footer{
+    box-shadow: 0px -15px 30px 0px rgba(247, 233, 222, 1);
+}
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 1050px;
+    align-items: center;
+}
+
+.sub-header{
+    height: 200px;
+    background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
+    position: relative;
+    width: 100%;
+}
+
+.left-subheader-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.right-subheader-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.plants-wrapper{
+    padding: 50px 0;
+}
+
+.water-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.section-title {
+    font-family:"Ambidexter Regular", serif;
+    font-size: 45px;
+}
+
+.button{
+    background-color: #01696C;
+    border: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.7s;
+    width: auto;
+}
+
+.button:hover{
+    background-color: #004445;
+    color: #01696C;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+}
+
+.cards-wrapper{
+    display: flex;
+    width: 1140px;
+    column-gap: 33px;
+    row-gap: 45px;
+    position: relative;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.plant-card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 260px;
+    height: 281px;
+    flex-direction: column;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    transition: 0.7s;
+}
+
+.plant-card:hover{
+    color: #004445;
+}
+
+.cart-image{
+    width: 260px;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.light-title{
+    margin-bottom: 20px;
+}
+
+.drop{
+    width: 90px;
+    height: 120px;
+    position: absolute;
+    padding: 42.5px 85px;
+    background-color: rgba(28,55,64,0.75);
+    border-radius: 40px;
     opacity: 0;
+    transition: 0.7s;
+}
+
+.drop:hover{
+    opacity: 1;
 }
 
 .drop.open{
     position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
+    background-color: rgba(28,55,64,0.75);
+    padding: 42.5px 85px;
     opacity: 1;
     transition: 0.7s;
 }
@@ -33,42 +140,3 @@
     transition: 0.7s;
 
 }
-.main{
-    display: flex;
-    justify-content: center;
-}
-
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-.cards-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    width: 1140px;
-    gap: 35px;
-    padding: 20px 0;
-}
-
-.plant-card{
-    display: flex;
-    align-items: center;
-    width: 200px;
-    height: 250px;
-    flex-direction: column;
-    cursor:default;
-    position: relative;
-}
-
-.cart-image{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.light-title{
-    margin-bottom: 20px;
-}
-
