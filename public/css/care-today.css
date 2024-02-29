@@ -27,8 +27,14 @@
     right: 0;
 }
 
+.just-relax {
+    font-family: "Ambidexter Regular", serif;
+    font-size: 50px;
+}
+
+
 .plants-wrapper{
-    padding: 50px 0;
+    padding-top: 50px;
 }
 
 .water-wrapper{
@@ -96,10 +102,6 @@
     border-radius: 40px;
 }
 
-.light-title{
-    margin-bottom: 20px;
-}
-
 .drop{
     width: 90px;
     height: 120px;
@@ -123,20 +125,47 @@
     transition: 0.7s;
 }
 
+.light-wrapper{
+    padding-bottom: 50px;
+}
+
+.section-title-light{
+    padding-bottom: 20px;
+}
+
+.light-group-title-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lightGroup{
+    font-size: 25px;
+}
+
+.light-plant-card{
+    cursor: default;
+}
+
+.light-plant-card:hover{
+    color: #77afaf;
+}
+
 .clock{
-    width:150px;
-    height:150px;
+    width: 110px;
+    height: 120px;
     position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
+    background-color: rgba(28,55,64,0.75);
+    padding: 42.5px 75px;
+    border-radius: 40px;
     opacity: 0;
+    transition: 0.7s;
 }
 
 .clock.open{
     position: absolute;
-    background-color: rgba(0,0,0,0.7);
-    padding: 25px;
+    background-color: rgba(28,55,64,0.75);
+    padding: 42.5px 75px;/**/
     opacity: 1;
     transition: 0.7s;
-
 }
