@@ -1,16 +1,38 @@
 <div>
     <link href="{{ asset('css/share-plant.css') }}" rel="stylesheet">
     <div class="wrapper">
-        <img class="image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
-        <div class="properties">
-            <h2 class="title">{{$plant->name}}</h2>
-            <div class="text">Время между поливами летом: {{$plant->waterSummer}} дн.</div>
-            <div class="text">Время между поливами зимой: {{$plant->waterWinter}} дн.</div>
-            <div class="text">Свет летом: {{$plant->lightSummer}} час.</div>
-            <div class="text">Свет зимой: {{$plant->lightWinter}} час.</div>
-            <div class="text">интенсивность освещения: {{$plant->light}} </div>
-            <div class="text">влажность: {{$plant->wet}} </div>
-            <div class="text">заметки: {{$plant->notes}} </div>
+        <div class="sub-header">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
+        </div>
+        <div class="plant-wrapper">
+            <div class="title">{{$plant->name}}</div>
+            <div class="properties">
+                <div class="text">Время между поливами летом:
+                    <span class="text-data">{{$plant->waterSummer}} дн</span>
+                </div>
+                <div class="text">Время между поливами зимой:
+                    <span class="text-data">{{$plant->waterWinter}} дн</span>
+                </div>
+                <div class="text">Свет летом:
+                    <span class="text-data">{{$plant->lightSummer}} час</span>
+                </div>
+                <div class="text">Свет зимой:
+                    <span class="text-data">{{$plant->lightWinter}} час</span>
+                </div>
+                <div class="text">Интенсивность освещения:
+                    <span class="text-data">{{$plant->light}}</span>
+                </div>
+                <div class="text">Влажность:
+                    <span class="text-data">{{$plant->wet}}</span>
+                </div>
+                @if($plant->notes)
+                    <div class="text">Заметки:
+                        <span class="text-data">{{$plant->notes}}</span>
+                    </div>
+                @endif
+            </div>
+            <img class="image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
         </div>
     </div>
 </div>
