@@ -9,6 +9,7 @@
             <label for="search">
                 <input wire:model.live.debounce.500ms="search" type="text" class="search" name="search" id="search" placeholder="Поиск по моему саду" onfocusout="this.placeholder ='Поиск по моему саду'" onfocus="this.placeholder =''">
             </label>
+            <a href="{{route('create-plant')}}" class="button">Добавить</a>
         </div>
         <div class="plants-wrapper">
             @foreach($plants as $plant)
