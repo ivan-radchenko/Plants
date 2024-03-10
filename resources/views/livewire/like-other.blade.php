@@ -1,30 +1,45 @@
 <div>
     <link href="{{ asset('css/like-other.css') }}" rel="stylesheet">
     <div class="wrapper">
+        <div class="sub-header">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
+        </div>
         <div class="search-wrapper">
-            <form wire:submit="search">
-                <label for="search">Поиск по растенькам</label>
-                <input wire:model="searchInput" type="text" name="search" id="search" autocomplete="off" required>
-                <button type="submit">поиск</button>
-            </form>
+                <label for="search">
+                <input wire:model="searchInput" wire:keydown.enter="search" type="text" class="search" name="search" id="search" autocomplete="off" placeholder="Поиск по растенькам" onfocusout="this.placeholder ='Поиск по растенькам'" onfocus="this.placeholder =''" required>
+                </label>
         </div>
         <div class="stats-wrapper">
             @if($averageStats)
-                <h3>Усредненная статистика {{$searchInput}}:</h3>
-                <div class="stat-text">Время между поливами летом: {{$averageStats['waterSummer']}} дн.</div>
-                <div class="stat-text">Время между поливами зимой: {{$averageStats['waterWinter']}} дн.</div>
-                <div class="stat-text">Свет летом: {{$averageStats['lightSummer']}} час.</div>
-                <div class="stat-text">Свет зимой: {{$averageStats['lightWinter']}} час.</div>
-                <div class="stat-text">интенсивность освещения: {{$averageStats['light']}} </div>
-                <div class="stat-text">влажность: {{$averageStats['wet']}} </div>
+                <div class="stat-title">СТАТИСТИКА</div>
+                <div class="stat-text">Время между поливами летом:
+                    <span class="stat-text-data">{{$averageStats['waterSummer']}} дн</span>
+                </div>
+                <div class="stat-text">Время между поливами зимой:
+                    <span class="stat-text-data">{{$averageStats['waterWinter']}} дн</span>
+                </div>
+                <div class="stat-text">Свет летом:
+                    <span class="stat-text-data">{{$averageStats['lightSummer']}} час</span>
+                </div>
+                <div class="stat-text">Свет зимой:
+                    <span class="stat-text-data">{{$averageStats['lightWinter']}} час</span>
+                </div>
+                <div class="stat-text">Интенсивность освещения:
+                    <span class="stat-text-data">{{$averageStats['light']}}</span>
+                </div>
+                <div class="stat-text">Влажность:
+                    <span class="stat-text-data">{{$averageStats['wet']}}</span>
+                </div>
             @endif
         </div>
-        <div class="searchResult-wrapper">
-            @if($searchResult)
+
+        @if($searchResult)
+            <div class="plants-wrapper">
                 @foreach($searchResult as $plant)
                     <div wire:key="{{$plant->id}}" class="plant-card" wire:ignore>
                         <img x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})" class="cart-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
-                        <h4 x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})">{{$plant->name}}</h4>
+                        <div x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})">{{$plant->name}}</div>
                     </div>
                     <div wire:key="{{$plant->id}}-modal" class="modal"
                          x-data="{open:false, modalID:'{{$plant->id}}'}"
@@ -33,19 +48,34 @@
                          x-on:close-modal.window="open=false"
                          x-transition.duration.700ms
                          style="display: none;">
-                        <div class="modal-header">
-                            <h4 class="modal-title">{{$plant->name}}</h4>
-                            <button x-on:click="open=false" class="modal-close">X</button>
+
+                        <div class="modal-bg"
+                             x-on:click="open=false">
                         </div>
-                        <div class="modal-body">
-                            <img class="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
+
+                        <div class="modal-content-wrapper">
+                            <svg x-on:click="open=false" class="modal-close" id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.53 31.53">
+                                <g>
+                                    <rect width="31.53" height="31.53" rx="6" ry="6"/>
+                                    <g>
+                                        <rect x="13.27" y="3.14" width="5.29" height="25.41" transform="translate(-6.55 15.89) rotate(-45)" style="fill: #77afaf; stroke-width: 0px;"/>
+                                        <rect x="2.92" y="12.91" width="25.41" height="5.29" transform="translate(-6.43 15.6) rotate(-45)" style="fill: #77afaf; stroke-width: 0px;"/>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="modal-body">
+                                <img class="modal-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
+                                <div class="modal-footer">
+                                    <p class="modal-title">{{$plant->name}}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach
-                @if($searchResultAll->count() > $count)
-                        <button type="button" wire:click="loadMore">Загрузить еще</button>
-                @endif
+            </div>
+            @if($searchResultAll->count() > $count)
+                <button wire:click="loadMore" type="button"  class="button">Загрузить еще</button>
             @endif
-        </div>
+        @endif
     </div>
 </div>

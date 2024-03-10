@@ -12,8 +12,8 @@ use Livewire\Component;
 
 class LikeOther extends Component
 {
-    #[Validate('required | string', as: 'поиск')]
-    #[Url()]
+
+    #[Url()]#[Validate('required | string', as: 'поиск')]
     public $searchInput;
     #[Locked]
     public $searchResultAll;
@@ -27,14 +27,14 @@ class LikeOther extends Component
     public function loadMore(): void
     {
         if ($this->searchResultAll->count() > $this->count) {
-            $this->count=$this->count + 5;
+            $this->count=$this->count + 4;
             $this->searchResult=$this->searchResultAll->take($this->count);
         }
     }
 
     public function search(): void
     {
-        $this->searchResultAll=PlantsSearch::search($this->searchInput);
+        $this->searchResultAll=PlantsSearch::search($this->validate()['searchInput']);
         $this->averageStats=PlantsSearch::avg($this->searchResultAll);
         if ($this->searchResultAll){
             if ($this->searchResultAll->count() === 0){
@@ -48,7 +48,7 @@ class LikeOther extends Component
                 );
             }
             if ($this->searchResultAll->count() > 0){
-                $this->count=5;
+                $this->count=4;
                 $this->searchResult=$this->searchResultAll->take($this->count);
             }
         }
