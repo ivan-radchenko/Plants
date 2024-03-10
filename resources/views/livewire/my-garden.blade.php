@@ -9,6 +9,7 @@
             <label for="search">
                 <input wire:model.live.debounce.500ms="search" type="text" class="search" name="search" id="search" placeholder="Поиск по моему саду" onfocusout="this.placeholder ='Поиск по моему саду'" onfocus="this.placeholder =''">
             </label>
+            <a href="{{route('create-plant')}}" class="button">Добавить</a>
         </div>
         <div class="plants-wrapper">
             @foreach($plants as $plant)
@@ -63,7 +64,7 @@
                             </div>
                         </div>
                         <div class="modal-buttons">
-                            <button class="modal-button"><a class="modal-link" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a></button>
+                            <a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a>
                             <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">Как у других</button>
                             <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">Удалить
                             </button>
