@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\AlertIcons;
 use App\Models\Plants;
 use App\Services\PlantsSearch;
 use Livewire\Attributes\Locked;
@@ -42,7 +43,7 @@ class LikeOther extends Component
                 $this->searchResult=null;
                 $this->dispatch(
                     'alert',
-                    icon:'error',
+                    icon:AlertIcons::ERROR,
                     title:'не удалось найти растение в базе данных =(',
                     position:'center'
                 );
