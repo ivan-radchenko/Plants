@@ -109,6 +109,7 @@
                     element.classList.add("open")
                 }
             );
+            document.getElementById("water-plant-all").removeEventListener("mouseout",removeWater)
         });
         document.getElementById("water-plant-all").addEventListener("mouseover", function() {
             Array.from(document.getElementsByClassName("drop")).forEach(
@@ -117,13 +118,14 @@
                 }
             );
         });
-        document.getElementById("water-plant-all").addEventListener("mouseout", function() {
+        function removeWater(event){
             Array.from(document.getElementsByClassName("drop")).forEach(
                 function(element, index, array) {
                     element.classList.remove("open")
                 }
             );
-        });
+        }
+        document.getElementById("water-plant-all").addEventListener("mouseout", removeWater);
         @endif
 
         @if($changeLighting)
