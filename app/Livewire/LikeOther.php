@@ -44,8 +44,8 @@ class LikeOther extends Component
                 $this->dispatch(
                     'alert',
                     icon:AlertIcons::ERROR,
-                    title:'не удалось найти растение в базе данных =(',
-                    position:'center'
+                    title:'Не удалось найти растеньку',
+                    position:'top'
                 );
             }
             if ($this->searchResultAll->count() > 0){
