@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\AlertIcons;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -19,9 +20,9 @@ class MyGarden extends Component
             Storage::disk('public')->delete($plant->image);
             $this->dispatch(
                 'alert',
-                icon:'success',
+                icon:AlertIcons::SUCCESS,
                 title:$plant->name.' удалена!',
-                position:'top-end'
+                position:'top'
             );
         }
     }
@@ -49,9 +50,9 @@ class MyGarden extends Component
         {
             $this->dispatch(
                 'alert',
-                icon:'success',
+                icon:AlertIcons::SUCCESS,
                 title:session('success'),
-                position:'top-end'
+                position:'top'
             );
         }
 

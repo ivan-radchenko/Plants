@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Enums\AlertIcons;
 use App\Models\User;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;
@@ -82,7 +83,7 @@ class Login extends Component
         {
             $this->dispatch(
                 'alert',
-                icon:'success',
+                icon:AlertIcons::SUCCESS,
                 title:session('success'),
                 position:'center'
             );

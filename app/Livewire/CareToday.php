@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\AlertIcons;
 use App\Models\Plants;
 use App\Services\PlantsCare;
 use App\Services\SeasonNow;
@@ -26,7 +27,7 @@ class CareToday extends Component
 
             $this->dispatch(
                 'alert',
-                icon:'success',
+                icon:AlertIcons::SUCCESS,
                 title:$plant->name.' полита!',
                 position:'top'
             );
@@ -42,7 +43,7 @@ class CareToday extends Component
         }
         $this->dispatch(
             'alert',
-            icon:'success',
+            icon:AlertIcons::SUCCESS,
             title:'Все растеньки политы!',
             position:'top'
         );
@@ -65,7 +66,7 @@ class CareToday extends Component
         }
         $this->dispatch(
             'alert',
-            icon:'success',
+            icon:AlertIcons::SUCCESS,
             title:'Группа переведена на '.$season.' время!',
             position:'top'
         );

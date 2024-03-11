@@ -1,0 +1,28 @@
+.alert-icon {
+    border: 0;
+}
+
+.alert-title{
+    color: #77AFAF;
+    font-family: "Malgun Gothic", serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    text-align: end;
+}
+
+.alert-popup{
+    margin-top: 120px;
+    border-radius: 25px;
+    height: 100px;
+}
+
+.swal2-popup.swal2-toast.swal2-show{
+    padding: 20px;
+    font-size: 25px;
+    align-items: center;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+    margin: 0;
+}
