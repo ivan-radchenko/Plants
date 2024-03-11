@@ -22,7 +22,7 @@ class MyGarden extends Component
                 'alert',
                 icon:AlertIcons::SUCCESS,
                 title:$plant->name.' удалена!',
-                position:'top-end'
+                position:'top'
             );
         }
     }

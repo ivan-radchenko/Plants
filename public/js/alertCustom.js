@@ -3,7 +3,7 @@ window.addEventListener('alert',(event)=>{
     const Toast = Swal.mixin({
         toast: true,
         showConfirmButton: false,
-        timer: 300000,
+        timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.onmouseenter = Swal.stopTimer;

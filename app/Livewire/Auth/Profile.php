@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Enums\AlertIcons;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -95,7 +96,7 @@ class Profile extends Component
         {
             $this->dispatch(
                 'alert',
-                icon:'success',
+                icon:AlertIcons::SUCCESS,
                 title:session('success'),
                 position:'center'
             );
