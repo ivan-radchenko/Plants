@@ -26,30 +26,30 @@
     <div class="section-3">
         <div class="wrapper">
             <div class="wrapper-image">
-                <div class="img-1">
+                <a class="img-1" href="{{route('my-garden')}}">
                     <img class="img-1" src="{{ asset('images/home/section-3-1.svg') }}" alt="создавай свой сад">
                     <div class="animate-wrapper">
                         <p class="img-text">создавай <br> свой сад</p>
                     </div>
-                </div>
-                <div class="img-2">
+                </a>
+                <a class="img-2" href="{{route('like-other')}}">
                     <img class="img-2" src="{{ asset('images/home/section-3-2.svg') }}" alt="находи информацию">
                     <div class="animate-wrapper">
                         <p class="img-text">находи <br> информацию</p>
                     </div>
-                </div>
-                <div class="img-3">
+                </a>
+                <a class="img-3" href="{{route('care-today')}}">
                     <img class="img-3" src="{{ asset('images/home/section-3-3.svg') }}" alt="отслеживай уход">
                     <div class="animate-wrapper">
                         <p class="img-text">отслеживай <br> уход</p>
                     </div>
-                </div>
-                <div class="img-4">
+                </a>
+                <a class="img-4" href="{{route('create-plant')}}">
                     <img class="img-4" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
                     <div class="animate-wrapper">
                         <p class="img-text">делись <br> знаниями</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
