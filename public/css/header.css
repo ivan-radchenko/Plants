@@ -143,12 +143,36 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .header-center-nav{
+    .header-desktop{
         display: none;
     }
 
     .header-mobile{
-        display: block;
+        display: flex;
     }
 
+    .header-wrapper{
+        padding: 0 20px;
+    }
+
+    .menu{
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+    }
+
+    .header-drop-down{
+        width: 100%;
+    }
+
+    .header-nav-link{
+        font-size: 15px;
+        text-wrap: none;
+    }
+
+    .header-drop-down-wrapper{
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
 }
