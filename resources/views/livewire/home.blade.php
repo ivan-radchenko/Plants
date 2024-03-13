@@ -73,7 +73,7 @@
                 </label>
             </div>
         </div>
-        {{--<div class="section-2">
+        <div class="section-2">
             <div class="wrapper">
                 <div class="my-plants-wrapper">
                     <h1 class="my-plants-text-top">МOИ</h1>
@@ -82,7 +82,7 @@
                         и зелеными друзьями</h2>
                 </div>
             </div>
-        </div>--}}
+        </div>
         {{--<div class="section-3">
             <div class="wrapper">
                 <div class="wrapper-image">

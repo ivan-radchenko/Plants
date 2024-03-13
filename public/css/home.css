@@ -136,6 +136,10 @@
     opacity: 1;
 }
 
+.mobile{
+    display: none;
+}
+
 @media screen and (max-width: 1200px){
     .desktop{
         display: none;
@@ -171,6 +175,19 @@
         right: calc((100% - 326px) / 2);
         width: 320px;
     }
+    .my-plants-wrapper{
+        gap: 20px;
+        padding: 30px 0 50px 0;
+    }
+    .my-plants-text-top{
+        font-size: 100px;
+    }
+    .my-plants-text-bot{
+        font-size: 70px;
+    }
+    .second-section-text{
+        font-size: 22px;
+    }
 }
 @media screen and (max-width: 768px){
     .search-bg{
@@ -180,5 +197,13 @@
         object-fit: cover;
         margin-left: -240px;
     }
-
+    .my-plants-text-top{
+        font-size: 85px;
+    }
+    .my-plants-text-bot{
+        font-size: 50px;
+    }
+    .second-section-text{
+        font-size: 15px;
+    }
 }
