@@ -188,6 +188,13 @@
     .second-section-text{
         font-size: 22px;
     }
+    .swiper-wrapper{
+        max-width: 526px;
+    }
+    .animate-wrapper{
+        opacity: 1;
+        box-shadow: none;
+    }
 }
 @media screen and (max-width: 768px){
     .search-bg{
@@ -205,5 +212,24 @@
     }
     .second-section-text{
         font-size: 15px;
+    }
+    .swiper-wrapper{
+        max-width: 266px;
+    }
+    .animate-wrapper{
+        width: 130px;
+        height: 102px;
+        border-radius: 20px;
+        transition: 0s;
+    }
+    .img{
+        width: 130px;
+    }
+    .img-text{
+        font-size: 15px;
+    }
+
+    .section-3{
+        padding: 20px 0;
     }
 }

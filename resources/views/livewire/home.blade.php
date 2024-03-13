@@ -1,5 +1,6 @@
 <div>
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <div class="desktop">
         <div class="section-1">
             <div class="wrapper">
@@ -83,35 +84,67 @@
                 </div>
             </div>
         </div>
-        {{--<div class="section-3">
-            <div class="wrapper">
-                <div class="wrapper-image">
-                    <a class="img-1" href="{{route('my-garden')}}">
-                        <img class="img-1" src="{{ asset('images/home/section-3-1.svg') }}" alt="создавай свой сад">
-                        <div class="animate-wrapper">
-                            <p class="img-text">создавай <br> свой сад</p>
-                        </div>
-                    </a>
-                    <a class="img-2" href="{{route('like-other')}}">
-                        <img class="img-2" src="{{ asset('images/home/section-3-2.svg') }}" alt="находи информацию">
-                        <div class="animate-wrapper">
-                            <p class="img-text">находи <br> информацию</p>
-                        </div>
-                    </a>
-                    <a class="img-3" href="{{route('care-today')}}">
-                        <img class="img-3" src="{{ asset('images/home/section-3-3.svg') }}" alt="отслеживай уход">
-                        <div class="animate-wrapper">
-                            <p class="img-text">отслеживай <br> уход</p>
-                        </div>
-                    </a>
-                    <a class="img-4" href="{{route('create-plant')}}">
-                        <img class="img-4" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
-                        <div class="animate-wrapper">
-                            <p class="img-text">делись <br> знаниями</p>
-                        </div>
-                    </a>
+        <div class="section-3">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="{{route('my-garden')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-1.svg') }}" alt="создавай свой сад">
+                            <div class="animate-wrapper">
+                                <p class="img-text">создавай <br> свой сад</p>
+                            </div>
+                        </a>
+                        <a href="{{route('my-garden')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-1.svg') }}" alt="создавай свой сад">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{route('like-other')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-2.svg') }}" alt="находи информацию">
+                            <div class="animate-wrapper">
+                                <p class="img-text">находи <br> информацию</p>
+                            </div>
+                        </a>
+                        <a href="{{route('like-other')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-2.svg') }}" alt="находи информацию">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{route('care-today')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-3.svg') }}" alt="отслеживай уход">
+                            <div class="animate-wrapper">
+                                <p class="img-text">отслеживай <br> уход</p>
+                            </div>
+                        </a>
+                        <a href="{{route('care-today')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-3.svg') }}" alt="отслеживай уход">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{route('create-plant')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
+                            <div class="animate-wrapper">
+                                <p class="img-text">делись <br> знаниями</p>
+                            </div>
+                        </a>
+                        <a href="{{route('create-plant')}}">
+                            <img class="img" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>--}}
+        </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "1",
+            slidesPerGroup: 2,
+            slidesPerGroupSkip:2,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </div>

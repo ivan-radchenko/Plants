@@ -93,7 +93,7 @@
     }
     .footer-wrapper{
         height: 100px;
-        padding: 0 20px;
+        padding: 20px 20px;
     }
     .footer-center{
         gap: 0;
@@ -106,7 +106,6 @@
         align-items: flex-start;
         gap: 20px;
         height: 200px;
-        padding-bottom: 40px;
     }
     .footer-desktop{
         display: none;
