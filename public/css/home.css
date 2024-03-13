@@ -176,8 +176,9 @@
     .search-bg{
         position: absolute;
         height: 400px;
-        width: 100%;
+        width: calc(100% + 240px);
         object-fit: cover;
+        margin-left: -240px;
     }
 
 }
