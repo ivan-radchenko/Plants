@@ -125,7 +125,7 @@
                 function sleep (time) {
                     return new Promise((resolve) => setTimeout(resolve, time));
                 }
-                sleep(5000).then(() => {
+                sleep(10000).then(() => {
                     document.getElementById("drop-down-mobile").classList.remove("open");
                 });
             });

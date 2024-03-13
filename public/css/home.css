@@ -13,6 +13,13 @@
     position: relative;
 }
 
+.search-grass{
+    position: absolute;
+    top: 389px;
+    right: calc((100% - 588px) / 2);
+    width: 550px;
+}
+
 .search{
     position: absolute;
     top: 440px;
@@ -29,6 +36,7 @@
     cursor: pointer;
     z-index: 2;
 }
+
 .search:focus{
     outline: none;
 }
@@ -143,4 +151,33 @@
         height: 400px;
         object-fit: cover;
     }
+    .search{
+        top: 320px;
+        left: calc((100% - 335px) / 2);
+        width: 295px;
+        font-size: 16px;
+        padding: 11px 20px;
+    }
+    .search-label {
+        top: 327px;
+        right: calc((100% - 310px) / 2);
+    }
+    .icon-search{
+        width: 25px;
+        height: 25px;
+    }
+    .search-grass{
+        top: 291px;
+        right: calc((100% - 326px) / 2);
+        width: 320px;
+    }
+}
+@media screen and (max-width: 768px){
+    .search-bg{
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+    }
+
 }
