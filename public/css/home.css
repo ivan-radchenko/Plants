@@ -13,6 +13,13 @@
     position: relative;
 }
 
+.search-grass{
+    position: absolute;
+    top: 389px;
+    right: calc((100% - 588px) / 2);
+    width: 550px;
+}
+
 .search{
     position: absolute;
     top: 440px;
@@ -29,6 +36,7 @@
     cursor: pointer;
     z-index: 2;
 }
+
 .search:focus{
     outline: none;
 }
@@ -126,4 +134,102 @@
 }
 .animate-wrapper:hover{
     opacity: 1;
+}
+
+.mobile{
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .section-1{
+        height: 400px;
+    }
+    .search-bg{
+        position: absolute;
+        height: 400px;
+        object-fit: cover;
+    }
+    .search{
+        top: 320px;
+        left: calc((100% - 335px) / 2);
+        width: 295px;
+        font-size: 16px;
+        padding: 11px 20px;
+    }
+    .search-label {
+        top: 327px;
+        right: calc((100% - 310px) / 2);
+    }
+    .icon-search{
+        width: 25px;
+        height: 25px;
+    }
+    .search-grass{
+        top: 291px;
+        right: calc((100% - 326px) / 2);
+        width: 320px;
+    }
+    .my-plants-wrapper{
+        gap: 20px;
+        padding: 30px 0 50px 0;
+    }
+    .my-plants-text-top{
+        font-size: 100px;
+    }
+    .my-plants-text-bot{
+        font-size: 70px;
+    }
+    .second-section-text{
+        font-size: 22px;
+    }
+    .swiper-wrapper{
+        max-width: 526px;
+    }
+    .animate-wrapper{
+        opacity: 1;
+        box-shadow: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .search-bg{
+        position: absolute;
+        height: 400px;
+        width: calc(100% + 240px);
+        object-fit: cover;
+        margin-left: -240px;
+    }
+    .my-plants-text-top{
+        font-size: 85px;
+    }
+    .my-plants-text-bot{
+        font-size: 50px;
+    }
+    .second-section-text{
+        font-size: 15px;
+    }
+    .swiper-wrapper{
+        max-width: 266px;
+    }
+    .animate-wrapper{
+        width: 130px;
+        height: 102px;
+        border-radius: 20px;
+        transition: 0s;
+    }
+    .img{
+        width: 130px;
+    }
+    .img-text{
+        font-size: 15px;
+    }
+
+    .section-3{
+        padding: 20px 0;
+    }
 }

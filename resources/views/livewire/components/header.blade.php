@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="header-wrapper">
+    <div class="header-wrapper header-desktop">
         <nav class="header-nav-home">
             <a class="header-nav-link @if(Request::route()->getName() == 'home') header-nav-this-page @endif" href="{{ route('home') }}" title="home-page">
                 <img class="header-my-plants-text" src="{{ asset('images/header/logo.svg') }}" alt="logo">
@@ -29,9 +29,6 @@
                                 профиль
                             </a>
                         </div>
-
-                        {{--<a wire:navigate class="header-nav-link header-mobile @if(Request::route()->getName() == 'my-plants') header-nav-this-page @endif" href="{{ route('my-plants') }}">мой сад</a>
-                        <a wire:navigate class="header-nav-link header-mobile @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif" href="{{route('care-today')}}">уход сегодня</a>--}}
 
                         <form class="header-logout-form" action="{{ route('logout') }}" method="post">
                             @csrf
@@ -66,5 +63,72 @@
                 <a class="header-nav-link @if(Request::route()->getName() == 'register') header-nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
             </nav>
         @endauth
+    </div>
+    <div class="header-wrapper header-mobile">
+        <nav class="header-nav-home">
+            <a class="header-nav-link @if(Request::route()->getName() == 'home') header-nav-this-page @endif" href="{{ route('home') }}" title="home-page">
+                <img class="header-my-plants-text" src="{{ asset('images/header/logo.svg') }}" alt="logo">
+            </a>
+        </nav>
+
+        @auth
+            <div class="header-profile" id="profile">
+                <svg id="menu" data-name="menu" class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.03 42.03">
+                    <rect width="42.03" height="42.03" style="fill: #fff; stroke-width: 0px;"/>
+                    <path d="M41.01,9.52H1.01C.45,9.52,0,9.07,0,8.52s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                    <path d="M41.01,21.56H1.01C.45,21.56,0,21.11,0,20.56s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                    <path d="M41.01,33.6H1.01c-.55,0-1-.45-1-1s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                </svg>
+            </div>
+            <nav class="header-drop-down" id="drop-down-mobile">
+                <div class="header-drop-down-box" id="drop-down-box">
+                    <div class="header-drop-down-wrapper">
+                        <a class="header-nav-link @if(Request::route()->getName() == 'my-garden') header-nav-this-page @endif"
+                           href="{{ route('my-garden') }}">мой сад</a>
+                        <a class="header-nav-link @if(Request::route()->getName() == 'care-today') header-nav-this-page @endif"
+                           href="{{route('care-today')}}">уход сегодня</a>
+                        <a class="header-nav-link @if(Request::route()->getName() == 'like-other') header-nav-this-page @endif"
+                           href="{{route('like-other')}}">как у других</a>
+                        <a class="header-nav-link @if(Request::route()->getName() == 'profile') header-nav-this-page @endif" href="{{ route('profile') }}">
+                            профиль
+                        </a>
+                        <form class="header-logout-form" action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="header-logout-button header-nav-link">
+                                выход
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        @else
+            <div class="header-profile" id="profile">
+                <svg id="menu" data-name="menu" class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.03 42.03">
+                    <rect width="42.03" height="42.03" style="fill: #fff; stroke-width: 0px;"/>
+                    <path d="M41.01,9.52H1.01C.45,9.52,0,9.07,0,8.52s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                    <path d="M41.01,21.56H1.01C.45,21.56,0,21.11,0,20.56s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                    <path d="M41.01,33.6H1.01c-.55,0-1-.45-1-1s.45-1,1-1h40c.55,0,1,.45,1,1s-.45,1-1,1Z" style="fill: #77afaf; stroke-width: 0px;"/>
+                </svg>
+            </div>
+            <nav class="header-drop-down" id="drop-down-mobile">
+                <div class="header-drop-down-box" id="drop-down-box">
+                    <div class="header-drop-down-wrapper">
+                        <a class="header-nav-link @if(Request::route()->getName() == 'login') header-nav-this-page @endif" href="{{route('login')}}">Вход</a>
+                        <a class="header-nav-link @if(Request::route()->getName() == 'register') header-nav-this-page @endif" href="{{ route('register') }}">Регистрация</a>
+                    </div>
+                </div>
+            </nav>
+        @endauth
+        <script>
+            document.getElementById("menu").addEventListener("click", function() {
+                document.getElementById("drop-down-mobile").classList.add("open");
+                function sleep (time) {
+                    return new Promise((resolve) => setTimeout(resolve, time));
+                }
+                sleep(10000).then(() => {
+                    document.getElementById("drop-down-mobile").classList.remove("open");
+                });
+            });
+        </script>
     </div>
 </header>
