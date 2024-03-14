@@ -183,6 +183,9 @@
     .login-plants{
         display: none;
     }
+    .main{
+        min-height: 600px;
+    }
 }
 @media screen and (max-width: 768px){
     .main{
