@@ -69,19 +69,12 @@
     border: none;
     color: #FFFFFF;
     font-size: 25px;
-    padding: 10px;
+    padding: 10px 30px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
-    width: 150px;
-    height: 50px;
-}
 
-.button:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
 }
 
 .forgot-password{
@@ -106,14 +99,14 @@
     transition: 0.7s;
 }
 
-.check:hover{
-    color: #004445;
-}
-
 .check-input{
     position: absolute;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.checkbox-wrapper{
+    width: 192px;
 }
 
 .check-box{
@@ -137,10 +130,6 @@
     transition: 0.7s;
 }
 
-.social-login-icon:hover{
-    fill: #004445;
-}
-
 .login-plants{
     bottom: 0;
     position: absolute;
@@ -158,4 +147,94 @@
     gap: 10px;
     margin-bottom: 20px;
     align-items: center;
+}
+
+@media (hover: hover){
+    .button:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .social-login-icon:hover{
+        fill: #004445;
+    }
+    .check:hover{
+        color: #004445;
+    }
+}
+@media (hover: none) {
+    .button:active{
+        transition: 0s;
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .social-login-icon:active{
+        transition: 0s;
+        fill: #004445;
+    }
+    .check:active{
+        transition: 0s;
+        color: #004445;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .login-plants{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .main{
+        min-height: 500px;
+    }
+    .form{
+        padding: 15px;
+        width: 305px;
+        border-radius: 40px;
+        gap:15px;
+    }
+    .form-input{
+        width: 295px;
+        height: 30px;
+        font-size: 16px;
+    }
+    .form-item{
+        font-size: 15px;
+        gap: 10px;
+    }
+    .bi-eye{
+        height: 20px;
+    }
+    .remember-wrapper{
+        width: 295px;
+        height: 25px;
+        font-size: 15px;
+    }
+    .checkbox-wrapper{
+        width: 115px;
+    }
+    .check-box{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .social-login-icon{
+        width: 25px;
+        height: 25px;
+    }
+    .button{
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+
+    .messages{
+        font-size: 15px;
+        width: 335px;
+        text-align: center;
+    }
+    .error{
+        font-size: 15px;
+        width: 335px;
+        text-align: center;
+    }
 }

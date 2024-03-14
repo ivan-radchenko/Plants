@@ -26,8 +26,8 @@
                 <input wire:model="password" class="form-input" type="password" name="password" id="password">
                 <div class="remember-wrapper">
                     <div class="checkbox-wrapper">
-                        <label for="remember" class="check">
-                            Запомнить меня
+                        <label for="remember" class="check" checked>
+                            Запомнить
                             <input wire:model="remember" type="checkbox" id="remember" name="remember" class="check-input">
                             <span class="check-box"></span>
                         </label>
