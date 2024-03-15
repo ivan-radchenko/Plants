@@ -69,12 +69,13 @@
     border: none;
     color: #FFFFFF;
     font-size: 25px;
-    padding: 10px 30px;
+    padding: 6px 30px 10px 30px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
-
+    font-family: "Malgun Gothic", serif;
+    font-weight: normal;
 }
 
 .forgot-password{
@@ -227,7 +228,7 @@
     }
     .button{
         font-size: 15px;
-        padding: 5px 20px;
+        padding: 2px 20px 5px 20px;
     }
 
     .messages{

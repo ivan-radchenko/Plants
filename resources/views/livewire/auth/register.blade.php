@@ -45,7 +45,8 @@
                 <button class="button" type="submit">Зарегистрироваться</button>
             </div>
         </form>
-        <img src="{{asset('images/auth/register-plants.svg')}}" alt="" class="register-plants">
+        <img src="{{asset('images/auth/register-plants-left.svg')}}" alt="" class="register-plants-left">
+        <img src="{{asset('images/auth/register-plants-right.svg')}}" alt="" class="register-plants-right">
     </div>
     <script>
         document.getElementById('show').addEventListener('click', event => {
