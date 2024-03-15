@@ -289,4 +289,7 @@
         width: 335px;
         text-align: center;
     }
+    .bottom-wrapper{
+    gap: 0;
+    }
 }
