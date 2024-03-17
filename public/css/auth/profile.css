@@ -220,6 +220,7 @@
         width: 305px;
         border-radius: 40px;
         gap: 15px;
+        top: 60px;
     }
 
     .form-input {
@@ -235,26 +236,6 @@
 
     .bi-eye {
         height: 20px;
-    }
-
-    .remember-wrapper {
-        width: 295px;
-        height: 25px;
-        font-size: 15px;
-    }
-
-    .checkbox-wrapper {
-        width: 115px;
-    }
-
-    .check-box {
-        margin-top: 5px;
-        margin-left: 5px;
-    }
-
-    .social-login-icon {
-        width: 25px;
-        height: 25px;
     }
 
     .button {
