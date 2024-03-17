@@ -15,17 +15,6 @@
     width: 1140px;
 }
 
-@media screen and (max-width: 1200px) {
-    .main{
-        min-height: calc(80vh + 100px);
-    }
-}
-@media screen and (max-width: 1200px) {
-    .main{
-        min-height: calc(80vh - 40px);
-    }
-}
-
 @font-face {
     font-family: 'AmbidexterWebRegular';
     src:

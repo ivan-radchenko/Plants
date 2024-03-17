@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 107.04 151.98">
+  <defs>
+    <linearGradient id="linear-gradient" x1="12289.99" y1="-6558.71" x2="12437.44" y2="-6548.06" gradientTransform="translate(13781.02 -2769.03) rotate(-163.78)" gradientUnits="userSpaceOnUse">
+      <stop offset=".24" stop-color="#004445"/>
+      <stop offset=".67" stop-color="#25775d"/>
+      <stop offset=".76" stop-color="#2d8263"/>
+    </linearGradient>
+  </defs>
+  <path d="M91.57,0c5.06,3.1,10.49,6.27,15.47,9.32V0h-15.47ZM88.82,29.76c7.73-.25,13.91,2.46,18.22,5.96v-9.43c-18.24-5.75-44.19-20.07-65.96-2.26-13.26,14.1-2.7,17.07,21.48,18.09,24.19,1.02,31.14,16.51,8.5,14.53-22.64-1.98-52.28-18.43-68.47,5.2-6.17,14.86,5.83,29.06,16.41,18.34,10.59-10.64,43.02-13.86,27.8-.33-14.82,13.18-58.84,13.56-43.66,43.79h23.99c6.34-4.66,13.1-11.8,19.27-21.08,15.65-23.58,29.5-4.78,19.06,2.38-6.34,4.32-13.93,11.98-15.64,18.7h48.61c.15-.84.23-1.72.25-2.66.16-12.99,2.69-29.73,8.36-36.76v-31.42c-3.98.03-8.79-2.74-14.86-5.09-9.98-3.75-21.2-17.36-3.36-17.96ZM94.57,92.63c-.4,7.75-.08,18.93-9.77,23.19-9.68,4.35-13.38-7.61-7.66-26.93,5.73-19.31,17.76-2.25,17.43,3.74Z" style="fill: url(#linear-gradient); stroke-width: 0px;"/>
+  <g>
+    <polygon points="44.44 56.17 43.77 56 57.59 0 58.26 0 71.86 56 71.19 56.16 57.92 1.53 44.44 56.17" style="fill: #1c3740; stroke-width: 0px;"/>
+    <g>
+      <path d="M43.21,56.08s-6.56,27.51,14.94,27.51,15.3-27.51,15.3-27.51h-30.24Z" style="fill: #e3c8bf; stroke-width: 0px;"/>
+      <ellipse cx="37.28" cy="97.29" rx="1.75" ry="6.06" transform="translate(-60.55 61.44) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="37.28" cy="109.41" rx="1.75" ry="5.3" transform="translate(-66.44 58.41) rotate(-45)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="35.82" cy="123.07" rx="1.75" ry="5.3" transform="translate(-76.53 61.38) rotate(-45)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="36.9" cy="134.68" rx="1.75" ry="5.3" transform="translate(-99.81 106.24) rotate(-62.93)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="41.7" cy="143.85" rx="1.75" ry="5.3" transform="translate(-104.31 177.19) rotate(-86.69)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="36.37" cy="146.67" rx="1.75" ry="5.3" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="31.18" cy="136.64" rx="5.88" ry="1.75" transform="translate(-108.95 139.51) rotate(-78.32)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="30.27" cy="123.71" rx="5.88" ry="1.75" transform="translate(-89.14 79.41) rotate(-55.9)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="30.27" cy="110.96" rx="5.88" ry="1.75" transform="translate(-78.58 73.81) rotate(-55.9)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="30.27" cy="97.29" rx="5.88" ry="1.75" transform="translate(-71.07 86.68) rotate(-66.74)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="27.81" cy="84.36" rx="5.88" ry="1.75" transform="translate(-60.68 76.6) rotate(-66.74)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="26.53" cy="75.29" rx="5.88" ry="1.75" transform="translate(-46.15 42.28) rotate(-46.16)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="26.34" cy="65.07" rx="7.29" ry="1.75" transform="translate(-15.28 8.54) rotate(-14.32)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="30.91" cy="55.55" rx="1.75" ry="7.18" transform="translate(-28.24 78.83) rotate(-82.39)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="38.15" cy="50.16" rx="1.75" ry="5.86" transform="translate(-24.36 58.13) rotate(-60.01)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="47.99" cy="48.47" rx="1.75" ry="5.37" transform="translate(-20.08 52.78) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="54.88" cy="48.09" rx="1.75" ry="4.94" transform="translate(-16.47 32.8) rotate(-29.13)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="69.88" cy="52.92" rx="4.94" ry="1.75" transform="translate(-10.5 87.89) rotate(-60.65)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="75.16" cy="53.86" rx="4.94" ry="1.75" transform="translate(-16.62 65.04) rotate(-42.57)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="79.21" cy="56.08" rx="4.94" ry="1.75" transform="translate(-2.09 3.08) rotate(-2.2)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="63.93" cy="53.08" rx="1.75" ry="4.94" transform="translate(-16.51 32.25) rotate(-25.19)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="57.03" cy="52.49" rx="4.94" ry="1.75" transform="translate(-20.02 60.97) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="69.88" cy="66.04" rx="4.94" ry="1.75" transform="translate(-22.48 92.76) rotate(-59.52)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="75.47" cy="65.76" rx="1.75" ry="4.94" transform="translate(-24.63 66.74) rotate(-41.63)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="69.06" cy="78.91" rx="4.94" ry="1.75" transform="translate(-33.97 98.4) rotate(-59.52)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="75.16" cy="79.71" rx="1.75" ry="4.94" transform="translate(-31.86 56.27) rotate(-34.33)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="73.31" cy="92.55" rx="2.07" ry="5.82" transform="translate(-29.61 34.7) rotate(-22.28)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="67.01" cy="90.22" rx="5.82" ry="2.07" transform="translate(-45.03 81.43) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="64.91" cy="105.44" rx="5.82" ry="2.07" transform="translate(-58.87 102.35) rotate(-56.95)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="70.23" cy="105.76" rx="1.88" ry="4.43" transform="translate(-48.94 61.99) rotate(-36.25)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="65.67" cy="121.76" rx="4.86" ry="2.06" transform="translate(-69.15 152.74) rotate(-74.61)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="71.14" cy="116.12" rx="2.06" ry="4.86" transform="translate(-64.92 110.46) rotate(-56.12)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="75.74" cy="125.83" rx="2.06" ry="5.34" transform="translate(-69.28 149.05) rotate(-68.05)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="69.88" cy="131.73" rx="5.34" ry="2.06" transform="translate(-72.43 176.3) rotate(-79.44)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="82.44" cy="61.69" rx="1.89" ry="4.89" transform="translate(-4.31 117.15) rotate(-69.4)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="83.11" cy="67.67" rx="1.89" ry="4.89" transform="translate(-22.52 85.83) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="78.3" cy="68.8" rx="3.97" ry="1.53" transform="translate(-19.96 103.59) rotate(-60.8)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="79.21" cy="75.94" rx="3.97" ry="1.53" transform="translate(-25.72 108.04) rotate(-60.8)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="77.81" cy="87.1" rx="3.97" ry="1.53" transform="translate(-36.18 112.53) rotate(-60.8)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="77.81" cy="102.01" rx="3.97" ry="1.53" transform="translate(-49.2 120.17) rotate(-60.8)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="83.07" cy="76.44" rx="2.05" ry="4.94" transform="translate(-28.62 60.03) rotate(-34.26)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="81.56" cy="84.93" rx="2.05" ry="4.94" transform="translate(-33.66 60.65) rotate(-34.26)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="81.46" cy="93.56" rx="1.86" ry="4.47" transform="translate(-38.53 62.09) rotate(-34.26)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="81.26" cy="102.15" rx="1.78" ry="4.27" transform="translate(-43.41 63.47) rotate(-34.26)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="79.81" cy="110.96" rx="1.78" ry="4.27" transform="translate(-36.87 39.77) rotate(-22.89)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="35.3" cy="66.04" rx="1.75" ry="4.94" transform="translate(-27.68 25.53) rotate(-29.13)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="41.1" cy="57.84" rx="4.94" ry="1.75" transform="translate(-26.14 80.49) rotate(-73.22)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="47.99" cy="57.84" rx="4.94" ry="1.75" transform="translate(-14.05 100.26) rotate(-84.68)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="63.93" cy="61.64" rx="1.75" ry="4.94" transform="translate(-2.85 3.09) rotate(-2.71)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="51.12" cy="62.04" rx="1.75" ry="4.94" transform="translate(-26.05 39.51) rotate(-34.23)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="50.76" cy="69.84" rx="1.75" ry="4.94" transform="translate(-30.5 40.65) rotate(-34.23)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="50.73" cy="77.6" rx="1.75" ry="4.24" transform="translate(-34.87 41.99) rotate(-34.23)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="52.49" cy="85.94" rx="1.75" ry="4.16" transform="translate(-39.25 44.42) rotate(-34.23)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="52.49" cy="92.55" rx="1.75" ry="4.16" transform="translate(-51.76 71.28) rotate(-48.91)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="52.03" cy="101.38" rx="1.75" ry="4.16" transform="translate(-50.45 51.56) rotate(-36.9)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="53.43" cy="109.24" rx="1.55" ry="4.16" transform="translate(-67 92.37) rotate(-55.96)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="51.12" cy="117.21" rx="4.16" ry="1.55" transform="translate(-70.5 156.69) rotate(-84.42)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="48.62" cy="109.43" rx="3.77" ry="1.4" transform="translate(-68.64 85.16) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="48.28" cy="101.38" rx="3.77" ry="1.4" transform="translate(-62.24 81.53) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="47.94" cy="93.39" rx="3.77" ry="1.4" transform="translate(-55.89 77.91) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="47.94" cy="84.36" rx="3.77" ry="1.4" transform="translate(-48.55 74.14) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="46.18" cy="75.29" rx="3.77" ry="1.4" transform="translate(-41.91 68.93) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="45.46" cy="68.8" rx="3.77" ry="1.4" transform="translate(-36.94 65.64) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="44.74" cy="62.6" rx="3.77" ry="1.4" transform="translate(-32.2 62.47) rotate(-54.35)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="57.03" cy="114.68" rx="1.33" ry="3.58" transform="translate(-65.43 152.18) rotate(-80.58)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="33.85" cy="76.65" rx="1.75" ry="6.49" transform="translate(-33.03 26.17) rotate(-29.13)" style="fill: #004445; stroke-width: 0px;"/>
+      <ellipse cx="33.42" cy="84.04" rx="1.75" ry="6.49" transform="translate(-49.64 48.25) rotate(-45)" style="fill: #004445; stroke-width: 0px;"/>
+      <path d="M46.98,151.74c-.17-.08-17.43-7.93-16.37-28.7.73-14.23.06-29.52-.38-39.63-.2-4.65-.36-8.32-.34-10.59.07-7.03,2.15-12.4,6.17-15.97,4.53-4.01,11.42-5.52,20.48-4.49,2.2.22,4.3.33,6.33.42,11.1.53,19.12.92,18.34,21.8-.92,24.41-2.22,39.59-2.85,42.58l-1.1-.23c.6-2.86,1.92-18.31,2.83-42.39.74-19.77-6.03-20.09-17.27-20.63-2.04-.1-4.16-.2-6.4-.43-8.74-.99-15.34.43-19.62,4.22-3.78,3.34-5.73,8.44-5.79,15.14-.02,2.24.14,5.9.34,10.53.44,10.14,1.11,25.45.38,39.74-1.02,19.98,15.53,27.54,15.7,27.61l-.45,1.03Z" style="fill: #004445; stroke-width: 0px;"/>
+      <path d="M78.1,138.63c-7.33-7.85-13.64-24.06-11.05-36.56,2.03-9.78,5.4-27.79,5.13-38.58-.1-4.17-3.64-6.85-6.59-8.37-5.64-2.9-13.18-3.55-15.4-2.05-2.48,1.68-1.64,16.11-.9,28.83.38,6.45.77,13.12.79,18.62.08,16.52,8.67,19.31,8.76,19.33l-.32,1.08c-.39-.11-9.48-2.98-9.57-20.41-.03-5.48-.42-12.13-.79-18.56-1.01-17.29-1.42-27.92,1.39-29.82,2.81-1.91,10.85-.95,16.54,1.98,3.22,1.65,7.08,4.62,7.2,9.34.27,10.9-3.11,29.01-5.15,38.84-2.52,12.15,3.63,27.92,10.77,35.57l-.82.77Z" style="fill: #004445; stroke-width: 0px;"/>
+    </g>
+  </g>
+</svg>

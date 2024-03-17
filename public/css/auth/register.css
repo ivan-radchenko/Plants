@@ -95,28 +95,18 @@
     cursor: pointer;
 }
 
-.image-animated:hover{
-    opacity: 1;
-}
-
 .button{
     background-color: #01696C;
     border: none;
     color: #FFFFFF;
     font-size: 25px;
-    padding: 10px;
+    padding: 6px 30px 10px 30px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
-    width: 300px;
-    height: 50px;
-}
-
-.button:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    font-family: "Malgun Gothic", serif;
+    font-weight: normal;
 }
 
 .image-button{
@@ -127,10 +117,8 @@
     gap: 20px;
     align-items: center;
     position: relative;
-}
-
-.image-button:hover{
-    color: #004445;
+    width: 150px;
+    text-wrap: nowrap;
 }
 
 .bottom-wrapper{
@@ -154,8 +142,154 @@
     align-items: center;
 }
 
-.register-plants{
+.register-plants-left{
     bottom: 0;
     position: absolute;
+    height: 730px;
     left: -310px;
+}
+
+.register-plants-right{
+    bottom: 0;
+    position: absolute;
+    left: 450px;
+    height: 730px;
+}
+@media (hover: hover){
+    .button:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .image-button:hover{
+        color: #004445;
+    }
+    .image-animated:hover{
+        opacity: 1;
+    }
+}
+@media (hover: none){
+    .button:active{
+        transition: 0s;
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .image-button:active{
+        color: #004445;
+        transition: 0s;
+    }
+    .image-animated:active{
+        opacity: 1;
+        transition: 0s;
+    }
+}
+
+@media screen and (max-width: 1405px){
+    .register-plants-left{
+        width: 400px;
+        height: 550px;
+        left: -240px;
+    }
+
+    .register-plants-right{
+        width: 400px;
+        left: 490px;
+        height: 550px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .register-plants-left{
+        display: none;
+    }
+
+    .register-plants-right{
+        display: none;
+    }
+    .main{
+        min-height: 600px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main {
+        min-height: 500px;
+    }
+    .wrapper{
+        margin: 10px 0 40px 0;
+    }
+
+    .form {
+        padding: 15px;
+        width: 305px;
+        border-radius: 40px;
+        gap: 15px;
+    }
+
+    .form-input {
+        width: 295px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .form-item {
+        font-size: 15px;
+        gap: 10px;
+    }
+
+    .bi-eye {
+        height: 20px;
+    }
+
+    .remember-wrapper {
+        width: 295px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .checkbox-wrapper {
+        width: 115px;
+    }
+
+    .check-box {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    .social-login-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .button {
+        font-size: 15px;
+        padding: 2px 20px 5px 20px;
+    }
+
+    .img-prev{
+        width: 80px;
+        height: 80px;
+    }
+    .image-animated{
+        width: 80px;
+        height: 80px;
+    }
+    .image-button{
+        width: 80px;
+    }
+
+    .messages {
+        font-size: 15px;
+        width: 335px;
+        text-align: center;
+    }
+
+    .error {
+        font-size: 15px;
+        width: 335px;
+        text-align: center;
+    }
+    .bottom-wrapper{
+        gap: 0;
+    }
 }

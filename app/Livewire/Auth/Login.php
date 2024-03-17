@@ -25,7 +25,7 @@ class Login extends Component
     public $password;
 
     #[Rule('boolean')]
-    public $remember=false;
+    public $remember=true;
 
     public function login(): void
     {
