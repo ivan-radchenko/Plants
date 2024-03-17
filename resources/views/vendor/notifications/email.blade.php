@@ -1,5 +1,5 @@
 <x-mail::message>
-    <img src="{{\Illuminate\Support\Facades\Storage::disk('public')->url('mailv2.png')}}" alt="logo">
+    <img src="{{\Illuminate\Support\Facades\Storage::disk('public')->url('mail.png')}}" alt="logo">
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}
