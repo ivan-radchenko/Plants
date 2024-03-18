@@ -344,6 +344,9 @@
     .desktop{
         display: none;
     }
+    .main{
+        min-height: 600px;
+    }
     .wrapper{
         min-height: 600px;
     }
