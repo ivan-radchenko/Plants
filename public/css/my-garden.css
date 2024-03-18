@@ -57,18 +57,13 @@
     border: none;
     color: #FFFFFF;
     font-size: 25px;
-    padding: 6px 25px 11px 25px;
+    padding: 6px 30px 10px 30px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
-    width: auto;
-}
-
-.button:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    font-family: "Malgun Gothic", serif;
+    font-weight: normal;
 }
 
 .plants-wrapper{
@@ -79,6 +74,7 @@
     position: relative;
     padding: 50px 0;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .plant-card{
@@ -93,9 +89,6 @@
     text-align: center;
     transition: 0.7s;
 
-}
-.plant-card:hover{
-    color: #004445;
 }
 
 .cart-image{
@@ -159,10 +152,6 @@
     cursor: pointer;
     transition: 0.7s;
 }
-.modal-close:hover{
-    fill: #004445;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
-}
 
 .modal-body{
     display: flex;
@@ -199,9 +188,6 @@
     justify-content: space-evenly;
 }
 
-.modal-button:hover.modal-link{
-    color: #01696C;
-}
 
 .modal-button{
     background-color: #01696C;
@@ -217,12 +203,6 @@
     width: auto;
 }
 
-.modal-button:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
-}
-
 .ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
     font-size: 25px;
     padding: 10px 25px;
@@ -235,19 +215,11 @@
     border-radius: 25px;
     transition: 0.7s;
 }
-.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
-}
 
 .ya-share2__title {
     color: #FFFFFF;
     font-family: "Malgun Gothic", serif;
     transition: 0.7s;
-}
-.ya-share2__title:hover{
-    color: #01696C;
 }
 
 .ya-share2__container_size_m .ya-share2__title {
@@ -260,7 +232,7 @@
 }
 
 .ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__popup_direction_bottom {
-    top: 0px;
+    top: 0;
 }
 
 .ya-share2__container_size_m .ya-share2__popup:not(.ya-share2__popup_mobile) {
@@ -287,7 +259,157 @@
     fill: #77afaf;
     transition: 0.7s;
 }
+.mobile{
+    display: none;
+}
 
-.add-button:hover{
-    fill: #004445;
+@media (hover: hover){
+    .button:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .ya-share2__title:hover{
+        color: #01696C;
+    }
+    .modal-close:hover{
+        fill: #004445;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .modal-button:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .modal-button:hover.modal-link{
+        color: #01696C;
+    }
+    .add-button:hover{
+        fill: #004445;
+    }
+    .plant-card:hover{
+        color: #004445;
+    }
+    .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+}
+@media (hover: none){
+    .button:active{
+        transition: 0s;
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .ya-share2__title:active{
+        color: #01696C;
+        transition: 0s;
+    }
+    .modal-close:active{
+        transition: 0s;
+        fill: #004445;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .modal-button:active{
+        transition: 0s;
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .modal-button:active.modal-link{
+        transition: 0s;
+        color: #01696C;
+    }
+    .add-button:active{
+        transition: 0s;
+        fill: #004445;
+    }
+    .plant-card:active{
+        transition: 0s;
+        color: #004445;
+    }
+    .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more:active{
+        background-color: #004445;
+        color: #01696C;
+        transition: 0s;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+}
+@media screen and (max-width: 1200px) {
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .wrapper{
+        min-height: 600px;
+    }
+    .sub-header{
+        height:125px;
+    }
+    .left-subheader-image{
+        height: 135px;
+    }
+    .right-subheader-image{
+        height: 154px;
+    }
+    .search-wrapper {
+        width: 846px;
+        padding: 50px 30px 0 30px;
+    }
+    .plants-wrapper{
+        width: calc(100% - 60px);
+        padding: 50px 30px 0 30px;
+    }
+}
+@media screen and (max-width: 922px){
+    .search-wrapper {
+        width: 680px;
+        padding: 40px 0 0 0;
+    }
+    .search{
+        font-size: 15px;
+        width: auto;
+    }
+    .button {
+        font-size: 15px;
+        padding: 2px 20px 5px 20px;
+    }
+    .plants-wrapper{
+        padding: 30px 0 0 0;
+        row-gap: 20px;
+        column-gap: 10px;
+        width: 680px;
+    }
+    .cart-image{
+        width: 105px;
+        height: 85px;
+        border-radius: 15px;
+    }
+    .plant-card{
+        width: 105px;
+        height: 115px;
+        gap: 0;
+        font-size: 11px;
+    }
+    .add{
+        width: 105px;
+        height: 85px;
+    }
+    .add-button{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 768px){
+    .search-wrapper {
+        width: 335px;
+    }
+    .plants-wrapper{
+        width: 335px;
+        column-gap: 5px;
+    }
 }

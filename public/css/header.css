@@ -171,12 +171,16 @@
 
     .header-drop-down-wrapper{
         flex-wrap: wrap;
-        gap: 15px;
+        column-gap: 50px;
+        row-gap: 20px;
         justify-content: center;
     }
 }
 @media screen and (max-width: 768px) {
     .header-nav-link{
         font-size: 15px;
+    }
+    .header-drop-down-wrapper{
+        gap: 15px;
     }
 }
