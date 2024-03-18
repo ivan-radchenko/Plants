@@ -42,6 +42,7 @@
     border-bottom: solid 1pt #77AFAF;
     font-family: "Malgun Gothic", serif;
     font-style: normal;
+    border-radius: 0
 }
 
 .search:focus{
@@ -64,6 +65,7 @@
     transition: 0.7s;
     font-family: "Malgun Gothic", serif;
     font-weight: normal;
+    text-wrap: nowrap;
 }
 
 .plants-wrapper{
@@ -100,8 +102,8 @@
 
 .modal{
     position: fixed;
-    top: calc((100vh - 480px) / 2);
-    margin-left: 130px;
+    top: calc((100% - 480px) / 2);
+    left: calc((100% - 870px) / 2);
     max-width: 870px;
     max-height: 480px;
     z-index: 9998;
@@ -186,6 +188,7 @@
 .modal-buttons{
     display: flex;
     justify-content: space-evenly;
+    text-wrap: nowrap;
 }
 
 
@@ -375,7 +378,7 @@
     }
     .search{
         font-size: 15px;
-        width: auto;
+        width: 155px;
     }
     .button {
         font-size: 15px;
@@ -405,6 +408,42 @@
     .add-button{
         width: 50px;
         height: 50px;
+    }
+    .modal{
+        top: calc((100% - 550px) / 2);
+        left: calc((100% - 335px) / 2);
+    }
+    .modal-content-wrapper{
+        height: 550px;
+        width: 300px;
+        padding: 20px;
+        gap: 10px;
+    }
+    .modal-body{
+        flex-direction: column;
+    }
+    .modal-title{
+        font-size: 25px;
+        width: 300px;
+        line-height: normal;
+    }
+    .modal-close{
+        width: 20px;
+        height: 20px;
+    }
+    .modal-header{
+        align-items: center;
+    }
+    .modal-image {
+        width: 300px;
+        height: 170px;
+    }
+    .modal-notes{
+        width: 276px;
+    }
+    .modal-button{
+        font-size: 15px;
+        padding: 2px 20px 5px 20px;
     }
 }
 @media screen and (max-width: 768px){
