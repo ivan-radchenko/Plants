@@ -1,5 +1,5 @@
 <div>
-    <link href="{{ asset('css/my-garden.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/my-garden.css')}}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
             <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
@@ -66,12 +66,12 @@
                             </div>
                         </div>
                         <div class="modal-buttons">
-                            <a class="modal-button" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a>
+                            <a class="modal-button button-link" href="{{route('edit-plant',['plant'=>$plant->id])}}">Изменить</a>
                             <button wire:click="likeOther('{{$plant->name}}')" class="modal-button">Как у других</button>
                             <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">Удалить
                             </button>
-                            <div class="ya-share2"
-                                 data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
+                            <div wire:key="{{$plant->name}}-share" class="ya-share2"
+                                 data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-description="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
                             </div>
                         </div>
                     </div>

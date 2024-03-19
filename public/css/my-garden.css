@@ -42,7 +42,7 @@
     border-bottom: solid 1pt #77AFAF;
     font-family: "Malgun Gothic", serif;
     font-style: normal;
-    border-radius: 0
+    border-radius: 0;
 }
 
 .search:focus{
@@ -414,10 +414,10 @@
         left: calc((100% - 335px) / 2);
     }
     .modal-content-wrapper{
-        height: 550px;
         width: 300px;
         padding: 20px;
-        gap: 10px;
+        gap: 8px;
+        height: fit-content;
     }
     .modal-body{
         flex-direction: column;
@@ -425,25 +425,46 @@
     .modal-title{
         font-size: 25px;
         width: 300px;
-        line-height: normal;
+        line-height: 0.8;
     }
     .modal-close{
         width: 20px;
         height: 20px;
-    }
-    .modal-header{
-        align-items: center;
     }
     .modal-image {
         width: 300px;
         height: 170px;
     }
     .modal-notes{
-        width: 276px;
+        width: 280px;
+        font-size: 11px;
+        border-radius: 15px;
+        padding: 5px 10px;
+        height: 80px;
+    }
+    .modal-buttons{
+        flex-wrap: wrap;
+        row-gap: 15px;
+        justify-content: space-around;
     }
     .modal-button{
         font-size: 15px;
         padding: 2px 20px 5px 20px;
+        width: 130px;
+    }
+    .modal-text{
+        font-size: 15px;
+    }
+    .ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more {
+        font-size: 15px;
+        padding: 0 23px;
+        height: 27px;
+    }
+    .button-link{
+        width: 90px;
+    }
+    .ya-share2__container_size_m .ya-share2__popup:not(.ya-share2__popup_mobile) {
+        border-radius: 15px;
     }
 }
 @media screen and (max-width: 768px){
@@ -452,6 +473,5 @@
     }
     .plants-wrapper{
         width: 335px;
-        column-gap: 5px;
     }
 }
