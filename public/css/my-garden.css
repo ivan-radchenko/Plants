@@ -76,7 +76,6 @@
     position: relative;
     padding: 50px 0;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .plant-card{
