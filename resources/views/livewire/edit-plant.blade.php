@@ -2,8 +2,10 @@
     <link href="{{ asset('css/edit-plant.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
-            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
-            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image desktop">
+            <img src="{{asset('images/header/left-subheader-image-mobile.svg')}}" alt="" class="left-subheader-image mobile">
+            <img src="{{asset('images/header/right-subheader-image-mobile.svg')}}" alt="" class="right-subheader-image mobile">
             <div class="messages">
                 @if (session('status'))
                     <span class="error">{{ session('status') }}</span>
@@ -35,7 +37,7 @@
                 <div class="form-item">
                     <label for="waterSummer" class="label-relative" id="it">
                         <span>Интервал поливов летом:</span>
-                        <div class="inc-dec-water">
+                        <div class="inc-dec-water desktop">
                             <span wire:click="decrement('waterSummer')" class="increment-button">-</span>
                             <span wire:click="increment('waterSummer')" class="increment-button">+</span>
                         </div>
@@ -46,7 +48,7 @@
                 <div class="form-item">
                     <label for="waterWinter" class="label-relative">
                         <span>Интервал поливов зимой:</span>
-                        <div class="inc-dec-water">
+                        <div class="inc-dec-water desktop">
                             <span wire:click="decrement('waterWinter')" class="increment-button">-</span>
                             <span wire:click="increment('waterWinter')" class="increment-button">+</span>
                         </div>
@@ -57,7 +59,7 @@
                 <div class="form-item">
                     <label for="lightSummer" class="label-relative">
                         <span>Свет летом:</span>
-                        <div class="inc-dec-light">
+                        <div class="inc-dec-light desktop">
                             <span wire:click="decrement('lightSummer')" class="increment-button">-</span>
                             <span wire:click="increment('lightSummer')" class="increment-button">+</span>
                         </div>
@@ -68,7 +70,7 @@
                 <div class="form-item">
                     <label for="lightWinter" class="label-relative">
                         <span>Свет зимой:</span>
-                        <div class="inc-dec-light">
+                        <div class="inc-dec-light desktop">
                             <span wire:click="decrement('lightWinter')" class="increment-button">-</span>
                             <span wire:click="increment('lightWinter')" class="increment-button">+</span>
                         </div>
@@ -98,7 +100,7 @@
                     <label for="notes"></label>
                     <textarea wire:model="notes" type="text" maxlength="130" name="notes" id="notes" class="notes" placeholder="Заметки...&#128393;" onfocusout="this.placeholder ='Заметки...&#128393;'" onfocus="this.placeholder =''"></textarea>
                 </div>
-                <button class="button" type="submit">Сохранить</button>
+                <button class="button" type="submit" onClick="window.scrollTo(0,0);">Сохранить</button>
             </form>
         </div>
     </div>
