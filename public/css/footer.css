@@ -52,6 +52,7 @@
     border-bottom: solid 1pt #77AFAF;
     font-family: "Malgun Gothic", serif;
     font-style: normal;
+    border-radius: 0
 }
 .footer-search:focus{
     outline: none;
@@ -86,7 +87,7 @@
         font-size: 15px;
     }
     .footer-search{
-        font-size: 15px;
+        font-size: 16px;
     }
     .footer-img{
         width: 78px;
