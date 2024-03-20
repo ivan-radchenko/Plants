@@ -377,8 +377,8 @@
         padding: 40px 0 0 0;
     }
     .search{
-        font-size: 15px;
-        width: 155px;
+        font-size: 16px;
+        width: 170px;
     }
     .button {
         font-size: 15px;
@@ -465,6 +465,9 @@
     }
     .ya-share2__container_size_m .ya-share2__popup:not(.ya-share2__popup_mobile) {
         border-radius: 15px;
+    }
+    .ya-share2__popup-content .ya-share2__popup-header {
+        padding: 0;
     }
 }
 @media screen and (max-width: 768px){

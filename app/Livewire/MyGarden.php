@@ -6,12 +6,30 @@ use App\Enums\AlertIcons;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Locked;
+use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class MyGarden extends Component
 {
-    public $search;
+    #[Rule('string')]
+    public $search=null;
+    #[Locked]
+    public $plants;
+
+    public function searchFunction()
+    {
+        $searchInput = $this->validate()['search'];
+        if ($searchInput !== null and $searchInput !== ""){
+            $this->plants=Plants::query()
+                ->where('userID','=',Auth::user()->id)
+                ->where('name','ilike','%' .$searchInput. '%')
+                ->get();
+        }else{
+            $this->redirect(route('my-garden'));
+        }
+    }
     public function delete($plantID): void
     {
         $plant = Plants::find($plantID);
@@ -31,20 +49,17 @@ class MyGarden extends Component
     {
         $this->redirect('like-other?searchInput='.$plantName);
     }
+    public function mount(){
+        $this->plants=Plants::query()
+            ->where('userID','=',Auth::user()->id)
+            ->get();
+        $this->plantsAll=Plants::query()
+            ->where('userID','=',Auth::user()->id)
+            ->get();
+    }
     #[Title('Мой сад')]
     public function render()
     {
-        if ($this->search){
-
-            $plants=Plants::query()
-                ->where('userID','=',Auth::user()->id)
-                ->where('name','ilike','%' .$this->search. '%')
-                ->get();
-        }else{
-            $plants=Plants::query()
-                ->where('userID','=',Auth::user()->id)
-                ->get();
-        }
 
         if (session('success'))
         {
@@ -57,7 +72,7 @@ class MyGarden extends Component
         }
 
         return view('livewire.my-garden',[
-            'plants' => $plants
+            'plants' => $this->plants,
         ]);
     }
 }
