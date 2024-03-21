@@ -48,7 +48,7 @@
                             <p class="img-text">отслеживай <br> уход</p>
                         </div>
                     </a>
-                    <a class="img-4" href="{{route('create-plant')}}">
+                    <a class="img-4" href="{{route('my-garden')}}">
                         <img class="img-4" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
                         <div class="animate-wrapper">
                             <p class="img-text">делись <br> знаниями</p>
@@ -121,13 +121,13 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="{{route('create-plant')}}">
+                        <a href="{{route('my-garden')}}">
                             <img class="img" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
                             <div class="animate-wrapper">
                                 <p class="img-text">делись <br> знаниями</p>
                             </div>
                         </a>
-                        <a href="{{route('create-plant')}}">
+                        <a href="{{route('my-garden')}}">
                             <img class="img" src="{{ asset('images/home/section-3-4.svg') }}" alt="делись знаниями">
                         </a>
                     </div>
