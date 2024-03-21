@@ -5,10 +5,6 @@ window.addEventListener('alert',(event)=>{
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-        }
     });
     Toast.fire({
         iconHtml: data.icon,
