@@ -49,7 +49,7 @@ class LikeOther extends Component
                 );
             }
             if ($this->searchResultAll->count() > 0){
-                $this->count=4;
+                $this->count=6;
                 $this->searchResult=$this->searchResultAll->take($this->count);
             }
         }

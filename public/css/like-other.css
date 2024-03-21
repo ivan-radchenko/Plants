@@ -43,6 +43,7 @@
     border-bottom: solid 1pt #77AFAF;
     font-family: "Malgun Gothic", serif;
     font-style: normal;
+    border-radius: 0;
 }
 
 .search:focus{
@@ -109,9 +110,6 @@
     transition: 0.7s;
 
 }
-.plant-card:hover{
-    color: #004445;
-}
 
 .cart-image{
     width: 260px;
@@ -125,24 +123,20 @@
     border: none;
     color: #FFFFFF;
     font-size: 25px;
-    padding: 10px 25px;
+    padding: 6px 30px 10px 30px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
     transition: 0.7s;
-    width: auto;
-}
-
-.button:hover{
-    background-color: #004445;
-    color: #01696C;
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    font-family: "Malgun Gothic", serif;
+    font-weight: normal;
+    text-wrap: nowrap;
 }
 
 .modal{
     position: fixed;
     top: calc((100vh - 585px) / 2);
-    margin-left: 130px;
+    left: calc((100% - 870px) / 2);
     max-width: 870px;
     max-height: 585px;
     z-index: 9998;
@@ -182,11 +176,6 @@
     transition: 0.7s;
     border-radius: 7px;
 }
-.modal-close:hover{
-    fill: rgba(247, 233, 222, 0.2);
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 222, 1));
-    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.33);
-}
 
 .modal-body{
     display: flex;
@@ -214,4 +203,153 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.mobile{
+    display: none;
+}
+@media (hover: hover){
+    .button:hover{
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .plant-card:hover{
+        color: #004445;
+    }
+    .modal-close:hover{
+        fill: rgba(247, 233, 222, 0.2);
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 222, 1));
+        box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.33);
+    }
+}
+@media (hover: none){
+    .button:active{
+        transition: 0s;
+        background-color: #004445;
+        color: #01696C;
+        box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
+    }
+    .plant-card:active{
+        transition: 0s;
+        color: #004445;
+    }
+    .modal-close:active{
+        transition: 0s;
+        fill: rgba(247, 233, 222, 0.2);
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 222, 1));
+        box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.33);
+    }
+}
+@media screen and (max-width: 1200px) {
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .main{
+        min-height: 600px;
+    }
+    .wrapper{
+        min-height: 600px;
+    }
+    .sub-header{
+        height:125px;
+    }
+    .left-subheader-image{
+        height: 135px;
+    }
+    .right-subheader-image{
+        height: 154px;
+    }
+    .search-wrapper {
+        width: 846px;
+        padding-top: 50px;
+    }
+    .plants-wrapper{
+        width: 846px;;
+        padding-top: 40px;
+    }
+    .stats-wrapper{
+        width: 846px;
+        padding: 35px 0 30px 0;
+    }
+}
+@media screen and (max-width: 922px) {
+    .wrapper{
+        padding-bottom: 40px;
+    }
+    .search-wrapper {
+        width: 680px;
+        padding-top: 35px;
+    }
+    .stats-wrapper{
+        width: 680px;
+    }
+    .search{
+        font-size: 16px;
+        width: 170px;
+    }
+    .button {
+        font-size: 15px;
+        padding: 2px 20px 5px 20px;
+    }
+    .plants-wrapper{
+        padding-top: 0;
+        padding-bottom: 20px;
+        row-gap: 20px;
+        column-gap: 10px;
+        width: 680px;
+    }
+    .stat-title{
+        padding-bottom: 15px;
+        font-size: 25px;
+    }
+    .stat-text{
+        font-size: 15px;
+    }
+    .cart-image{
+        width: 105px;
+        height: 85px;
+        border-radius: 15px;
+    }
+    .plant-card{
+        width: 105px;
+        height: 115px;
+        gap: 0;
+        font-size: 11px;
+    }
+    .modal{
+        top: calc((100% - 235px) / 2);
+        left: calc((100% - 335px) / 2);
+    }
+    .modal-content-wrapper{
+        width: 335px;
+        height: 235px;
+        border-radius: 24px;
+    }
+    .modal-image{
+        width: 335px;
+        height: 200px;
+        border-radius: 24px 24px 0 0;
+    }
+    .modal-footer{
+        height: 35px;
+    }
+    .modal-title{
+        font-size: 16px;
+        margin: 0;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .search-wrapper {
+        width: 335px;
+    }
+    .plants-wrapper{
+        width: 335px;
+    }
+    .stats-wrapper{
+        width: 335px;
+    }
 }
