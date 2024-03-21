@@ -2,8 +2,10 @@
     <link href="{{ asset('css/share-plant.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
-            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
-            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image desktop">
+            <img src="{{asset('images/header/left-subheader-image-mobile.svg')}}" alt="" class="left-subheader-image mobile">
+            <img src="{{asset('images/header/right-subheader-image-mobile.svg')}}" alt="" class="right-subheader-image mobile">
         </div>
         <div class="plant-wrapper">
             <div class="title">{{$plant->name}}</div>
