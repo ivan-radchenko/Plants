@@ -28,7 +28,7 @@ class LikeOther extends Component
     public function loadMore(): void
     {
         if ($this->searchResultAll->count() > $this->count) {
-            $this->count=$this->count + 4;
+            $this->count=$this->count + 6;
             $this->searchResult=$this->searchResultAll->take($this->count);
         }
     }
