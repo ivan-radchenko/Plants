@@ -9,7 +9,7 @@
         </div>
         <div class="search-wrapper">
                 <label for="search">
-                <input wire:model="searchInput" wire:keydown.enter="search" type="text" class="search" name="search" id="search" autocomplete="off" placeholder="Поиск по растенькам" onfocusout="this.placeholder ='Поиск по растенькам'" onfocus="this.placeholder =''" required>
+                <input wire:model="searchInput" wire:keydown.enter="search" enterkeyhint="search" type="text" class="search" name="search" id="search" autocomplete="off" placeholder="Поиск по растенькам" onfocusout="this.placeholder ='Поиск по растенькам'" onfocus="this.placeholder =''" required>
                 </label>
         </div>
         <div class="stats-wrapper">

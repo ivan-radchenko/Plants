@@ -9,7 +9,7 @@
         </div>
         <div class="search-wrapper">
             <label for="search">
-                <input wire:model="search" wire:keydown.enter="searchFunction" type="text" class="search" name="search" id="search" placeholder="Поиск по моему саду" onfocusout="this.placeholder ='Поиск по моему саду'" onfocus="this.placeholder =''">
+                <input wire:model="search" wire:keydown.enter="searchFunction" type="text" enterkeyhint="search" class="search" name="search" id="search" placeholder="Поиск по моему саду" onfocusout="this.placeholder ='Поиск по моему саду'" onfocus="this.placeholder =''">
             </label>
             <a href="{{route('create-plant')}}" class="button">Добавить</a>
         </div>
