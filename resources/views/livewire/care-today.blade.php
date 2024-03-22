@@ -2,8 +2,10 @@
     <link href="{{ asset('css/care-today.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
-            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image">
-            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image desktop">
+            <img src="{{asset('images/header/left-subheader-image-mobile.svg')}}" alt="" class="left-subheader-image mobile">
+            <img src="{{asset('images/header/right-subheader-image-mobile.svg')}}" alt="" class="right-subheader-image mobile">
             <div class="messages">
                 @if (session('status'))
                     <span class="error">{{ session('status') }}</span>
@@ -44,14 +46,14 @@
                     @if(\App\Services\SeasonNow::season() === \App\Enums\PlantStatus::SUMMER->value)
                         <div wire:key="lightGroup-{{$plantGroup[0]->lightSummer}}" class="light-group-title-button">
                             <h4 class="lightGroup">
-                                Увеличить освещение до {{$plantGroup[0]->lightSummer}}
+                                Увеличить до {{$plantGroup[0]->lightSummer}}
                                 @if($plantGroup[0]->lightSummer === 1 or $plantGroup[0]->lightSummer === 21)
                                     часа
                                 @else
                                     часов
                                 @endif
                             </h4>
-                            <button wire:click="changeSeason({{$plantGroup[0]->lightSummer}})" id="light-group-{{$plantGroup[0]->lightSummer}}" class="button">Перевести группу на летнее освещение</button>
+                            <button wire:click="changeSeason({{$plantGroup[0]->lightSummer}})" id="light-group-{{$plantGroup[0]->lightSummer}}" class="button">Изменить свет</button>
                         </div>
                         <div class="cards-wrapper" wire:ignore>
                             @foreach($plantGroup as $plant)
@@ -67,14 +69,14 @@
                     @else
                         <div wire:key="lightGroup-{{$plantGroup[0]->lightWinter}}" class="light-group-title-button">
                             <h4 class="lightGroup">
-                                Сократить освещение до {{$plantGroup[0]->lightWinter}}
+                                Сократить до {{$plantGroup[0]->lightWinter}}
                                 @if($plantGroup[0]->lightWinter === 1 or $plantGroup[0]->lightWinter === 21)
                                     часа
                                 @else
                                     часов
                                 @endif
                             </h4>
-                            <button wire:click="changeSeason({{$plantGroup[0]->lightWinter}})" id="light-group-{{$plantGroup[0]->lightWinter}}" class="button">Перевести группу на зимнее освещение</button>
+                            <button wire:click="changeSeason({{$plantGroup[0]->lightWinter}})" id="light-group-{{$plantGroup[0]->lightWinter}}" class="button">Изменить свет</button>
                         </div>
                         <div class="cards-wrapper" wire:ignore>
                             @foreach($plantGroup as $plant)

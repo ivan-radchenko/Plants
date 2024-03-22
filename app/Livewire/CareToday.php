@@ -67,7 +67,7 @@ class CareToday extends Component
         $this->dispatch(
             'alert',
             icon:AlertIcons::SUCCESS,
-            title:'Группа переведена на '.$season.' время!',
+            title:'Группа переведена на '.$season.' освещение!',
             position:'top'
         );
     }
