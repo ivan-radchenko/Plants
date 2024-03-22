@@ -28,9 +28,12 @@
 }
 
 .just-relax {
-    font-family: "Ambidexter Regular", serif;
+    font-family: 'AmbidexterWebRegular', 'serif';
+    font-weight: normal;
+    font-style: normal;
     font-size: 50px;
     padding: 50px 0;
+    text-align: center;
 }
 
 
@@ -274,5 +277,8 @@
     }
     .lightGroup{
         font-size: 14px;
+    }
+    .just-relax{
+        font-size: 30px;
     }
 }
