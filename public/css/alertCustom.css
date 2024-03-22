@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 1200px){
     .swal2-popup.swal2-toast.swal2-show {
-        margin-top: 77px;
+        margin-top: 0;
     }
 }
 @media screen and (max-width: 768px){
