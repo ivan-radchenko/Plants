@@ -42,6 +42,8 @@ class MyGarden extends Component
                 title:$plant->name.' удалена!',
                 position:'top'
             );
+            redirect()->route('my-garden');
+            request()->session()->flash('success',$plant->name.' удалена!');
         }
     }
 
