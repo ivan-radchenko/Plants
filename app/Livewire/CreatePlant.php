@@ -51,7 +51,7 @@ class CreatePlant extends Component
         $image=$validated['image'];
 
         $path='storage/plants/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
-        $image=Image::read($image)->cover(1140,900,'center')->toJpeg(75);
+        $image=Image::read($image)->cover(1140,640,'center')->toJpeg(75);
         $image->save($path);
 
         $validated['image']=Str::after($path,'storage/');
