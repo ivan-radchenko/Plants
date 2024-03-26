@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\LogoutController;
+use App\Livewire\Admin\EditUser;
+use App\Livewire\Admin\Email;
+use App\Livewire\Admin\Plants;
+use App\Livewire\Admin\Users;
 use App\Livewire\Auth\ForgotPassword;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Profile;
@@ -60,4 +64,17 @@ Route::middleware('auth')->group(function () {
         ->name('edit-plant');
     Route::get('/care-today', CareToday::class)
         ->name('care-today');
+
+    Route::middleware('isAdmin')->group(function (){
+        Route::get('/admin/users', Users::class)
+            ->name('admin.users');
+        Route::get('/admin/edit-user/{user}', EditUser::class)
+            ->name('admin.edit.user');
+        Route::get('/admin/plants', Plants::class)
+            ->name('admin.plants');
+        Route::get('/admin/edit-plant/{plant}', \App\Livewire\Admin\EditPlant::class)
+            ->name('admin.edit.plant');
+        Route::get('/admin/email', Email::class)
+            ->name('admin.email');
+    });
 });
