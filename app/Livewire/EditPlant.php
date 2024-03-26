@@ -7,7 +7,9 @@ use App\Enums\Wet;
 use App\Models\Plants;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Enum;
+use Intervention\Image\Laravel\Facades\Image;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
@@ -23,7 +25,7 @@ class EditPlant extends Component
     public $userID;
     #[Rule('required | string | min:3 | max:30 ')]
     public $name;
-    #[Rule('sometimes|nullable|image|mimes:jpg,jpeg,png| max: 5500')]
+    #[Rule('sometimes|nullable|image|mimes:jpg,jpeg,png| max: 10000')]
     public $image;
     #[locked]
     public $imageOld;
@@ -49,8 +51,12 @@ class EditPlant extends Component
         if ($validated['image'] === null){
             $validated['image'] = $this->imageOld;
         } else {
-            $path=$validated['image']->store('plants','public');
-            $validated['image']=$path;
+            $image=$validated['image'];
+            $path='storage/plants/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
+            $image=Image::read($image)->cover(1140,900,'center')->toJpeg(75);
+            $image->save($path);
+
+            $validated['image']=Str::after($path,'storage/');;
             Storage::disk('public')->delete($this->imageOld);
         }
 

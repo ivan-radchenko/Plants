@@ -27,7 +27,7 @@ class CreatePlant extends Component
     #[Rule('required | string | min:3 | max:30')]
     public $name;
 
-    #[Rule('required|image|mimes:jpg,jpeg,png| max: 15000')]
+    #[Rule('required|image|mimes:jpg,jpeg,png| max: 10000')]
     public $image;
     #[Rule('required|integer|min:1|max:30')]
     public $waterSummer=7;
@@ -51,7 +51,7 @@ class CreatePlant extends Component
         $image=$validated['image'];
 
         $path='storage/plants/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
-        $image=Image::read($image)->cover(1140,640,'center')->toJpeg(80);
+        $image=Image::read($image)->cover(1140,900,'center')->toJpeg(75);
         $image->save($path);
 
         $validated['image']=Str::after($path,'storage/');

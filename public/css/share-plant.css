@@ -53,7 +53,7 @@
 }
 
 .image{
-    height: 640px;
+    height: 900px;
     object-fit: cover;
     border-radius: 50px;
 }
@@ -89,7 +89,7 @@
         padding: 20px 0;
     }
     .image{
-        height: 450px;
+        height: 550px;
     }
 }
 @media screen and (max-width: 768px){
@@ -106,7 +106,7 @@
         font-size: 16px;
     }
     .image{
-        height: 210px;
+        height: 260px;
         border-radius: 20px;
     }
 }

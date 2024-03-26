@@ -4,6 +4,8 @@ namespace App\Livewire\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Intervention\Image\Laravel\Facades\Image;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -32,8 +34,12 @@ class Register extends Component
         if ($validated['image'] === null){
             $validated['image'] = 'users/default.svg';
         } else {
-            $path=$validated['image']->store('users','public');
-            $validated['image']=$path;
+            $image=$validated['image'];
+            $path='storage/users/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
+            $image=Image::read($image)->cover(200,200,'center')->toJpeg(75);
+            $image->save($path);
+
+            $validated['image']=Str::after($path,'storage/');
         }
 
         $user=User::create($validated);
