@@ -70,7 +70,7 @@
 
 .img-prev{
     width: 550px;
-    height: 365px;
+    height: 310px;
     object-fit: cover;
     margin-bottom: 15px;
 }
@@ -277,7 +277,7 @@
     }
     .img-prev {
         width: 335px;
-        height: 200px;
+        height: 190px;
         margin-bottom: 5px;
     }
     .button {

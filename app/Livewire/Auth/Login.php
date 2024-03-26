@@ -85,7 +85,7 @@ class Login extends Component
                 'alert',
                 icon:AlertIcons::SUCCESS,
                 title:session('success'),
-                position:'center'
+                position:'top'
             );
         }
         return view('livewire.auth.login');

@@ -7,12 +7,15 @@ use App\Enums\Wet;
 use App\Models\Plants;
 use App\Services\SeasonNow;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Intervention\Image\Laravel\Facades\Image;
 
 class CreatePlant extends Component
 {
@@ -24,7 +27,7 @@ class CreatePlant extends Component
     #[Rule('required | string | min:3 | max:30')]
     public $name;
 
-    #[Rule('required|image|mimes:jpg,jpeg,png| max: 5500')]
+    #[Rule('required|image|mimes:jpg,jpeg,png| max: 10000')]
     public $image;
     #[Rule('required|integer|min:1|max:30')]
     public $waterSummer=7;
@@ -45,9 +48,13 @@ class CreatePlant extends Component
     public function create()
     {
         $validated=$this->validate();
+        $image=$validated['image'];
 
-        $path=$validated['image']->store('plants','public');
-        $validated['image']=$path;
+        $path='storage/plants/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
+        $image=Image::read($image)->cover(1140,640,'center')->toJpeg(75);
+        $image->save($path);
+
+        $validated['image']=Str::after($path,'storage/');
 
         $plants=Plants::create($validated);
         if ($plants->save())

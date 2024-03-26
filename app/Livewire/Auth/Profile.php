@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Intervention\Image\Laravel\Facades\Image;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -27,7 +29,11 @@ class Profile extends Component
 
     public function updateImage($image):void
     {
-        $path=$image->store('users','public');
+        $path='storage/users/'.Str::beforeLast($image->hashName(),'.').'.jpeg';
+        $image=Image::read($image)->cover(200,200,'center')->toJpeg(75);
+        $image->save($path);
+
+        $path=Str::after($path,'storage/');
 
         if (Auth::user()->image !== 'users/default.svg') {
             Storage::disk('public')->delete(Auth::user()->image);
@@ -98,7 +104,7 @@ class Profile extends Component
                 'alert',
                 icon:AlertIcons::SUCCESS,
                 title:session('success'),
-                position:'center'
+                position:'top'
             );
         }
 
