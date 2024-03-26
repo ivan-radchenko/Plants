@@ -70,8 +70,10 @@ class EditUser extends Component
 
     public function updateIsAdmin($isAdmin,$user): void
     {
-        User::find($user->id)->update(['is_admin'=>$isAdmin]);
-        request()->session()->flash('success','Данные сохранены.');
+        if ($user->id !== Auth::user()->id){
+            User::find($user->id)->update(['is_admin'=>$isAdmin]);
+            request()->session()->flash('success','Данные сохранены.');
+        }
     }
 
     public function update()
