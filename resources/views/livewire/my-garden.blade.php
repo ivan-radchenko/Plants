@@ -17,7 +17,8 @@
             @foreach($plants as $plant)
                 <div wire:key="{{$plant->id}}">
                     <div  class="plant-card">
-                        <img x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})" class="cart-image" src="{{Storage::disk('public')->url($plant->image)}}" alt="plant">
+                        <img x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})" class="cart-image" src="{{Storage::disk('public')
+                        ->url($plant->image)}}" alt="plant">
                         <span x-on:click="$dispatch('open-modal',{modalID:'{{$plant->id}}'})">{{$plant->name}}</span>
                     </div>
                     <div class="modal"

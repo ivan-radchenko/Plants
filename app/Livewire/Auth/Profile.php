@@ -98,7 +98,7 @@ class Profile extends Component
                 'alert',
                 icon:AlertIcons::SUCCESS,
                 title:session('success'),
-                position:'center'
+                position:'top'
             );
         }
 
