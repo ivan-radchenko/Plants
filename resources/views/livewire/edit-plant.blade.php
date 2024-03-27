@@ -1,5 +1,5 @@
 <div>
-    <link href="{{ asset('css/edit-user.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/edit-plant.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
             <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">

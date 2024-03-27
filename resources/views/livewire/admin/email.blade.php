@@ -1,7 +1,6 @@
 <div>
-    <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
     <div class="wrapper">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" wire:ignore>
             <li class="nav-item">
                 <a class="nav-link @if(request()->routeIs('admin.users'))active @endif" aria-current="page" href="{{route('admin.users')}}">Пользователи</a>
             </li>
@@ -16,5 +15,4 @@
             почта
         </div>
     </div>
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 </div>

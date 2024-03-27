@@ -1,6 +1,6 @@
 <div>
     <div class="wrapper">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" wire:ignore>
             <li class="nav-item">
                 <a class="nav-link @if(request()->routeIs('admin.users'))active @endif" aria-current="page" href="{{route('admin.users')}}">Пользователи</a>
             </li>
@@ -21,7 +21,7 @@
                     </form>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm" style="vertical-align: middle;">
+                    <table class="table table-striped table-sm" style="vertical-align: middle;text-align: center;">
                         <thead>
                         <tr>
                             <th scope="col">#ID</th>
@@ -38,7 +38,7 @@
                         <tbody>
                         @if($searchResult)
                             @foreach($searchResult as $user)
-                                <tr style="color: #FFFFFF; background-color: #004445">
+                                <tr style="color: #FFFFFF; background-color: #004445" wire:key="search{{$user->id}}">
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
@@ -54,7 +54,7 @@
                             @endforeach
                         @endif
                         @foreach($users as $user)
-                        <tr>
+                        <tr wire:key="{{$user->id}}">
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
@@ -64,8 +64,12 @@
                             </td>
                             <td>{{$user->created_at}}</td>
                             <td>{{$user->updated_at}}</td>
-                            <td><a href="{{route('admin.edit.user',['user'=>$user->id])}}"><button type="button" class="btn btn-primary btn-sm">изменить</button></a></td>
-                            <td><button wire:click="delete({{$user->id}})" wire:confirm="Вы точно хотите удалить {{$user->name}} email: {{$user->email}}?" type="button" class="btn btn-danger btn-sm">Удалить</button></td>
+                            <td>
+                                <a href="{{route('admin.edit.user',['user'=>$user->id])}}"><button type="button" class="btn btn-primary btn-sm">изменить</button></a>
+                            </td>
+                            <td>
+                                <button wire:click="delete({{$user->id}})" wire:confirm="Вы точно хотите удалить {{$user->name}} email: {{$user->email}}?" type="button" class="btn btn-danger btn-sm">Удалить</button>
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>
@@ -75,5 +79,4 @@
         </div>
     </div>
     {{ $users->links() }}
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 </div>
