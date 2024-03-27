@@ -11,6 +11,7 @@ use Illuminate\Validation\Rules\Enum;
 use Intervention\Image\Laravel\Facades\Image;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
@@ -98,6 +99,7 @@ class EditPlant extends Component
         $this->wet=$plant->wet;
         $this->notes=$plant->notes;
     }
+    #[Title('Администратор')]
     public function render()
     {
         return view('livewire.admin.edit-plant');

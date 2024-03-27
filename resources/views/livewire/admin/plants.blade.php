@@ -14,7 +14,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div>
-                    <h2>Растения</h2>
+                    <div class="d-flex align-items-center">
+                        <h2>Растения</h2>
+                        {{--<a href=""><button type="button" class="btn btn-primary" style="margin-left: 10px">добавить</button></a>--}}
+                    </div>
                     <form wire:submit="search" class="d-flex">
                         <input wire:model="searchInput" class="form-control me-2" type="search" placeholder="Поиск по названию или email" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
