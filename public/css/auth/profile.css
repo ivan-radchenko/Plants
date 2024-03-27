@@ -13,6 +13,9 @@
     height: 200px;
     background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .left-subheader-image{
@@ -149,6 +152,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
     align-items: center;
+    z-index: 2;
 }
 .mobile{
     display: none;
@@ -257,10 +261,14 @@
         width: 80px;
     }
 
-    .messages {
+    .messages{
+        background-color: rgba(0,68,69,0.6);
+        z-index: 2;
+        border-radius: 20px;
         font-size: 15px;
         width: 335px;
         text-align: center;
+        gap: 0;
     }
 
     .error {

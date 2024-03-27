@@ -2,6 +2,10 @@
     <link href="{{ asset('css/admin/edit-user.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
+            <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
+            <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image desktop">
+            <img src="{{asset('images/header/left-subheader-image-mobile.svg')}}" alt="" class="left-subheader-image mobile">
+            <img src="{{asset('images/header/right-subheader-image-mobile.svg')}}" alt="" class="right-subheader-image mobile">
             <div class="messages">
                 @if (session('status'))
                     <span class="error">{{ session('status') }}</span>
