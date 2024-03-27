@@ -94,6 +94,7 @@
     font-family: "Malgun Gothic", serif;
     font-weight: normal;
     text-wrap: nowrap;
+    line-height: normal;
 }
 
 .form-input-number{

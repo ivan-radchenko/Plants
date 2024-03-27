@@ -126,6 +126,7 @@
     transition: 0.7s;
     font-family: "Malgun Gothic", serif;
     font-weight: normal;
+    line-height: normal;
 }
 
 .password-item{
