@@ -3,7 +3,6 @@
 namespace App\Livewire\Admin;
 use App\Enums\AlertIcons;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -14,7 +13,7 @@ class Plants extends Component
     use WithPagination;
     public $searchInput;
     public $searchResult;
-    public function search()
+    public function search(): void
     {
         $user=User::query()->where('email',$this->searchInput)->first();
         if ($user){
@@ -28,21 +27,19 @@ class Plants extends Component
                 ->get();
         }
     }
-    public function delete($userID)
+    public function delete($plantID): void
     {
-        $user = User::find($userID);
-        if($user->id !== Auth::user()->id){
-            $user->delete();
-            Storage::disk('public')->delete($user->image);
+        $plant = \App\Models\Plants::find($plantID);
+        $plant->delete();
+            Storage::disk('public')->delete($plant->image);
             $this->dispatch(
                 'alert',
                 icon:AlertIcons::SUCCESS,
-                title:$user->name.' удален!',
+                title:$plant->name.' удалено!',
                 position:'top'
             );
-            redirect()->route('admin.users');
-            request()->session()->flash('success',$user->name.' удалена!');
-        }
+            redirect()->route('admin.plants');
+            request()->session()->flash('success',$plant->name.' удалена!');
     }
     #[Title('Администратор')]
     public function render()
