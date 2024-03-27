@@ -18,7 +18,10 @@ class Users extends Component
     public $searchResult;
     public function search()
     {
-        $this->searchResult=User::query()->where('email',$this->searchInput)->get();
+        $this->searchResult=User::query()
+            ->where('email',$this->searchInput)
+            ->orWhere('name',$this->searchInput)
+            ->get();
     }
     public function delete($userID)
     {

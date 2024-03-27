@@ -16,7 +16,7 @@
                 <div>
                     <h2>Пользователи</h2>
                     <form wire:submit="search" class="d-flex">
-                        <input wire:model="searchInput" class="form-control me-2" type="search" placeholder="Поиск по email" aria-label="Search">
+                        <input wire:model="searchInput" class="form-control me-2" type="search" placeholder="Поиск по имени или email" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
                 </div>
@@ -29,7 +29,8 @@
                             <th scope="col">Почта</th>
                             <th scope="col">Права</th>
                             <th scope="col">Фото</th>
-                            <th scope="col">Последнее обновление</th>
+                            <th scope="col">Дата создания</th>
+                            <th scope="col">дата обновления</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -45,6 +46,7 @@
                                     <td>
                                         <img src="{{\Illuminate\Support\Facades\Storage::disk('public')->url($user->image)}}" alt="profile" width="50px" height="50px">
                                     </td>
+                                    <td>{{$user->created_at}}</td>
                                     <td>{{$user->updated_at}}</td>
                                     <td><a href="{{route('admin.edit.user',['user'=>$user->id])}}"><button type="button" class="btn btn-primary btn-sm">изменить</button></a></td>
                                     <td><button type="button" class="btn btn-danger btn-sm">Удалить</button></td>
@@ -60,6 +62,7 @@
                             <td>
                                 <img src="{{\Illuminate\Support\Facades\Storage::disk('public')->url($user->image)}}" alt="profile" width="50px" height="50px">
                             </td>
+                            <td>{{$user->created_at}}</td>
                             <td>{{$user->updated_at}}</td>
                             <td><a href="{{route('admin.edit.user',['user'=>$user->id])}}"><button type="button" class="btn btn-primary btn-sm">изменить</button></a></td>
                             <td><button wire:click="delete({{$user->id}})" wire:confirm="Вы точно хотите удалить {{$user->name}} email: {{$user->email}}?" type="button" class="btn btn-danger btn-sm">Удалить</button></td>
