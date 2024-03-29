@@ -132,6 +132,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/gif" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/clock" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
