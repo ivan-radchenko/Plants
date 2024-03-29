@@ -5,16 +5,17 @@ namespace App\Livewire\Admin;
 use App\Enums\AlertIcons;
 use App\Jobs\SendEmailAllUsers;
 use App\Models\User;
+use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Email extends Component
 {
-    #[Rule('required | string | min:5')]
+    #[Rule('required | string')]
     public $text;
 
-    public function sendEmail(): void
+    #[NoReturn] public function sendEmail(): void
     {
         $text=$this->validate()['text'];
         $users=User::get('email');
