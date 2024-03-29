@@ -17,7 +17,7 @@
                @csrf
                <div class="mb-3">
                    <label for="exampleFormControlTextarea1" class="form-label"></label>
-                   <textarea wire:model="text" class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+                   <textarea wire:model="text" class="form-control" id="exampleFormControlTextarea1" rows="10" style="font-size: 25px"></textarea>
                </div>
                <button type="submit" class="btn btn-primary btn-sm">Отправить</button>
            </form>
