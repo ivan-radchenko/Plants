@@ -1,12 +1,9 @@
 <div>
-    <link href="{{ asset('css/auth/profile.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/edit-user.css') }}" rel="stylesheet">
     <div class="wrapper">
         <div class="sub-header">
-                <img src="{{asset('images/header/left-subheader-image.svg')}}" alt="" class="left-subheader-image desktop">
-                <img src="{{asset('images/header/right-subheader-image.svg')}}" alt="" class="right-subheader-image desktop">
-                <img src="{{asset('images/header/left-subheader-image-mobile.svg')}}" alt="" class="left-subheader-image mobile">
-                <img src="{{asset('images/header/right-subheader-image-mobile.svg')}}" alt="" class="right-subheader-image mobile">
             <div class="messages">
+                <span class="error">Администратор</span>
                 @if (session('status'))
                     <span class="error">{{ session('status') }}</span>
                 @endif
@@ -47,17 +44,16 @@
                 </div>
                 <input wire:model="password" autocomplete="new-password" class="form-input" type="password" name="password" id="password" placeholder="пароль">
             </div>
+            <div class="form-item">
+                <div class="form-check form-switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Права администратора</label>
+                    <input wire:model="isAdmin" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                </div>
+            </div>
             <button type="submit" class="button">Сохранить</button>
-            @if(Auth::user()->is_admin === true)
-                <a href="{{route('admin.users')}}"><button type="button" class="button">Админка</button></a>
-            @else
-                <button wire:confirm.prompt="Отменить это действие будет невозможно. Вы уверенны,что хотите удалить свой аккаунт? Если да, введите свое имя. |{{Auth::user()->name}}"
-                        wire:click="delete" class="button" type="button">
-                    Удалить аккаунт
-                </button>
-            @endif
+            <a href="{{route('admin.users')}}"><button type="button" class="button">Назад</button></a>
         </form>
-        </div>
+    </div>
     <script>
         document.getElementById('show').addEventListener('click', event => {
             const password = document.getElementById("password");
@@ -72,3 +68,4 @@
         })
     </script>
 </div>
+

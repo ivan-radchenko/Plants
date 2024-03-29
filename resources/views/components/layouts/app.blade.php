@@ -11,9 +11,15 @@
         <link href="{{ asset('css/header.css') }}" rel="stylesheet">
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
         <link href="{{ asset('css/alertCustom.css') }}" rel="stylesheet">
+        @if(request()->routeIs('admin*'))
+            <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
+        @endif
         {{--scripts--}}
         <script src="{{asset('js/sweetAlert2.js')}}"></script>
         <script src="{{asset('js/alertCustom.js')}}"></script>
+        @if(request()->routeIs('admin*'))
+            <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+        @endif
     </head>
     <body>
         <livewire:components.header></livewire:components.header>

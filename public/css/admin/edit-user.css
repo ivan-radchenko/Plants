@@ -9,9 +9,10 @@
     min-height: 1050px;
 }
 
+
 .sub-header{
-    height: 200px;
     background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
+    height: 200px;
     position: relative;
     display: flex;
     align-items: center;
@@ -30,16 +31,13 @@
 }
 
 .form{
-    position: absolute;
-    top: 140px;
-    left: 0;
-    right: 0;
     margin: 0 auto;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 25px;
     align-items: center;
+    padding: 40px 0;
 }
 
 .image-label{
@@ -128,6 +126,7 @@
     transition: 0.7s;
     font-family: "Malgun Gothic", serif;
     font-weight: normal;
+    line-height: normal;
 }
 
 .password-item{

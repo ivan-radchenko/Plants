@@ -10,8 +10,8 @@
 }
 
 .sub-header{
-    height: 200px;
     background: linear-gradient(#01696C 0%,#01696C 66%, #004445 100%);
+    height: 200px;
     position: relative;
     display: flex;
     align-items: center;
@@ -29,60 +29,18 @@
     right: 0;
 }
 
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
 .form{
-    position: absolute;
-    top: 140px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 25px;
     align-items: center;
-}
-
-.image-label{
-    position: relative;
-}
-
-.user-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 100px;
-}
-
-.input-image{
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    width: 0.1px;
-}
-
-.image-animated{
-    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    transition: 0.7s;
-    border-radius: 100px;
-    background-color: rgba(0, 68, 69, 0.8);
-    opacity: 0;
-    top:0;
-    cursor: pointer;
-}
-
-.image-button{
-    display: flex;
-    cursor: pointer;
-    transition: 0.7s;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    position: relative;
-    width: 200px;
-    text-wrap: nowrap;
+    padding: 40px 0;
 }
 
 .form-item{
@@ -104,16 +62,23 @@
     border: none;
     text-align: center;
 }
-
 .form-input:focus{
     outline: none;
     box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
 }
 
-.bi-eye{
-    cursor: pointer;
-    fill: #FFFFFF;
-    transition: 0.7s;
+.img-prev{
+    width: 550px;
+    height: 310px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.input-image{
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    width: 0.1px;
 }
 
 .button{
@@ -128,16 +93,92 @@
     transition: 0.7s;
     font-family: "Malgun Gothic", serif;
     font-weight: normal;
+    text-wrap: nowrap;
+    line-height: normal;
 }
 
-.password-item{
+.form-input-number{
+    vertical-align: middle;
+    text-align: center;
+    width: 90px;
+    height: 25px;
+    border: none;
+    border-radius: 6px;
+    color: #A7A9AC;
+    font-size: 20px;
+}
+.form-input-number:focus{
+    outline: none;
+}
+
+.label-relative{
+    position: relative;
+    user-select: none;
+}
+
+.inc-dec-water{
+    top: 0;
+    right: 38px;
+    position: absolute;
+    z-index: 2;
+    width: 90px;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-between;
 }
 
-.bi-eye{
+.increment-button{
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    font-size: 25px;
+    color: #A7A9AC;
     cursor: pointer;
+    user-select: none;
+    transition: 0.7s;
+}
+
+
+.inc-dec-light{
+    top: 0;
+    right: 48px;
+    position: absolute;
+    z-index: 2;
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-input-select {
+    vertical-align: middle;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    color:#A7A9AC;
+    cursor:pointer;
+    font-size: 20px;
+    width: 150px;
+    height: 25px;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.7s;
+    font-family: Arial, serif;
+}
+
+.notes{
+    width: 510px;
+    height: 65px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+    color: #A7A9AC;
+    font-family: "Malgun Gothic", serif;
+    transition: 0.7s;
+}
+
+.notes:focus{
+    outline: none;
+    box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
 }
 
 .error{
@@ -163,11 +204,11 @@
         color: #01696C;
         box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
     }
-    .image-button:hover{
-        color: #004445;
+    .increment-button:hover{
+        color: #01696C;
     }
-    .image-animated:hover{
-        opacity: 1;
+    .form-input-select:hover{
+        color: #004445;
     }
 }
 @media (hover: none){
@@ -177,16 +218,15 @@
         color: #01696C;
         box-shadow: 0px 0px 30px 5px rgba(247, 233, 222, 1);
     }
-    .image-button:active{
+    .increment-button:active{
+        color: #01696C;
+        transition: 0s;
+    }
+    .form-input-select:active{
         color: #004445;
         transition: 0s;
     }
-    .image-animated:active{
-        opacity: 1;
-        transition: 0s;
-    }
 }
-
 @media screen and (max-width: 1200px) {
     .mobile{
         display: block;
@@ -195,6 +235,9 @@
         display: none;
     }
     .main{
+        min-height: 600px;
+    }
+    .wrapper{
         min-height: 600px;
     }
     .sub-header{
@@ -206,74 +249,56 @@
     .right-subheader-image{
         height: 154px;
     }
-    .form{
-        top: 75px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .main {
-        min-height: 500px;
-    }
-
-    .wrapper {
-        min-height: 550px;
-    }
-
-    .form {
-        padding: 15px;
-        width: 305px;
-        border-radius: 40px;
-        gap: 15px;
-        top: 60px;
-    }
-
-    .form-input {
-        width: 295px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    .form-item {
-        font-size: 15px;
-        gap: 10px;
-    }
-
-    .bi-eye {
-        height: 20px;
-    }
-
-    .button {
-        font-size: 15px;
-        padding: 2px 20px 5px 20px;
-    }
-
-    .user-image {
-        width: 80px;
-        height: 80px;
-    }
-
-    .image-animated {
-        width: 80px;
-        height: 80px;
-    }
-
-    .image-button {
-        width: 80px;
-    }
-
     .messages{
-        background-color: rgba(0,68,69,0.6);
-        z-index: 2;
-        border-radius: 20px;
         font-size: 15px;
         width: 335px;
         text-align: center;
         gap: 0;
     }
-
-    .error {
+    .error{
         font-size: 15px;
         width: 335px;
         text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .form{
+        gap: 15px;
+    }
+    .form-item{
+        font-size: 16px;
+        gap: 5px;
+    }
+    .form-input{
+        width: 335px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .img-prev {
+        width: 335px;
+        height: 190px;
+        margin-bottom: 5px;
+    }
+    .button {
+        font-size: 15px;
+        padding: 2px 20px 5px 20px;
+    }
+    .form-input-number{
+        font-size: 16px;
+        width: 70px;
+    }
+    .form-input-select{
+        font-size: 16px;
+        width: 120px;
+    }
+    .notes{
+        width: 300px;
+        padding: 5px 10px;
+        height: 90px;
+    }
+    .messages{
+        background-color: rgba(0,68,69,0.6);
+        z-index: 2;
+        border-radius: 20px;
     }
 }
