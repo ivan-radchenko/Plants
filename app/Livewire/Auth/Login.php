@@ -46,36 +46,36 @@ class Login extends Component
             ]);
         }
     }
-//отключено потому что ВК Oauth не поддерживает домены накириллице
-    // public function socialRedirect(Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|\Illuminate\Http\RedirectResponse
-    // {
-    //     $driver = $request->route()->parameters()['driver'];
-    //     return Socialite::driver($driver)->redirect();
-    // }
 
-    // public function socialCallback(Request $request)
-    // {
-    //     $driver = $request->route()->parameters()['driver'];
-    //     $socialUser = Socialite::driver($driver)->user();
-    //     $user = User::query()->where('email', '=', $socialUser->getEmail())->first();
+    public function socialRedirect(Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|\Illuminate\Http\RedirectResponse
+    {
+        $driver = $request->route()->parameters()['driver'];
+        return Socialite::driver($driver)->redirect();
+    }
 
-    //     if ($user === null) {
-    //         $newUser=[
-    //             'name'=>$socialUser->getName(),
-    //             'email'=>$socialUser->getEmail(),
-    //             'password'=>Hash::make($socialUser->getId().rand(10000000,99999900))
-    //         ];
-    //         $user=User::create($newUser);
-    //         if ($user->save()){
-    //             Auth::login($user);
-    //             return redirect(route('my-garden'));
-    //         }
-    //         return back()->with('error',('Что-то пошло не так =('));
-    //     } else {
-    //         Auth::login($user);
-    //          return redirect(route('my-garden'));
-    //     }
-    // }
+    public function socialCallback(Request $request)
+    {
+        $driver = $request->route()->parameters()['driver'];
+        $socialUser = Socialite::driver($driver)->user();
+        $user = User::query()->where('email', '=', $socialUser->getEmail())->first();
+
+        if ($user === null) {
+            $newUser=[
+                'name'=>$socialUser->getName(),
+                'email'=>$socialUser->getEmail(),
+                'password'=>Hash::make($socialUser->getId().rand(10000000,99999900))
+            ];
+            $user=User::create($newUser);
+            if ($user->save()){
+                Auth::login($user);
+                return redirect(route('my-garden'));
+            }
+            return back()->with('error',('Что-то пошло не так =('));
+        } else {
+            Auth::login($user);
+             return redirect(route('my-garden'));
+        }
+    }
     #[Title('Вход')]
     public function render()
     {
