@@ -71,7 +71,7 @@
                                 <button wire:click="delete({{$plant->id}})" wire:confirm="Вы точно хотите удалить {{$plant->name}}?" class="modal-button">Удалить
                                 </button>
                                 <div class="ya-share2 share{{$plant->id}}" id="share{{$plant->id}}"
-                                     data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-description="{{$plant->name}}" data-url="{{URL::signedRoute('share-plant',['plant'=>$plant->id])}}" {{--data-image="{{Storage::disk('public')->url($plant->image)}}"--}} data-use-links>
+                                     data-curtain data-shape="round" data-limit="0" data-more-button-type="long" data-services="vkontakte,telegram,whatsapp" data-title="{{$plant->name}}" data-description="{{$plant->name}}" data-url="https://моирастеньки.рф{{URL::signedRoute('share-plant',['plant'=>$plant->id],absolute: false)}}" data-image="{{Storage::disk('public')->url($plant->image)}}" data-use-links>
                                 </div>
                             </div>
                         </div>

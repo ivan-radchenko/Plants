@@ -35,7 +35,7 @@ Route::get('/', Home::class)
 Route::get('like-other', LikeOther::class)
     ->name('like-other');
 Route::get('/share-plant/{plant}', SharePlant::class)
-    ->name('share-plant');
+    ->name('share-plant')->middleware('signed:relative');
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', Register::class)
