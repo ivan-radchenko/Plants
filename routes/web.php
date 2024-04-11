@@ -42,9 +42,10 @@ Route::middleware('guest')->group(function () {
         ->name('register');
     Route::get('/login', Login::class)
         ->name('login');
-    Route::get('/{driver}/redirect', [Login::class,'socialRedirect'])
-        ->name('social.login');
-    Route::get('/{driver}/callback',[Login::class,'socialCallback']);
+        //отключено потому что ВК Oauth не поддерживает домены накириллице
+    // Route::get('/{driver}/redirect', [Login::class,'socialRedirect'])
+    //     ->name('social.login');
+    // Route::get('/{driver}/callback',[Login::class,'socialCallback']);
     Route::get('/forgot-password', ForgotPassword::class)
         ->name('password.request');
     Route::get('/reset-password/{token}', ResetPassword::class)
