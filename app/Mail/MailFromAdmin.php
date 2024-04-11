@@ -29,7 +29,7 @@ class MailFromAdmin extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Уведомление от администратора Мои-Растеньки.рф',
+            subject: 'Уведомление от администратора моирастеньки.рф',
         );
     }
 
